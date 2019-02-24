@@ -27,7 +27,7 @@ func main() {
 	resp,err := http.Get("http://stream.meetup.com/2/rsvps")
 	decoder:=json.NewDecoder(resp.Body)
 	w := kafka.NewWriter(kafka.WriterConfig{
-		Brokers: []string{"localhost:9092"},
+		Brokers: []string{"34.73.54.57:9092"},
 		Topic:   "MyTopic",
 	})
 	fmt.Println(reflect.TypeOf(w).String())
