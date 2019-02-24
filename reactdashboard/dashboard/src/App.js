@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
-
 import Posts from './components/Posts/Posts';
 import PostForm from './components/Postform/Postform';
-
+import TopBar from './components/TopBar/TopBar';
 import store from './store';
-import MockResults from './components/MockServer/MockResults';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <MockResults />
-          <PostForm />
-          <hr />
-          <Posts />
+        <div className="App">                                                  
+        <TopBar />
         </div>
+        <script src="https://unpkg.com/react/umd/react.production.js" crossorigin />
+
+        <script
+        src="https://unpkg.com/react-dom/umd/react-dom.production.js"
+        crossorigin
+        />
+
+        <script
+        src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
+        crossorigin
+        />
+
+        <script>var Alert = ReactBootstrap.Alert;</script>            
+        <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous"
+        />         
       </Provider>
     );
   }

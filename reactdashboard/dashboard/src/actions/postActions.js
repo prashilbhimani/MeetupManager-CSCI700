@@ -28,14 +28,3 @@ export const createPost = postData => dispatch => {
     );
 };
 
-
-export const getDb = () => dispatch => {
-  fetch('http://localhost:3000/people')
-  .then(res => res.json())
-  .then(person =>
-    dispatch({
-      type: 'TESTING_MOCK',
-      payload: person
-    })
-  );
-}
