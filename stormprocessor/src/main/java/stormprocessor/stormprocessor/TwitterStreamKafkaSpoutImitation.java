@@ -2,11 +2,6 @@ package stormprocessor.stormprocessor;
 
 import java.util.Map;
 import java.util.Random;
-
-import org.apache.storm.topology.IRichSpout;
-
-import org.apache.storm.kafka.KafkaSpout;
-import org.apache.storm.kafka.SpoutConfig;
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.OutputFieldsDeclarer;
