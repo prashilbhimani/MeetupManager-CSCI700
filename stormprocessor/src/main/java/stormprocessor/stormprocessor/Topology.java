@@ -18,8 +18,7 @@ public class Topology {
 		String url = "mongodb://127.0.0.1:27017/testdb";
     	String collectionName = "test";
     	
-    	MongoMapper mongoMapper = new SimpleMongoMapper().withFields("date", "tweet_id", "trend", "message", "retweet_count");
-//    	MongoMapper mongoMapper = new SimpleMongoMapper().withFields("tweet");
+    	MongoMapper mongoMapper = new SimpleMongoMapper().withFields("name", "nested");
     	MongoInsertBolt mongoInsertBolt = new MongoInsertBolt(url, collectionName, mongoMapper);
     	builder.setBolt("MongoInsertBolt", mongoInsertBolt).shuffleGrouping("JSONBolt");
     	

@@ -17,13 +17,13 @@ public class JSONBolt extends BaseBasicBolt {
 		try {
 			JSONParser parser = new JSONParser();
 			JSONObject jsonObject = (JSONObject) parser.parse(input.getValue(0).toString());
-			collector.emit(new Values(jsonObject.get("date"), jsonObject.get("tweet_id"), jsonObject.get("trend"), jsonObject.get("message"), jsonObject.get("retweet_count")));
+			collector.emit(new Values(jsonObject.get("name"), jsonObject.get("nested")));
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
-		declarer.declare(new Fields("date", "tweet_id", "trend", "message", "retweet_count"));
+		declarer.declare(new Fields("name", "nested"));
 	}
 }
