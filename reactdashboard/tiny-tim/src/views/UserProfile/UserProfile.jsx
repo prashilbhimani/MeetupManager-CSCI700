@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  Badge,  
   Grid,
   Row,
   Col,
