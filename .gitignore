@@ -1,4 +1,5 @@
-reactdashboard/.idea/
+**/.idea/
+.*
 reactdashboard/nodeserver/node_modules
 reactdashboard/tiny-tim/.env
 reactdashboard/tiny-tim/node_modules
