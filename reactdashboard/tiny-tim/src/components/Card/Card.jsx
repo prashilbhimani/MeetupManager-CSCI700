@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Pagination } from 'react-bootstrap';
+// import { Pagination } from 'react-bootstrap';
 
 
 export class Card extends Component {

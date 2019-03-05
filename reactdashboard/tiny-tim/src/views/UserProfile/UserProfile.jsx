@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import {
-  Badge,  
+import {    
   Grid,
   Row,
   Col,
-  FormGroup,
-  ControlLabel,
-  FormControl,
   Table
 } from "react-bootstrap";
 import { thArray, tdArray } from "variables/Variables.jsx";

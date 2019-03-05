@@ -5,10 +5,6 @@ import Header from "components/Header/Header";
 import dashboardRoutes from "routes/dashboard.jsx";
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);        
-  }
-
    _populateSideBarRoutes = () => {
     return (
       dashboardRoutes.map((prop, key) => {                
