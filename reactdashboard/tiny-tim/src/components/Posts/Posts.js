@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../actions/postActions';
+import PropTypes from 'prop-types';
 class Posts extends Component {
   componentDidMount() {
     this.props.fetchPosts();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.newPost) {
+      this.props.posts.unshift(nextProps.newPost);
+    }
   }
   render() {    
     const postItems = this.props.posts.map(post => (
@@ -14,15 +21,22 @@ class Posts extends Component {
     ));
     return (
       <div>
-        <h1>Post</h1>
+        <h1>Post</h1>        
         {postItems}
       </div>
     )
   }
 }
 
+Posts.propTypes = {
+  fetchPosts: PropTypes.func.isRequired,
+  posts: PropTypes.array.isRequired,
+  post: PropTypes.object
+};
+
 const mapStateToProps = state => ({
-  posts: state.posts.items
+  posts: state.posts.items,
+  newPost: state.posts.item
 });
 // posts is what we set in the post reducer
 
