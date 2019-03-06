@@ -3,4 +3,6 @@
 reactdashboard/nodeserver/node_modules
 reactdashboard/tiny-tim/.env
 reactdashboard/tiny-tim/node_modules
+reactdashboard/mockserver/node_modules
 reactdashboard/tiny-tim/node_modules_backup
+reactdashboard/node_modules/
