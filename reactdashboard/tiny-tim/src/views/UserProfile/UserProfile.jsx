@@ -7,9 +7,6 @@ class UserProfile extends Component {
   render() {
     return (
       <div className="content">
-      <Postform />
-      <hr/>
-      <Posts />
       <CreateEvent/>
       <ListEvents />
       </div>

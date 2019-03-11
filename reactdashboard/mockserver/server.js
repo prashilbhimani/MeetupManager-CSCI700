@@ -1,4 +1,16 @@
-var http = require('http');
-var mockserver = require('mockserver');
- 
-http.createServer(mockserver('./mocks')).listen(9001);
+var express = require('express')
+var cors = require('cors')
+var app = express()
+var newevent = require('./mocks/newevent.json')
+app.use(cors())
+
+
+
+app.post('/newevent', function (req, res, next) {
+//   res.json({msg: 'This is CORS-enabled for all origins!'})
+    res.json(newevent)
+})
+
+app.listen(9001, function () {
+  console.log('CORS-enabled web server listening on port 9001')
+})

@@ -7,9 +7,19 @@ import {
 import { Card } from "../creative-tim-components/Card/Card.jsx";
 import { FormInputs } from "../creative-tim-components/FormInputs/FormInputs.jsx";
 import Button from "../creative-tim-components/CustomButton/CustomButton.jsx";
+import { createEvent } from '../../actions/eventActions';
+import { connect } from 'react-redux';
 
 
 class CreateEvent extends Component {
+    onSubmit = (e) => {
+        e.preventDefault();
+        console.log("in the onsubmit method")
+        const newEvent = {
+            somedata: 'ksjdgdfkjgbdkjgb'
+        }
+        this.props.createEvent(newEvent);        
+    }
     render() {
         return(
         <Grid fluid>
@@ -18,7 +28,7 @@ class CreateEvent extends Component {
             <Card
               title="Collect Event"
               content={
-                <form>
+                <form onSubmit={this.onSubmit}>
                   <FormInputs
                     ncols={["col-md-6", "col-md-6"]}
                     proprieties={[
@@ -79,4 +89,5 @@ class CreateEvent extends Component {
     }
 }
 
-export default CreateEvent;
+
+export default connect(null, {createEvent})(CreateEvent);
