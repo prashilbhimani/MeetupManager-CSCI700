@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Sidebar from "components/Sidebar/Sidebar";
+import Sidebar from "components/creative-tim-components/Sidebar/Sidebar";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Header from "components/Header/Header";
+import Header from "components/creative-tim-components/Header/Header";
 import dashboardRoutes from "routes/dashboard.jsx";
 
 class Dashboard extends Component {

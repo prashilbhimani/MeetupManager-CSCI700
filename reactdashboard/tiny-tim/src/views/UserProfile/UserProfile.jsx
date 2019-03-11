@@ -7,9 +7,9 @@ import {
 } from "react-bootstrap";
 import { thArray, tdArray } from "variables/Variables.jsx";
 
-import { Card } from "components/Card/Card.jsx";
-import { FormInputs } from "components/FormInputs/FormInputs.jsx";
-import Button from "components/CustomButton/CustomButton.jsx";
+import { Card } from "components/creative-tim-components/Card/Card.jsx";
+import { FormInputs } from "components/creative-tim-components/FormInputs/FormInputs.jsx";
+import Button from "components/creative-tim-components/CustomButton/CustomButton.jsx";
 import Posts from "components/Posts/Posts";
 import Postform from "../../components/PostForm/Postform";
 class UserProfile extends Component {
