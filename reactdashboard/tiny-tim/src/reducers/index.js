@@ -4,7 +4,7 @@ import eventsReducer from './eventsReducer';
 
 export default combineReducers({
     posts: postReducer,
-    events: eventsReducer
+    eventsReducer: eventsReducer
 });
 
 // nameofreducer: reducerObject

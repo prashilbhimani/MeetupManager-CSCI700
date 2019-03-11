@@ -7,9 +7,26 @@ import {
 } from "react-bootstrap";
 import { thArray, tdArray } from "variables/Variables.jsx";
 import { Card } from "../creative-tim-components/Card/Card.jsx";
+import { fetchEvents } from "../../actions/eventActions";
+import { connect } from 'react-redux';
 
 class ListEvents extends Component {
+  
+  componentDidMount() {
+    console.log('in component did mount');
+    this.props.fetchEvents();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('in component Will recv props')
+    if(nextProps.newEvent) {      
+      console.log(`got the new event ${JSON.stringify(nextProps.newEvent)}`)
+    }
+  }
+
     render() {
+      const eventItems = this.props.myevents;
+      console.log(` eventItems: ${JSON.stringify(eventItems)}`);
         return (
             <Grid fluid>
             <Col md={12}>
@@ -47,5 +64,9 @@ class ListEvents extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+  myevents: state.eventsReducer.myevents,
+  newEvent: state.eventsReducer.newEvent    
+});
 
-export default ListEvents;
+export default connect(mapStateToProps, { fetchEvents })(ListEvents);
