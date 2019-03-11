@@ -12,21 +12,22 @@ import { connect } from 'react-redux';
 
 class ListEvents extends Component {
   
-  componentDidMount() {
-    console.log('in component did mount');
+  componentDidMount() {    
     this.props.fetchEvents();
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log('in component Will recv props')
-    if(nextProps.newEvent) {      
-      console.log(`got the new event ${JSON.stringify(nextProps.newEvent)}`)
+  componentWillReceiveProps(nextProps) {    
+    if(nextProps.newEvent) {
+      console.log(this.props.myevents);          
+      console.log('unshifting stuff')
+      this.props.myevents.unshift(nextProps.newEvent);
+      console.log(this.props.myevents);
     }
   }
 
     render() {
       const eventItems = this.props.myevents;
-      console.log(` eventItems: ${JSON.stringify(eventItems)}`);
+      // console.log(` eventItems: ${JSON.stringify(eventItems)}`);
         return (
             <Grid fluid>
             <Col md={12}>

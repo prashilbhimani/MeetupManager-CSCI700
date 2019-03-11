@@ -18,8 +18,7 @@ export const createEvent = (eventData) => dispatch => {
             'Access-Control-Allow-Origin': '*'            
         },
         body: JSON.stringify(eventData)
-    }).then(res => res.json())
-    .then(res => console.log(`response is: ${JSON.stringify(res)}`))
+    }).then(res => res.json())    
     .then(myevent => dispatch({
         type: NEW_EVENT,
         payload: myevent

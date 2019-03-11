@@ -13,8 +13,7 @@ import { connect } from 'react-redux';
 
 class CreateEvent extends Component {
     onSubmit = (e) => {
-        e.preventDefault();
-        console.log("in the onsubmit method")
+        e.preventDefault();        
         const newEvent = {
             somedata: 'ksjdgdfkjgbdkjgb'
         }

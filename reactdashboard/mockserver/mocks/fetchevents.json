@@ -1,0 +1,26 @@
+[
+    {
+        "eventId" : "1",
+        "userName" : " Sharan Srivatsa",
+        "userEmail" : "sharan.srivatsa@colorado.edu",
+        "eventName" : "sharan's event",
+        "satus" : "Completed"
+
+    },
+    {
+        "eventId" : "2",
+        "userName" : " Prashil Bhimani",
+        "userEmail" : "prashil.bhimani@colorado.edu",
+        "eventName" : "prashil's event",
+        "satus" : "Active"
+
+    },
+    {
+        "eventId" : 3,
+        "userName" : " Ken Anderson",
+        "userEmail" : "ken.anderson@colorado.edu",
+        "eventName" : "ken's event",
+        "satus" : "Aborted"
+
+    }
+]

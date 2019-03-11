@@ -1,3 +1,8 @@
 {
-   "NewEvent": "created"
+   "eventId" : "4",
+   "userName" : " New Eevent",
+   "userEmail" : "new.event@colorado.edu",
+   "eventName" : "new events's event",
+   "satus" : "Completed"
+
 }
