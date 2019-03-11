@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TagsInput from 'react-tagsinput'
-import 'react-tagsinput/react-tagsinput.css' 
+// import 'react-tagsinput/react-tagsinput.css' 
+import './style.css';
 
  // https://www.npmjs.com/package/react-tagsinput
 class ReactTagInput extends Component {
