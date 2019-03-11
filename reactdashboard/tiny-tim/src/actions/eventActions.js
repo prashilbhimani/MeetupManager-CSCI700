@@ -14,8 +14,7 @@ export const createEvent = (eventData) => dispatch => {
     fetch('http://localhost:9001/newevent', {
         method: 'POST',        
         headers : {
-            'content-type' : 'application/json',
-            'Access-Control-Allow-Origin': '*'            
+            'content-type' : 'application/json'          
         },
         body: JSON.stringify(eventData)
     }).then(res => res.json())    

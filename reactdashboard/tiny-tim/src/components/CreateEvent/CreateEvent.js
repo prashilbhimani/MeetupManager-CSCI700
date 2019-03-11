@@ -9,6 +9,7 @@ import { FormInputs } from "../creative-tim-components/FormInputs/FormInputs.jsx
 import Button from "../creative-tim-components/CustomButton/CustomButton.jsx";
 import { createEvent } from '../../actions/eventActions';
 import { connect } from 'react-redux';
+import ReactTagInput  from "../ReactTagInput/ReactTagInput";
 
 
 class CreateEvent extends Component {
@@ -21,9 +22,9 @@ class CreateEvent extends Component {
     }
     render() {
         return(
-        <Grid fluid>
+        <Grid fluid>        
         <Row>
-          <Col md={12}>
+          <Col md={12}>           
             <Card
               title="Collect Event"
               content={
@@ -49,18 +50,7 @@ class CreateEvent extends Component {
                       }
                     ]}
                   />
-                  <FormInputs
-                    ncols={["col-md-12"]}
-                    proprieties={[
-                      {
-                        label: "Keywords",
-                        type: "text",
-                        bsClass: "form-control",
-                        placeholder: "Keywords",
-                        defaultValue: "keyword1, keyword2, keyword3"
-                      }
-                    ]}
-                  />
+                  <ReactTagInput/>
                   <FormInputs
                     ncols={["col-md-12"]}
                     proprieties={[
