@@ -22,6 +22,9 @@ class CreateEvent extends Component {
   updateTags = (tags) => {    
     this.setState({tags})        
   }
+  onChange = (e) => {
+    console.log("in the on change method :') ");
+  }
     onSubmit = (e) => {
         e.preventDefault();
         var keywords = this.state.tags
@@ -49,7 +52,8 @@ class CreateEvent extends Component {
                         bsClass: "form-control",
                         placeholder: "Event Name",
                         defaultValue: "Demo Event 1",
-                        disabled: false
+                        disabled: false,
+                        onChange: this.onChange
                       },
                       {
                         label: "Username",
@@ -57,7 +61,8 @@ class CreateEvent extends Component {
                         bsClass: "form-control",
                         placeholder: "sharans003@gmail.com",
                         defaultValue: "sharans003",
-                        disabled: true
+                        disabled: true,
+                        onChange: this.onChange
                       }
                     ]}
                   />
@@ -71,7 +76,9 @@ class CreateEvent extends Component {
                         bsClass: "form-control",
                         placeholder: "InformationAboutEvent",
                         defaultValue:
-                          "I'm collecting data for epic analytics. The data is related to disasters!"
+                          "I'm collecting data for epic analytics. The data is related to disasters!",
+                          onChange: this.onChange
+
                       }
                     ]}
                   />
