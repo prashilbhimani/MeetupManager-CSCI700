@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 class ListEvents extends Component {
   
   componentDidMount() {    
-    this.props.fetchEvents();
+    this.props.fetchEvents();    
   }
 
   componentWillReceiveProps(nextProps) {    
@@ -26,8 +26,18 @@ class ListEvents extends Component {
   }
 
     render() {
-      const eventItems = this.props.myevents;
-      // console.log(` eventItems: ${JSON.stringify(eventItems)}`);
+      const eventItems = this.props.myevents;      
+      const eventsTable = eventItems.map(event => {
+        return (
+          <tr key={event.eventId}>
+            <td>{event.eventId}</td>
+            <td>{event.userName}</td>
+            <td>{event.userEmail}</td>
+            <td>{event.eventName}</td>
+            <td>{event.status}</td>
+          </tr>
+        )
+      });      
         return (
             <Grid fluid>
             <Col md={12}>
@@ -46,15 +56,9 @@ class ListEvents extends Component {
                           </tr>
                         </thead>
                         <tbody>
-                          {tdArray.map((prop, key) => {
-                            return (
-                              <tr key={key}>
-                                {prop.map((prop, key) => {
-                                  return <td key={key}>{prop}</td>;
-                                })}
-                              </tr>
-                            );
-                          })}
+                          {
+                            eventsTable                      
+                          }
                         </tbody>
                       </Table>
                     }
