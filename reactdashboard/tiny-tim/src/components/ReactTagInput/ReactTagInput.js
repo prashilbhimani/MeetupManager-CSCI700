@@ -4,29 +4,20 @@ import TagsInput from 'react-tagsinput'
 import './style.css';
 
  // https://www.npmjs.com/package/react-tagsinput
+
 class ReactTagInput extends Component {
-    constructor() {
+      constructor() {
         super()
-        this.state = {tags: [], tag: ''}
+        this.state = {tags: []}
       }
      
-      handleChange = (tags) => {
+      handleChange = (tags, changed, changedIndexes) => {
         this.setState({tags})
-      }
-     
-      handleChangeInput = (tag) => {
-        this.setState({tag})
+        this.props.updateTags(tags)
       }
      
       render() {
-        return (
-          <TagsInput
-            value={this.state.tags}
-            onChange={this.handleChange}
-            inputValue={this.state.tag}
-            onChangeInput={this.handleChangeInput}
-          />
-        )
+        return <TagsInput value={this.state.tags} onChange={this.handleChange} />
       }
 };
  

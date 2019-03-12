@@ -13,8 +13,19 @@ import ReactTagInput  from "../ReactTagInput/ReactTagInput";
 
 
 class CreateEvent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      tags: []
+    }
+  }
+  updateTags = (tags) => {    
+    this.setState({tags})        
+  }
     onSubmit = (e) => {
-        e.preventDefault();        
+        e.preventDefault();
+        var keywords = this.state.tags
+        console.log(`kw tags : ${keywords}`);        
         const newEvent = {
             somedata: 'ksjdgdfkjgbdkjgb'
         }
@@ -50,7 +61,7 @@ class CreateEvent extends Component {
                       }
                     ]}
                   />
-                  <ReactTagInput/>
+                  <ReactTagInput id="keywords" updateTags={this.updateTags}/>
                   <FormInputs
                     ncols={["col-md-12"]}
                     proprieties={[
