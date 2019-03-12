@@ -16,22 +16,29 @@ class CreateEvent extends Component {
   constructor() {
     super();
     this.state = {
-      tags: []
+      tags: [],
+      EventName: "",
+      UserName: "",
+      EventInfo: ""
     }
   }
   updateTags = (tags) => {    
     this.setState({tags})        
   }
   onChange = (e) => {
-    console.log("in the on change method :') ");
+    this.setState(
+      { [e.target.name]: e.target.value }
+   );
   }
     onSubmit = (e) => {
         e.preventDefault();
-        var keywords = this.state.tags
-        console.log(`kw tags : ${keywords}`);        
+        var keywords = this.state.tags              
         const newEvent = {
-            somedata: 'ksjdgdfkjgbdkjgb'
-        }
+            eventName: this.state.EventName,
+            keywords: keywords,
+            eventInfo: this.state.EventInfo,
+            userName: this.state.UserName
+        }        
         this.props.createEvent(newEvent);        
     }
     render() {
@@ -47,6 +54,7 @@ class CreateEvent extends Component {
                     ncols={["col-md-6", "col-md-6"]}
                     proprieties={[
                       {
+                        name: "EventName",
                         label: "EventName",
                         type: "text",
                         bsClass: "form-control",
@@ -56,12 +64,12 @@ class CreateEvent extends Component {
                         onChange: this.onChange
                       },
                       {
+                        name: "Username",
                         label: "Username",
                         type: "text",
                         bsClass: "form-control",
                         placeholder: "sharans003@gmail.com",
-                        defaultValue: "sharans003",
-                        disabled: true,
+                        defaultValue: "sharans003",                        
                         onChange: this.onChange
                       }
                     ]}
@@ -71,6 +79,7 @@ class CreateEvent extends Component {
                     ncols={["col-md-12"]}
                     proprieties={[
                       {
+                        name: "EventInfo",
                         label: "Information about Event",
                         type: "text",
                         bsClass: "form-control",
