@@ -5,6 +5,7 @@ import {
   Col,
   Table
 } from "react-bootstrap";
+import MaterialIcon, {colorPalette} from 'material-icons-react';
 import { thArray } from "variables/Variables.jsx";
 import { Card } from "../creative-tim-components/Card/Card.jsx";
 import { fetchEvents, modifyEvents } from "../../actions/eventActions";
@@ -36,10 +37,10 @@ class ListEvents extends Component {
         keywords = keywords.replace(/,\s*$/, "");  
         let button;
         console.log(event.status)
-        if(event.status === "NOT_ACTIVE") {
-          button = <td><a href="#" onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><i id={"start-"+event.normalized_name} className="pe-7s-play" /></a></td>
+        if(event.status === "NOT_ACTIVE") {          
+          button = <td><a href="#" onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><MaterialIcon id={"start-"+event.normalized_name} icon="play_arrow" color={colorPalette.blue._400}/></a></td>
           } else {
-            button = <td><a href="#" onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><i id={"pause-"+event.normalized_name} className="pe-7s-refresh" /></a></td>            
+            button = <td><a href="#" onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><MaterialIcon id={"stop-"+event.normalized_name} icon="pause" color={colorPalette.blue._400}/></a></td>            
           }        
         return (
           <tr key={event.normalized_name}>
