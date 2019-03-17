@@ -34,13 +34,13 @@ class ListEvents extends Component {
         });
         keywords = keywords.replace(/,\s*$/, "");        
         return (
-          <tr key={event.event_name}>
-          <td>{event.event_name}</td>
+          <tr key={event.normalized_name}>
+          <td>{event.name}</td>
             <td>{event.description}</td>
             <td>{keywords}</td>
             <td>{event.status}</td>
-            <td key={"start-"+event.event_name}><i className="pe-7s-play" /></td>
-            <td key={"pause-"+event.event_name}><i className="pe-7s-refresh" /></td>            
+            <td key={"start-"+event.normalized_name}><a><i className="pe-7s-play" /></a></td>
+            <td key={"pause-"+event.normalized_name}><a><i className="pe-7s-refresh" /></a></td>            
           </tr>
         )
       });      

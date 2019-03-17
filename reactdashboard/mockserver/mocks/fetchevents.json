@@ -1,20 +1,38 @@
 [
-    {        
-        "event_name" : "sharan's event",
-        "description" : "Some quick description",
-        "keywords": ["kw1", "kw2"],
-        "status": "Active"        
+    {
+        "name": "sandy",
+        "keywords": [
+          "hurricane",
+          "sandy"
+        ],
+        "description": "extraction of data for Sandy hurricane",
+        "normalized_name": "sandy",
+        "status": "ACTIVE",
+        "created_at": 1552602162673,
+        "created_at_str": "2019-03-14 16:22:42.673"
     },
-    {        
-        "event_name" : "prashil's event",
-        "description" : "Some quick description",
-        "keywords": ["kw1", "kw2"],
-        "status": "Not Active"        
+    {
+        "name": "sunny",
+        "keywords": [
+          "hurricane",
+          "sandy"
+        ],
+        "description": "extraction of data for Sandy hurricane",
+        "normalized_name": "sunny",
+        "status": "NOT ACTIVE",
+        "created_at": 1552602162673,
+        "created_at_str": "2019-03-14 16:22:42.673"
     },
-    {        
-        "event_name" : "ken's event",
-        "description" : "Some quick description",
-        "keywords": ["kw1", "kw2"],
-        "status": "Active"        
+    {
+        "name": "sandy2",
+        "keywords": [
+          "hurricane",
+          "sandy"
+        ],
+        "description": "extraction of data for Sandy hurricane",
+        "normalized_name": "sandy2",
+        "status": "NOT ACTIVE",
+        "created_at": 1552602162673,
+        "created_at_str": "2019-03-14 16:22:42.673"
     }
 ]
