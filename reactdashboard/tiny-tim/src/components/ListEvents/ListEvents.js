@@ -5,7 +5,7 @@ import {
   Col,
   Table
 } from "react-bootstrap";
-import { thArray, tdArray } from "variables/Variables.jsx";
+import { thArray } from "variables/Variables.jsx";
 import { Card } from "../creative-tim-components/Card/Card.jsx";
 import { fetchEvents } from "../../actions/eventActions";
 import { connect } from 'react-redux';
@@ -18,23 +18,29 @@ class ListEvents extends Component {
 
   componentWillReceiveProps(nextProps) {    
     if(nextProps.newEvent) {
-      console.log(this.props.myevents);          
-      console.log('unshifting stuff')
+      // console.log(this.props.myevents);          
+      // console.log('unshifting stuff')
       this.props.myevents.unshift(nextProps.newEvent);
-      console.log(this.props.myevents);
+      // console.log(this.props.myevents);
     }
   }
 
     render() {
       const eventItems = this.props.myevents;                  
       const eventsTable = eventItems.map(event => {
-        console.log(`event: ${JSON.stringify(event.event_name)}`)
+        let keywords = "";
+        event.keywords.map(kw => {
+          keywords += kw + ","
+        });
+        keywords = keywords.replace(/,\s*$/, "");        
         return (
           <tr key={event.event_name}>
           <td>{event.event_name}</td>
             <td>{event.description}</td>
-            <td>{event.keywords}</td>
+            <td>{keywords}</td>
             <td>{event.status}</td>
+            <td key={"start-"+event.event_name}><i className="pe-7s-play" /></td>
+            <td key={"pause-"+event.event_name}><i className="pe-7s-refresh" /></td>            
           </tr>
         )
       });      
