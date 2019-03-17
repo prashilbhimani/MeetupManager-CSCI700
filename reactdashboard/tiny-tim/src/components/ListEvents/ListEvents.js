@@ -7,7 +7,7 @@ import {
 } from "react-bootstrap";
 import { thArray } from "variables/Variables.jsx";
 import { Card } from "../creative-tim-components/Card/Card.jsx";
-import { fetchEvents } from "../../actions/eventActions";
+import { fetchEvents, modifyEvents } from "../../actions/eventActions";
 import { connect } from 'react-redux';
 
 class ListEvents extends Component {
@@ -18,17 +18,12 @@ class ListEvents extends Component {
 
   componentWillReceiveProps(nextProps) {    
     if(nextProps.newEvent) {
-      // console.log(this.props.myevents);          
-      // console.log('unshifting stuff')
       this.props.myevents.unshift(nextProps.newEvent);
-      // console.log(this.props.myevents);
     }
   }
 
-  _onLinkClickHandler = (e) => {
-    e.preventDefault();
-    console.log('in onLinkClick Handler');
-    console.log(e.target.id);
+  _onLinkClickHandler = (type, normalized_name) => {
+    this.props.modifyEvents(type,normalized_name);
   }
     render() {
       const eventItems = this.props.myevents;                  
@@ -45,8 +40,8 @@ class ListEvents extends Component {
             <td>{event.description}</td>
             <td>{keywords}</td>
             <td>{event.status}</td>
-            <td><a href="#" onClick={this._onLinkClickHandler}><i id={"start-"+event.normalized_name} className="pe-7s-play" /></a></td>
-            <td><a href="#" onClick={this._onLinkClickHandler}><i id={"pause-"+event.normalized_name} className="pe-7s-refresh" /></a></td>            
+            <td><a href="#" onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><i id={"start-"+event.normalized_name} className="pe-7s-play" /></a></td>
+            <td><a href="#" onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><i id={"pause-"+event.normalized_name} className="pe-7s-refresh" /></a></td>            
           </tr>
         )
       });      
@@ -86,4 +81,4 @@ const mapStateToProps = state => ({
   newEvent: state.eventsReducer.newEvent    
 });
 
-export default connect(mapStateToProps, { fetchEvents })(ListEvents);
+export default connect(mapStateToProps, { fetchEvents, modifyEvents })(ListEvents);

@@ -1,8 +1,12 @@
 {
-   "eventId" : "4",
-   "userName" : " New Event",
-   "userEmail" : "new.event@colorado.edu",
-   "eventName" : "new events's event",
-   "satus" : "Completed"
-
+   "name": "sandy3",
+   "keywords": [
+     "hurricane",
+     "sandy"
+   ],
+   "description": "new event man",
+   "normalized_name": "sandy3",
+   "status": "NOT ACTIVE",
+   "created_at": 1552602162673,
+   "created_at_str": "2019-03-14 16:22:42.673"
 }

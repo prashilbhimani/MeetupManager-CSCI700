@@ -1,4 +1,4 @@
-import { NEW_EVENT, FETCH_EVENTS } from './types';
+import { NEW_EVENT, FETCH_EVENTS, MODIFY_EVENT } from './types';
 
 
 export const fetchEvents = () => dispatch => {    
@@ -20,6 +20,20 @@ export const createEvent = (eventData) => dispatch => {
     }).then(res => res.json())    
     .then(myevent => dispatch({
         type: NEW_EVENT,
+        payload: myevent
+    })
+    );
+};
+
+export const modifyEvents = (type, normalized_name) => dispatch => {          
+    fetch(`http://localhost:9001/${normalized_name}/${type}`, {
+        method: 'PUT',        
+        headers : {
+            'content-type' : 'application/json'          
+        }        
+    }).then(res => res.json())    
+    .then(myevent => dispatch({
+        type: MODIFY_EVENT,
         payload: myevent
     })
     );

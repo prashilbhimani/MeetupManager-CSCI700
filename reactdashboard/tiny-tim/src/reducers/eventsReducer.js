@@ -1,4 +1,4 @@
-import { NEW_EVENT, FETCH_EVENTS } from '../actions/types';
+import { NEW_EVENT, FETCH_EVENTS, MODIFY_EVENT } from '../actions/types';
 
 const initialState = {
     myevents: [],
@@ -16,6 +16,11 @@ export default function(state = initialState, action) {
         return {
             ...state,
             myevents: action.payload
+        }
+        case MODIFY_EVENT:
+        console.log('in modify event reducer')
+        return {
+            ...state
         }
         default:
         return state
