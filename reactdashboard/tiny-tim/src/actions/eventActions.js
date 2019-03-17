@@ -28,8 +28,10 @@ export const createEvent = (eventData) => dispatch => {
 };
 
 export const modifyEvents = (type, normalized_name) => dispatch => { 
-    console.log('in modify events action')         
-    fetch(`http://localhost:9001/${normalized_name}/${type}`, {
+    console.log('in modify events action')
+    console.log(`type is: ${type}`)
+    var status = type === "start" ? "ACTIVE": "NOT_ACTIVE";         
+    fetch(`http://localhost:9001/${normalized_name}/${status}`, {
         method: 'PUT',        
         headers : {
             'content-type' : 'application/json'          
