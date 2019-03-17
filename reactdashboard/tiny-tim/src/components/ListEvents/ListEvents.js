@@ -35,8 +35,7 @@ class ListEvents extends Component {
           return keywords
         });
         keywords = keywords.replace(/,\s*$/, "");  
-        let button;
-        console.log(event.status)
+        let button;        
         if(event.status === "NOT_ACTIVE") {          
           button = <td><a href="# " onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><MaterialIcon id={"start-"+event.normalized_name} icon="play_arrow" color={colorPalette.blue._300}/></a></td>
           } else {

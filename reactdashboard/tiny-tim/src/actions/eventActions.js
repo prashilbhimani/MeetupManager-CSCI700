@@ -26,9 +26,7 @@ export const createEvent = (eventData) => dispatch => {
     );
 };
 
-export const modifyEvents = (type, normalized_name) => dispatch => { 
-    console.log('in modify events action')
-    console.log(`type is: ${type}`)
+export const modifyEvents = (type, normalized_name) => dispatch => {         
     var status = type === "start" ? "ACTIVE": "NOT_ACTIVE";         
     fetch(`http://localhost:9001/${normalized_name}/${status}`, {
         method: 'PUT',        
