@@ -25,12 +25,18 @@ class ListEvents extends Component {
     }
   }
 
+  _onLinkClickHandler = (e) => {
+    e.preventDefault();
+    console.log('in onLinkClick Handler');
+    console.log(e.target.id);
+  }
     render() {
       const eventItems = this.props.myevents;                  
       const eventsTable = eventItems.map(event => {
         let keywords = "";
         event.keywords.map(kw => {
           keywords += kw + ","
+          return keywords
         });
         keywords = keywords.replace(/,\s*$/, "");        
         return (
@@ -39,8 +45,8 @@ class ListEvents extends Component {
             <td>{event.description}</td>
             <td>{keywords}</td>
             <td>{event.status}</td>
-            <td key={"start-"+event.normalized_name}><a><i className="pe-7s-play" /></a></td>
-            <td key={"pause-"+event.normalized_name}><a><i className="pe-7s-refresh" /></a></td>            
+            <td><a href="#" onClick={this._onLinkClickHandler}><i id={"start-"+event.normalized_name} className="pe-7s-play" /></a></td>
+            <td><a href="#" onClick={this._onLinkClickHandler}><i id={"pause-"+event.normalized_name} className="pe-7s-refresh" /></a></td>            
           </tr>
         )
       });      
