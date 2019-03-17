@@ -16,8 +16,7 @@ class ListEvents extends Component {
     this.props.fetchEvents();    
   }
 
-  componentWillReceiveProps(nextProps) { 
-    console.log('in will rev props')   
+  componentWillReceiveProps(nextProps) {        
     if(nextProps.newEvent) {
       this.props.myevents.unshift(nextProps.newEvent);
     }

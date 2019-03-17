@@ -1,8 +1,7 @@
 import { NEW_EVENT, FETCH_EVENTS } from './types';
 
 
-export const fetchEvents = () => dispatch => {  
-    console.log('in fetch events action')  
+export const fetchEvents = () => dispatch => {      
     fetch('http://localhost:9001/fetchevents')
     .then(res => res.json())
     .then(myevents => dispatch({
