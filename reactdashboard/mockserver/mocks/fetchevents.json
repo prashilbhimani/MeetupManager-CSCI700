@@ -1,26 +1,20 @@
 [
-    {
-        "eventId" : "1",
-        "userName" : " Sharan Srivatsa",
-        "userEmail" : "sharan.srivatsa@colorado.edu",
-        "eventName" : "sharan's event",
-        "satus" : "Completed"
-
+    {        
+        "event_name" : "sharan's event",
+        "description" : "Some quick description",
+        "keywords": ["kw1", "kw2"],
+        "status": "Active"        
     },
-    {
-        "eventId" : "2",
-        "userName" : " Prashil Bhimani",
-        "userEmail" : "prashil.bhimani@colorado.edu",
-        "eventName" : "prashil's event",
-        "satus" : "Active"
-
+    {        
+        "event_name" : "prashil's event",
+        "description" : "Some quick description",
+        "keywords": ["kw1", "kw2"],
+        "status": "Not Active"        
     },
-    {
-        "eventId" : 3,
-        "userName" : " Ken Anderson",
-        "userEmail" : "ken.anderson@colorado.edu",
-        "eventName" : "ken's event",
-        "satus" : "Aborted"
-
+    {        
+        "event_name" : "ken's event",
+        "description" : "Some quick description",
+        "keywords": ["kw1", "kw2"],
+        "status": "Active"        
     }
 ]

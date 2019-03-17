@@ -247,7 +247,7 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["Event ID", "User Name", "UserEmail", "Event Name", "Status"];
+const thArray = ["Event Name", "Description", "Keywords", "Status"];
 const tdArray = [
   ["1", "Dakota Rice", "drice", "drice@gmail.com", "Completed"],
   ["2", "Minerva Hooper", "mhooper", "mhooper@gmail.com", "In Progress"],

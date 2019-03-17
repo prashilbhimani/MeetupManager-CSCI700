@@ -26,14 +26,14 @@ class ListEvents extends Component {
   }
 
     render() {
-      const eventItems = this.props.myevents;      
+      const eventItems = this.props.myevents;                  
       const eventsTable = eventItems.map(event => {
+        console.log(`event: ${JSON.stringify(event.event_name)}`)
         return (
-          <tr key={event.eventId}>
-            <td>{event.eventId}</td>
-            <td>{event.userName}</td>
-            <td>{event.userEmail}</td>
-            <td>{event.eventName}</td>
+          <tr key={event.event_name}>
+          <td>{event.event_name}</td>
+            <td>{event.description}</td>
+            <td>{event.keywords}</td>
             <td>{event.status}</td>
           </tr>
         )
