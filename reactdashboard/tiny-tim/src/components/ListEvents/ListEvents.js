@@ -33,15 +33,20 @@ class ListEvents extends Component {
           keywords += kw + ","
           return keywords
         });
-        keywords = keywords.replace(/,\s*$/, "");        
+        keywords = keywords.replace(/,\s*$/, "");  
+        let button;
+        if(event.status === "ACTIVE") {
+          button = <td><a href="#" onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><i id={"start-"+event.normalized_name} className="pe-7s-play" /></a></td>
+          } else {
+            button = <td><a href="#" onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><i id={"pause-"+event.normalized_name} className="pe-7s-refresh" /></a></td>            
+          }        
         return (
           <tr key={event.normalized_name}>
           <td>{event.name}</td>
             <td>{event.description}</td>
             <td>{keywords}</td>
-            <td>{event.status}</td>
-            <td><a href="#" onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><i id={"start-"+event.normalized_name} className="pe-7s-play" /></a></td>
-            <td><a href="#" onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><i id={"pause-"+event.normalized_name} className="pe-7s-refresh" /></a></td>            
+            <td>{event.status}</td> 
+            {button}                                                          
           </tr>
         )
       });      
