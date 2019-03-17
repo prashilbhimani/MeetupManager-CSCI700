@@ -16,7 +16,8 @@ class ListEvents extends Component {
     this.props.fetchEvents();    
   }
 
-  componentWillReceiveProps(nextProps) {    
+  componentWillReceiveProps(nextProps) { 
+    console.log('in will rev props')   
     if(nextProps.newEvent) {
       this.props.myevents.unshift(nextProps.newEvent);
     }
@@ -25,9 +26,9 @@ class ListEvents extends Component {
   _onLinkClickHandler = (type, normalized_name) => {
     this.props.modifyEvents(type,normalized_name);
   }
-    render() {
-      const eventItems = this.props.myevents;                  
-      const eventsTable = eventItems.map(event => {
+    render() {      
+      const eventItems = this.props.myevents;                
+      const eventsTable = eventItems.map(event => {        
         let keywords = "";
         event.keywords.map(kw => {
           keywords += kw + ","
@@ -81,4 +82,5 @@ const mapStateToProps = state => ({
   newEvent: state.eventsReducer.newEvent    
 });
 
-export default connect(mapStateToProps, { fetchEvents, modifyEvents })(ListEvents);
+
+export default connect(mapStateToProps, { fetchEvents: fetchEvents, modifyEvents: modifyEvents })(ListEvents);

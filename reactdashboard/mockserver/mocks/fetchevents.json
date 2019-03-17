@@ -17,7 +17,7 @@
           "hurricane",
           "sandy"
         ],
-        "description": "extraction of data for Sandy hurricane",
+        "description": "extraction of data for Sunny hurricane",
         "normalized_name": "sunny",
         "status": "NOT ACTIVE",
         "created_at": 1552602162673,
@@ -29,7 +29,7 @@
           "hurricane",
           "sandy"
         ],
-        "description": "extraction of data for Sandy hurricane",
+        "description": "extraction of data for Sandy2 hurricane",
         "normalized_name": "sandy2",
         "status": "NOT ACTIVE",
         "created_at": 1552602162673,
