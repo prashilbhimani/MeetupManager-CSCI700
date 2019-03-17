@@ -38,9 +38,9 @@ class ListEvents extends Component {
         let button;
         console.log(event.status)
         if(event.status === "NOT_ACTIVE") {          
-          button = <td><a href="#" onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><MaterialIcon id={"start-"+event.normalized_name} icon="play_arrow" color={colorPalette.blue._400}/></a></td>
+          button = <td><a href="# " onClick={() => {this._onLinkClickHandler("start", event.normalized_name)}}><MaterialIcon id={"start-"+event.normalized_name} icon="play_arrow" color={colorPalette.blue._300}/></a></td>
           } else {
-            button = <td><a href="#" onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><MaterialIcon id={"stop-"+event.normalized_name} icon="pause" color={colorPalette.blue._400}/></a></td>            
+            button = <td><a href="# " onClick={() => {this._onLinkClickHandler("pause", event.normalized_name)}}><MaterialIcon id={"stop-"+event.normalized_name} icon="pause" color={colorPalette.blue._300}/></a></td>            
           }        
         return (
           <tr key={event.normalized_name}>
