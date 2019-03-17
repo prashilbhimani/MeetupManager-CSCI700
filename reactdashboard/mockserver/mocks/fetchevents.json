@@ -19,7 +19,7 @@
         ],
         "description": "extraction of data for Sunny hurricane",
         "normalized_name": "sunny",
-        "status": "NOT ACTIVE",
+        "status": "NOT_ACTIVE",
         "created_at": 1552602162673,
         "created_at_str": "2019-03-14 16:22:42.673"
     },
@@ -31,7 +31,7 @@
         ],
         "description": "extraction of data for Sandy2 hurricane",
         "normalized_name": "sandy2",
-        "status": "NOT ACTIVE",
+        "status": "NOT_ACTIVE",
         "created_at": 1552602162673,
         "created_at_str": "2019-03-14 16:22:42.673"
     }
