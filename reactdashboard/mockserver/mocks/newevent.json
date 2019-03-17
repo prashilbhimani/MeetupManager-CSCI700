@@ -6,7 +6,7 @@
    ],
    "description": "new event man",
    "normalized_name": "sandy3",
-   "status": "NOT ACTIVE",
+   "status": "NOT_ACTIVE",
    "created_at": 1552602162673,
    "created_at_str": "2019-03-14 16:22:42.673"
 }
