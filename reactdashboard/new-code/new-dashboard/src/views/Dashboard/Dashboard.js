@@ -9,7 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Sidebar from "../../components/common-components/Sidebar/Sidebar";
 import EventsAPI from "../../components/TimelineAPI/EventsAPI";
-import TweetAnnotation from "../../components/TweetAnnotationAPI/TweetAnnotationAPI";
+// import TweetAnnotation from "../../components/TweetAnnotationAPI/TweetAnnotationAPI";
 import { drawerWidth, theme, styles } from "./styles.js"
 
 
