@@ -8,8 +8,8 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Sidebar from "../../components/common-components/Sidebar/Sidebar";
-import EventsAPI from "../../components/EventsAPI/EventsAPI";
-import TweetAnnotation from "../../components/TweetAnnotationAPI/TweetAnnotationAPI";
+import EventsAPI from "../../components/TimelineAPI/EventsAPI";
+// import TweetAnnotation from "../../components/TweetAnnotationAPI/TweetAnnotationAPI";
 import { drawerWidth, theme, styles } from "./styles.js"
 
 
@@ -47,8 +47,8 @@ class Dashboard extends React.Component {
           </nav>
           <div className={classes.appContent}>
             {/* React Router routes go here } */ }
-            <Route path="/eventsapi" render={(props) => <EventsAPI {...props}  onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>
-            <Route path="/tweetannotation" render={(props) => <TweetAnnotation {...props} onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                                                           
+            <Route path="/timelineapi" render={(props) => <EventsAPI {...props}  onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>
+            {/* <Route path="/tweetannotation" render={(props) => <TweetAnnotation {...props} onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                                                            */}
           </div>
         </div>
       </MuiThemeProvider>
