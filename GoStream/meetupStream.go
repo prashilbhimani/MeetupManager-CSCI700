@@ -1,23 +1,21 @@
 package main
 
-import "net/http"
-import "encoding/json"
-import "fmt"
-//import "log"
-//import "bufio"
-
 import (
+	"math/rand"
+	"net/http"
+	"encoding/json"
+	"log"
+	"os"
 	"context"
 	"reflect"
 	"github.com/segmentio/kafka-go"
 )
 
 
-func KafkaWriter(x string, w *kafka.Writer) {
-	
+func KafkaWriter(x string, w *kafka.Writer) {	
 	w.WriteMessages(context.Background(),
 		kafka.Message{
-			Key:   []byte("Key-A"),
+			Key:   []byte(string(rand.Intn(10))),
 			Value: []byte(x),
 		},
 	)
@@ -26,24 +24,26 @@ func KafkaWriter(x string, w *kafka.Writer) {
 func main() {
 	resp,err := http.Get("http://stream.meetup.com/2/rsvps")
 	decoder:=json.NewDecoder(resp.Body)
+	//Pass localhsot:9092 for testing
 	w := kafka.NewWriter(kafka.WriterConfig{
-		Brokers: []string{"34.73.54.57:9092"},
-		Topic:   "MyTopic",
+		Brokers: []string{os.Args[1]},
+		Topic:   os.Args[2],
 	})
-	fmt.Println(reflect.TypeOf(w).String())
+	log.Println(reflect.TypeOf(w).String())
 	if err==nil{
 		for {
 			var myJson interface{}
 			decoder.Decode(&myJson)
-			b, err:=json.MarshalIndent(myJson, "", "    ")
+			b, err:=json.Marshal(myJson)
 			if err==nil{
-
-				fmt.Println(string(b))
+				log.Println(string(b))
 				go KafkaWriter(string(b),w)
+			}else{
+				log.Println(err)
 			}
 		}
 	}else{
-		fmt.Println("Error : ")
-		fmt.Println(err)
+		log.Println("Error : ")
+		log.Println(err)
 	}
 }
