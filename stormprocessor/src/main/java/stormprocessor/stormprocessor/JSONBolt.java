@@ -17,6 +17,7 @@ public class JSONBolt extends BaseBasicBolt {
 		try {
 			JSONParser parser = new JSONParser();
 			JSONObject jsonObject = (JSONObject) parser.parse(input.getValue(0).toString());
+			System.out.println(jsonObject);
 			collector.emit(new Values(jsonObject));
 		} catch(Exception e) {
 			e.printStackTrace();

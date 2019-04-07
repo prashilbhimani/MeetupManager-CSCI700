@@ -37,13 +37,13 @@ public class Topology {
 	}
 	private TopologyBuilder getTopology(){
 		TopologyBuilder builder = new TopologyBuilder();
-		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder("localhost:9092", "Meetups").setGroupId("id").build()), 1);
+		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder("kafka-broker:9092", "Meetups").setGroupId("id").build()), 1);
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
 		String url = "mongodb://mongo-db:27017/testdb";
 		String collectionName = "test";
 
-		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("name", "nested");
+		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("json");
 		MongoInsertBolt mongoInsertBolt = new MongoInsertBolt(url, collectionName, mongoMapper);
 		builder.setBolt("MongoInsertBolt", mongoInsertBolt).shuffleGrouping("JSONBolt");
 		return builder;
