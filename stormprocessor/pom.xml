@@ -115,6 +115,15 @@
         </configuration>
       </plugin>
     </plugins>
+    <resources>
+      <resource>
+        <directory>resources</directory>
+        <includes>
+          <include>config.properties</include>
+          <include>local.properties</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 
 <!--  <properties>-->
