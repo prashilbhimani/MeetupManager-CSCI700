@@ -13,6 +13,7 @@ import org.apache.storm.mongodb.common.mapper.SimpleMongoMapper;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.Random;
 
 public class Topology {
 	Properties properties=new Properties();
@@ -60,7 +61,9 @@ public class Topology {
 		readConfig();
 
 		TopologyBuilder builder = new TopologyBuilder();
-		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId("id").build()), 1);
+
+		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
+		        properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId(String.valueOf(Math.random())).build()), 1);
 
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
