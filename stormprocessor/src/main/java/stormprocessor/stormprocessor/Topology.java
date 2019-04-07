@@ -60,14 +60,14 @@ public class Topology {
 		readConfig();
 
 		TopologyBuilder builder = new TopologyBuilder();
-
 		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId("id").build()), 1);
+
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
 		String url = "mongodb://"+properties.getProperty("mongodb")+":27017/testdb";
 		String collectionName = "test";
 
-		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("name", "nested");
+		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("json");
 		MongoInsertBolt mongoInsertBolt = new MongoInsertBolt(url, collectionName, mongoMapper);
 		builder.setBolt("MongoInsertBolt", mongoInsertBolt).shuffleGrouping("JSONBolt");
 		return builder;
