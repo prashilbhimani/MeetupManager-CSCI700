@@ -10,7 +10,17 @@ import org.apache.storm.mongodb.bolt.MongoInsertBolt;
 import org.apache.storm.mongodb.common.mapper.MongoMapper;
 import org.apache.storm.mongodb.common.mapper.SimpleMongoMapper;
 
+import java.io.FileReader;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.Random;
+
 public class Topology {
+	Properties properties=new Properties();
+	String propertiesFile;
+	public Topology(String propertiesFile){
+		this.propertiesFile=propertiesFile;
+	}
 	public void create() {
 		Config config = new Config();
 		config.setNumWorkers(6);
@@ -35,15 +45,32 @@ public class Topology {
 		cluster.submitTopology("meetup-Topology", config, builder.createTopology());
 
 	}
+
+	private void readConfig(){
+		InputStream inputStream = getClass().getResourceAsStream(propertiesFile);
+		try {
+			properties.load(inputStream);
+		} catch (Exception e){
+			System.out.println("Could not read the properties");
+			e.printStackTrace();
+		}
+
+	}
+
 	private TopologyBuilder getTopology(){
+		readConfig();
+
 		TopologyBuilder builder = new TopologyBuilder();
-		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder("localhost:9092", "Meetups").setGroupId("id").build()), 1);
+
+		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
+		        properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId(String.valueOf(Math.random())).build()), 1);
+
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
-		String url = "mongodb://mongo-db:27017/testdb";
+		String url = "mongodb://"+properties.getProperty("mongodb")+":27017/testdb";
 		String collectionName = "test";
 
-		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("name", "nested");
+		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("json");
 		MongoInsertBolt mongoInsertBolt = new MongoInsertBolt(url, collectionName, mongoMapper);
 		builder.setBolt("MongoInsertBolt", mongoInsertBolt).shuffleGrouping("JSONBolt");
 		return builder;

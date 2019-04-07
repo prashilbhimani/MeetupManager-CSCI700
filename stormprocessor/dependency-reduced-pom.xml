@@ -7,6 +7,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <build>
+    <resources>
+      <resource>
+        <directory>resources</directory>
+        <includes>
+          <include>config.properties</include>
+          <include>local.properties</include>
+        </includes>
+      </resource>
+    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
