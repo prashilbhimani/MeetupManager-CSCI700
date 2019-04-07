@@ -1,0 +1,43 @@
+{
+  "venue": {
+    "venue_name": "Ye Old Crown",
+    "lon": 0.60535,
+    "lat": 51.58626,
+    "venue_id": 25710270
+  },
+  "visibility": "public",
+  "response": "yes",
+  "guests": 0,
+  "member": {
+    "member_id": 267210346,
+    "photo": "https://secure.meetupstatic.com/photos/member/1/b/8/0/thumb_282187040.jpeg",
+    "member_name": "Claire barham"
+  },
+  "rsvp_id": 1780717303,
+  "mtime": 1554659733526,
+  "event": {
+    "event_name": "Quiz Night",
+    "event_id": "260363875",
+    "time": 1555441200000,
+    "event_url": "https://www.meetup.com/Rayleigh-Social-Networking-Meetup/events/260363875/"
+  },
+  "group": {
+    "group_topics": [
+      {
+        "urlkey": "make-new-friends-from-all-walks-of-life",
+        "topic_name": "Make New Friends, from all Walks of Life"
+      },
+      {
+        "urlkey": "socialise",
+        "topic_name": "socialise"
+      }
+    ],
+    "group_city": "Rayleigh",
+    "group_country": "gb",
+    "group_id": 26628629,
+    "group_name": "South East Essex Social Group",
+    "group_lon": 0.61,
+    "group_urlname": "Rayleigh-Social-Networking-Meetup",
+    "group_lat": 51.59
+  }
+}
