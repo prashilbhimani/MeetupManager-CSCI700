@@ -6,7 +6,7 @@ public class App {
 		if(args[0].equals("local.properties")){
 			topology.createLocal();
 		}else{
-			topology.create();
+			topology.createTopology();
 		}
 	}
 }

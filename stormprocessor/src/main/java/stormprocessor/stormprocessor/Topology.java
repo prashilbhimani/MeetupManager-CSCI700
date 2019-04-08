@@ -1,5 +1,6 @@
 package stormprocessor.stormprocessor;
-
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.kafka.spout.KafkaSpout;
@@ -7,27 +8,26 @@ import org.apache.storm.kafka.spout.KafkaSpoutConfig;
 import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.Config;
 import org.apache.storm.mongodb.bolt.MongoInsertBolt;
-import org.apache.storm.mongodb.common.mapper.MongoMapper;
 import org.apache.storm.mongodb.common.mapper.SimpleMongoMapper;
+import org.bson.Document;
 
-import java.io.FileReader;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.Random;
+
 
 public class Topology {
-	Properties properties=new Properties();
+	Properties properties;
 	String propertiesFile;
 	public Topology(String propertiesFile){
 		this.propertiesFile=propertiesFile;
+
 	}
-	public void create() {
-		Config config = new Config();
-		config.setNumWorkers(6);
-		config.setNumAckers(6);
-		config.setMaxSpoutPending(1000);
-		config.setMessageTimeoutSecs(20);
+	public void createTopology() {
+        properties=readConfigFromFile();
+
+        Config config=getStormConfig();
 		TopologyBuilder builder=getTopology();
+
 		try {
 			StormSubmitter.submitTopology("meetup-Topology", config, builder.createTopology());
 		} catch (Exception e) {
@@ -35,18 +35,17 @@ public class Topology {
 		}
 	}
 	public void createLocal(){
-    	LocalCluster cluster = new LocalCluster();
-		Config config = new Config();
-		config.setNumWorkers(4);
-		config.setNumAckers(4);
-		config.setMaxSpoutPending(1000);
-		config.setMessageTimeoutSecs(20);
+        properties=readConfigFromFile();
+
+        LocalCluster cluster = new LocalCluster();
+		Config config = getStormConfig();
 		TopologyBuilder builder=getTopology();
 		cluster.submitTopology("meetup-Topology", config, builder.createTopology());
 
 	}
 
-	private void readConfig(){
+	private Properties readConfigFromFile(){
+		Properties properties=new Properties();
 		InputStream inputStream = getClass().getResourceAsStream(propertiesFile);
 		try {
 			properties.load(inputStream);
@@ -54,26 +53,45 @@ public class Topology {
 			System.out.println("Could not read the properties");
 			e.printStackTrace();
 		}
+		return  properties;
 
 	}
 
+	private Config getStormConfig(){
+		Config config = new Config();
+		config.setNumWorkers(6);
+		config.setNumAckers(6);
+		config.setMaxSpoutPending(1000);
+		config.setMessageTimeoutSecs(20);
+        //MongoCollection<Document> rsvps=new MongoClient(properties.getProperty("mongodb"),27017).getDatabase(properties.getProperty("mongoDatabase")).getCollection("rsvps");
+		//MongoCollection<Document> events=new MongoClient(properties.getProperty("mongodb")).getDatabase(properties.getProperty("mongoDatabase")).getCollection("events");
+        //config.put("rsvpCollection",rsvps);
+		//config.put("eventsCollection", events);
+		return config;
+	}
+
 	private TopologyBuilder getTopology(){
-		readConfig();
-
 		TopologyBuilder builder = new TopologyBuilder();
+        String url = "mongodb://"+properties.getProperty("mongodb")+":27017/"+properties.getProperty("mongoDatabase");
 
-		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
+
+        builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
 		        properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId(String.valueOf(Math.random())).build()), 1);
 
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
-		String url = "mongodb://"+properties.getProperty("mongodb")+":27017/testdb";
-		String collectionName = "test";
 
-		MongoMapper mongoMapper = new SimpleMongoMapper().withFields("json");
-		MongoInsertBolt mongoInsertBolt = new MongoInsertBolt(url, collectionName, mongoMapper);
-		builder.setBolt("MongoInsertBolt", mongoInsertBolt).shuffleGrouping("JSONBolt");
-		return builder;
+        builder.setBolt(
+                "MongoInsertBolt",
+                new MongoInsertBolt(
+                        url,
+                        "rsvps",
+                        new SimpleMongoMapper().withFields("json")
+                )
+        ).shuffleGrouping("JSONBolt");
+        builder.setBolt("DailyCountUpdate", new DailyCount()).shuffleGrouping("JSONBolt");
+
+        return builder;
 
 	}
 }
