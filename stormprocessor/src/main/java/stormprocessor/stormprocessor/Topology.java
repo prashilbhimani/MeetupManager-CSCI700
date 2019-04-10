@@ -1,6 +1,7 @@
 package stormprocessor.stormprocessor;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.kafka.spout.KafkaSpout;
@@ -63,10 +64,8 @@ public class Topology {
 		config.setNumAckers(6);
 		config.setMaxSpoutPending(1000);
 		config.setMessageTimeoutSecs(20);
-        //MongoCollection<Document> rsvps=new MongoClient(properties.getProperty("mongodb"),27017).getDatabase(properties.getProperty("mongoDatabase")).getCollection("rsvps");
-		//MongoCollection<Document> events=new MongoClient(properties.getProperty("mongodb")).getDatabase(properties.getProperty("mongoDatabase")).getCollection("events");
-        //config.put("rsvpCollection",rsvps);
-		//config.put("eventsCollection", events);
+		config.put("databaseName", properties.getProperty("mongoDatabase"));
+		config.put("monogClient", properties.getProperty("mongodb"));
 		return config;
 	}
 
