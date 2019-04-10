@@ -1,0 +1,22 @@
+Start Zookeeper on Mac:
+zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
+
+Start Kafka Server on Mac:
+kafka-server-start /usr/local/etc/kafka/server.properties
+
+Need a topic:
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic Meetups
+
+
+Our producer:
+kafka-console-producer --broker-list localhost:9092 --topic Meetups
+
+Our consumer:
+kafka-console-consumer --bootstrap-server localhost:9092 --topic Meetups --from-beginning
+
+Changing retention time on consumer:
+kafka-topics --alter --config retention.ms=3000 --zookeeper localhost:2181 --topic Meetups
+
+OR
+
+kafka-topics --zookeeper localhost:2181 --alter --topic Meetups --config retention.ms=86400000

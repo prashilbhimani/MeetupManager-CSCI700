@@ -24,9 +24,9 @@ public class Topology {
 
 	}
 	public void createTopology() {
-        properties=readConfigFromFile();
+		properties=readConfigFromFile();
 
-        Config config=getStormConfig();
+		Config config=getStormConfig();
 		TopologyBuilder builder=getTopology();
 
 		try {
@@ -36,9 +36,9 @@ public class Topology {
 		}
 	}
 	public void createLocal(){
-        properties=readConfigFromFile();
+		properties=readConfigFromFile();
 
-        LocalCluster cluster = new LocalCluster();
+		LocalCluster cluster = new LocalCluster();
 		Config config = getStormConfig();
 		TopologyBuilder builder=getTopology();
 		cluster.submitTopology("meetup-Topology", config, builder.createTopology());
@@ -71,26 +71,26 @@ public class Topology {
 
 	private TopologyBuilder getTopology(){
 		TopologyBuilder builder = new TopologyBuilder();
-        String url = "mongodb://"+properties.getProperty("mongodb")+":27017/"+properties.getProperty("mongoDatabase");
+		String url = "mongodb://"+properties.getProperty("mongodb")+":27017/"+properties.getProperty("mongoDatabase");
 
 
-        builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
-		        properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId(String.valueOf(Math.random())).build()), 1);
+		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
+				properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId(String.valueOf(Math.random())).build()), 1);
 
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
 
-        builder.setBolt(
-                "MongoInsertBolt",
-                new MongoInsertBolt(
-                        url,
-                        "rsvps",
-                        new SimpleMongoMapper().withFields("json")
-                )
-        ).shuffleGrouping("JSONBolt");
-        builder.setBolt("DailyCountUpdate", new DailyCount()).shuffleGrouping("JSONBolt");
+		builder.setBolt(
+				"MongoInsertBolt",
+				new MongoInsertBolt(
+						url,
+						"rsvps",
+						new SimpleMongoMapper().withFields("json")
+						)
+				).shuffleGrouping("JSONBolt");
+		builder.setBolt("DailyCountUpdate", new DailyCount()).shuffleGrouping("JSONBolt");
 
-        return builder;
+		return builder;
 
 	}
 }
