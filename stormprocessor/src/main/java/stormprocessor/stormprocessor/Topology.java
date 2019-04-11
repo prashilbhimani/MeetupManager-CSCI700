@@ -1,7 +1,4 @@
 package stormprocessor.stormprocessor;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.kafka.spout.KafkaSpout;
@@ -10,7 +7,9 @@ import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.Config;
 import org.apache.storm.mongodb.bolt.MongoInsertBolt;
 import org.apache.storm.mongodb.common.mapper.SimpleMongoMapper;
-import org.bson.Document;
+import stormprocessor.stormprocessor.Bolts.DailyCountBolt;
+import stormprocessor.stormprocessor.Bolts.JSONBolt;
+import stormprocessor.stormprocessor.Bolts.MongoEventInsertBolt;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -80,15 +79,10 @@ public class Topology {
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
 
-		builder.setBolt(
-				"MongoInsertBolt",
-				new MongoInsertBolt(
-						url,
-						"rsvps",
-						new SimpleMongoMapper().withFields("json")
-						)
-				).shuffleGrouping("JSONBolt");
-		builder.setBolt("DailyCountUpdate", new DailyCount()).shuffleGrouping("JSONBolt");
+		builder.setBolt("MongoRSVPInsertBolt", new MongoInsertBolt(url, "rsvps", new SimpleMongoMapper().withFields("json"))).shuffleGrouping("JSONBolt");
+		builder.setBolt("MongoEventInsertBolt", new MongoEventInsertBolt()).shuffleGrouping("JSONBolt");
+
+		builder.setBolt("DailyCountUpdate", new DailyCountBolt()).shuffleGrouping("MongoEventInsertBolt");
 
 		return builder;
 

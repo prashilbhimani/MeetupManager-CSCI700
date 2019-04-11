@@ -41,4 +41,17 @@
     "group_lat": 51.59
   }
 }
+
+locations
+{
+  "city": "Rayleigh",
+  "country": "gb",
+  "keywords" : [
+    {"topic_name": "Make New Friends, from all Walks of Life", "rsvp_count":10, "event_count":1}
+  ]
+}
 {"venue":{"venue_name":"Pune","lon":73.85674,"lat":18.52043,"venue_id":26020601},"visibility":"public","response":"yes","guests":0,"member":{"member_id":278408489,"photo":"https:\/\/secure.meetupstatic.com\/photos\/member\/7\/8\/0\/thumb_286861920.jpeg","member_name":" Neha Singh "},"rsvp_id":1780717046,"mtime":1554659605000,"event":{"event_name":"Digital Marketing Strategies For Startups x Pune","event_id":"259493103","time":1555756200000,"event_url":"https:\/\/www.meetup.com\/eChai-Pune-Startup-Network\/events\/259493103\/"},"group":{"group_topics":[{"urlkey":"hcm","topic_name":"Human Capital Management"},{"urlkey":"venture-capital-firms","topic_name":"Venture Capital Firms"},{"urlkey":"business-strategy","topic_name":"Business Strategy"},{"urlkey":"raising-capital","topic_name":"Raising Capital"},{"urlkey":"entrepreneurship","topic_name":"Entrepreneurship"},{"urlkey":"business-entrepreneur-networking","topic_name":"Entrepreneur Networking"},{"urlkey":"startup-businesses","topic_name":"Startup Businesses"},{"urlkey":"angel-investors","topic_name":"Angel Investors"},{"urlkey":"venture-capital","topic_name":"Venture Capital"},{"urlkey":"high-tech-ventures","topic_name":"High-Tech Ventures"},{"urlkey":"technology-startups","topic_name":"Technology Startups"},{"urlkey":"internet-startups","topic_name":"Internet Startups"},{"urlkey":"venture-capitalist","topic_name":"Venture Capitalist"},{"urlkey":"internet-technology-professionals-startups","topic_name":"Internet Technology Professionals & Startups"},{"urlkey":"venture-capital-and-startup","topic_name":"Venture Capital and Startup"}],"group_city":"Pune","group_country":"in","group_id":31154415,"group_name":"eChai Pune Startup Network","group_lon":73.84,"group_urlname":"eChai-Pune-Startup-Network","group_lat":18.53}}
+
+["red", "yellow"]
+
+select * from locations where city=xyz and country=abc and keywords.topic_name=socialise;
