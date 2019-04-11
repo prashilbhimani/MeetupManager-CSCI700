@@ -4,6 +4,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.UpdateOptions;
+import org.apache.storm.shade.org.joda.time.DateTime;
+import org.apache.storm.shade.org.joda.time.DateTimeZone;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.BasicOutputCollector;
 import org.apache.storm.topology.OutputFieldsDeclarer;
@@ -16,6 +18,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.Map;
 
 public class DailyCount extends BaseBasicBolt {
@@ -35,7 +39,7 @@ public class DailyCount extends BaseBasicBolt {
 
 	JSONObject getBlankBuckets(){
 		JSONObject dailyBucket=new JSONObject();
-		for(int i=0;i<24;i++)
+		for(int i=0;i<48;i++)
 			dailyBucket.put(String.valueOf(i), 0);
 		return  dailyBucket;
 	}
@@ -44,22 +48,24 @@ public class DailyCount extends BaseBasicBolt {
 		JSONObject event= (JSONObject) rsvp.get("event");
 		JSONObject group =(JSONObject) rsvp.get("group");
 		event.put("groupDetails", group);
-
-
+		DateTime date=new DateTime((Long) rsvp.get("mtime")*1000L, DateTimeZone.UTC); //= new SimDpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		int bucket= date.hourOfDay().get()*2;
+		if(date.minuteOfDay().get()>30);
+			bucket=bucket+1;
 		Document result = events.find(Filters.eq("event.event_name",event.get("event_name"))).first();
 	    if(result==null) {
 			//Insert new Json in Events DB
 			JSONObject dailyBuckets = getBlankBuckets();
+			dailyBuckets.put(String.valueOf(bucket),1);
 			event.put("dailyCounts", dailyBuckets);
 			result = new Document("event", event);
 			events.insertOne(result);
 		}else{
+
+	    	int currentCount= (int) ((Document)((Document)result.get("event")).get("dailyCounts")).get(String.valueOf(bucket));
+			((Document)((Document)result.get("event")).get("dailyCounts")).put(String.valueOf(bucket),currentCount+1);
 			events.replaceOne(Filters.eq("event.event_name",event.get("event_name") ), result, new UpdateOptions().upsert(true));
 		}
-			//Read the JSON and update it
-		//System.out.println("Did this work? "+result.get("json"));
-        //Document o = (Document) result.get("json");
-        //System.out.println(o.get("name"));
 	}
 
     @Override
