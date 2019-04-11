@@ -9,3 +9,5 @@ reactdashboard/node_modules/
 stormprocessor/logs/workers-artifacts/
 *.class
 stormprocessor/target/
+reactdashboard/NodeJSServer/mockserver/node_modules/
+.DS_Store
