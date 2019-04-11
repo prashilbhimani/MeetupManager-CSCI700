@@ -10,16 +10,18 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 import org.bson.Document;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import stormprocessor.stormprocessor.Resources.MongoDatabaseFactory;
 
 import java.util.Map;
 
-public class MongoEventInsertBolt extends BaseBasicBolt {
+public class MongoEventLocationInsertBolt extends BaseBasicBolt {
     private MongoCollection<Document> events;
-    private JSONParser parser;
+    private MongoCollection<Document> location;
     private static final long serialVersionUID = 1L;
+
 
     JSONObject getBlankBuckets(){
         JSONObject dailyBucket=new JSONObject();
@@ -31,12 +33,11 @@ public class MongoEventInsertBolt extends BaseBasicBolt {
     @Override
     public void prepare(Map stormConf, TopologyContext context) {
         events= MongoDatabaseFactory.getDatabaseObject((String) stormConf.get("monogClient"), (String) stormConf.get("databaseName")).getCollection("events");
-        parser=new JSONParser();
+        location= MongoDatabaseFactory.getDatabaseObject((String) stormConf.get("monogClient"), (String) stormConf.get("databaseName")).getCollection("locations");
+
     }
 
-    @Override
-    public void execute(Tuple input, BasicOutputCollector basicOutputCollector) {
-        JSONObject rsvp= (JSONObject)  input.getValueByField("json");
+    private boolean insertEvent(JSONObject rsvp){
         JSONObject event= (JSONObject) rsvp.get("event");
         Document result = events.find(Filters.eq("event.event_name",event.get("event_name"))).first();
         if(result==null) {
@@ -46,12 +47,38 @@ public class MongoEventInsertBolt extends BaseBasicBolt {
             event.put("dailyCounts", dailyBuckets);
             result = new Document("event", event);
             events.insertOne(result);
+            return true;
         }
-        basicOutputCollector.emit(new Values((JSONObject)input.getValueByField("json")));
+        return false;
+
+    }
+
+    private void insertLocation(JSONObject rsvp){
+        Document result= location.find(Filters.and(
+                Filters.eq("location.city", ((JSONObject)rsvp.get("group")).get("group_city")),
+                Filters.eq("location.country", ((JSONObject)rsvp.get("group")).get("group_country")))
+        ).first();
+        if(result==null){
+            JSONObject city=new JSONObject();
+            city.put("city",((JSONObject)rsvp.get("group")).get("group_city"));
+            city.put("country", ((JSONObject)rsvp.get("group")).get("group_country"));
+            city.put("keywords",new JSONArray());
+            result= new Document("location", city);
+            location.insertOne(result);
+        }
+    }
+
+    @Override
+    public void execute(Tuple input, BasicOutputCollector basicOutputCollector) {
+        JSONObject rsvp= (JSONObject)  input.getValueByField("json");
+        boolean newEvent=insertEvent(rsvp);
+        insertLocation(rsvp);
+
+        basicOutputCollector.emit(new Values((JSONObject)input.getValueByField("json"), newEvent));
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("json"));
+        outputFieldsDeclarer.declare(new Fields("json", "new_event"));
     }
 }

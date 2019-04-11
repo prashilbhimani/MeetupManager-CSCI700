@@ -9,7 +9,8 @@ import org.apache.storm.mongodb.bolt.MongoInsertBolt;
 import org.apache.storm.mongodb.common.mapper.SimpleMongoMapper;
 import stormprocessor.stormprocessor.Bolts.DailyCountBolt;
 import stormprocessor.stormprocessor.Bolts.JSONBolt;
-import stormprocessor.stormprocessor.Bolts.MongoEventInsertBolt;
+import stormprocessor.stormprocessor.Bolts.LocationCountBolt;
+import stormprocessor.stormprocessor.Bolts.MongoEventLocationInsertBolt;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -80,9 +81,10 @@ public class Topology {
 
 
 		builder.setBolt("MongoRSVPInsertBolt", new MongoInsertBolt(url, "rsvps", new SimpleMongoMapper().withFields("json"))).shuffleGrouping("JSONBolt");
-		builder.setBolt("MongoEventInsertBolt", new MongoEventInsertBolt()).shuffleGrouping("JSONBolt");
+		builder.setBolt("MongoEventLocationInsertBolt", new MongoEventLocationInsertBolt()).shuffleGrouping("JSONBolt");
+		builder.setBolt("LocationCountBolt", new LocationCountBolt()).shuffleGrouping("MongoEventLocationInsertBolt");
 
-		builder.setBolt("DailyCountUpdate", new DailyCountBolt()).shuffleGrouping("MongoEventInsertBolt");
+		builder.setBolt("DailyCountUpdate", new DailyCountBolt()).shuffleGrouping("MongoEventLocationInsertBolt");
 
 		return builder;
 
