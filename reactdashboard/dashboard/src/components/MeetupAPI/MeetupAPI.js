@@ -16,7 +16,7 @@ class EventsAPI extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        tabValue: "list-events"
+        tabValue: "events-page"
       }
   }
 
@@ -27,15 +27,14 @@ class EventsAPI extends Component {
   headerTabs = () => {
     return (
       <Tabs value={this.state.tabValue} onChange={this.onTabChange} textColor="inherit">                         
-        <Tab textColor="inherit" label="List Events" value="list-events" />
-        <Tab textColor="inherit" label="Annotate Tweets" value="annotate-tweet" />                                    
+        <Tab textColor="inherit" label="Events Page" value="events-page" />                                          
       </Tabs>  
     )
   }
 
   render() { 
     const { classes } = this.props;   
-    const title = "Events Collection";  
+    const title = "Events Page";  
     return (
       <div>
         <Header onDrawerToggle={this.props.onDrawerToggle} title={title} />
