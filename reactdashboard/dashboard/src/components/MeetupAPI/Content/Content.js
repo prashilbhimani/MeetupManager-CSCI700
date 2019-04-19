@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./styles";
-import TweetAnnotationTable from "../TweetAnnotation/TweetAnnotationTable/TweetAnnotationTable";
-import CreateEvent from "../../EventsAPI/CreateEvent/CreateEvent";
-import EventsTable from "../ListEvents/EventsTable/EventsTable";
+// import TweetAnnotationTable from "../TweetAnnotation/TweetAnnotationTable/TweetAnnotationTable";
+// import CreateEvent from "../../EventsAPI/CreateEvent/CreateEvent";
+// import EventsTable from "../ListEvents/EventsTable/EventsTable";
 import EventsPage from "../EventsPage/EventsPage";
 
 
@@ -24,7 +24,9 @@ class Content extends Component {
               </Paper>
             </div>
             )} */}
-            {this.props.tabValue === "events-page" && <EventsPage/>}
+            {this.props.tabValue === "events-page" && (            
+              <EventsPage/>            
+            )}
         </div>          
   );
 }
