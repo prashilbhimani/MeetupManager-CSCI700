@@ -9,6 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Sidebar from "../../components/common-components/Sidebar/Sidebar";
 import EventsAPI from "../../components/EventsAPI/EventsAPI";
+import MeetupAPI from "../../components/MeetupAPI/MeetupAPI";
 import { drawerWidth, theme, styles } from "./styles.js"
 import ManageUsers from "../../components/UsersAPI/ManageUsers";
 import MentionsAPI from "../../components/MentionsAPI/MentionsAPI";
@@ -57,6 +58,7 @@ class Dashboard extends React.Component {
             <Route path="/eventsapi" render={(props) => <EventsAPI {...props}  onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                                                                       
             <Route path="/users" render={(props) => <ManageUsers {...props} onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                              
             <Route path="/mentions" render={(props) => <MentionsAPI {...props} onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                                                                    
+            <Route path="/meetupevents" render={(props) => <MeetupAPI {...props} onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                                                                                
           </div>
         </div>
       </MuiThemeProvider>

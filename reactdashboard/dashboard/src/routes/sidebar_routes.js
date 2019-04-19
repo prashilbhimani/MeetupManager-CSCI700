@@ -19,6 +19,12 @@ const sidebarRoutes = [
       children: [
         { id: "Manage users", icon: <PeopleIcon />, targetUrl: "/users" },
       ]
+    },
+    {
+      id: "Meetup Manager Events API",
+      children: [
+        { id: "Event Dashboard", icon: <PeopleIcon />, targetUrl: "/meetupevents" },
+      ]
     }
 
   ];
