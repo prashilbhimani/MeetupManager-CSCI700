@@ -47,7 +47,7 @@ class Dashboard extends React.Component {
           </nav>
           <div className={classes.appContent}>
             {/* React Router routes go here } */ }
-            <Route path="/timelineapi" render={(props) => <EventsAPI {...props}  onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>
+            <Route path="/eventsapi" render={(props) => <EventsAPI {...props}  onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>
             {/* <Route path="/tweetannotation" render={(props) => <TweetAnnotation {...props} onDrawerToggle={this.handleDrawerToggle} classes={classes}/>}/>                                                            */}
           </div>
         </div>

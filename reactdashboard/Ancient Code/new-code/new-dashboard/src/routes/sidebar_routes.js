@@ -5,7 +5,7 @@ const sidebarRoutes = [
     {
       id: "Meetup Manager APIs",
       children: [
-        { id: "Timeline API", icon: <PeopleIcon />, targetUrl: "/timelineapi", active: true }
+        { id: "Events API", icon: <PeopleIcon />, targetUrl: "/eventsapi", active: true }
       ]
     }
   ];
