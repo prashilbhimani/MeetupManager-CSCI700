@@ -24,6 +24,7 @@ const styles = {
 
 function SimpleCard(props) {
   const { classes } = props;  
+  console.log(`in simple card: styles is ${JSON.stringify(classes)}`)
 
   return (
     <Card className={classes.card}>
