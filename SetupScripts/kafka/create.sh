@@ -1,5 +1,5 @@
 #gcloud beta compute instances create kafka-zookeeper --zone="us-east1-b" --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE   --scopes=https://www.googleapis.com/auth/cloud-platform --tags=http-server,https-server --image=debian-9-stretch-v20181011 --image-project=debian-cloud --boot-disk-size=50GB --boot-disk-type=pd-standard --boot-disk-device-name=kafka-zookeeper
-gcloud beta compute instances create kafka-broker --zone="us-east1-b" --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE   --scopes=https://www.googleapis.com/auth/cloud-platform --tags=http-server,https-server --image=debian-9-stretch-v20181011 --image-project=debian-cloud --boot-disk-size=50GB --boot-disk-type=pd-standard --boot-disk-device-name=kafka-broker
+gcloud beta compute instances create kafka-broker --zone="us-central1-b" --machine-type=n1-standard-1 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE   --scopes=https://www.googleapis.com/auth/cloud-platform --tags=http-server,https-server --image=debian-9-stretch-v20181011 --image-project=debian-cloud --boot-disk-size=50GB --boot-disk-type=pd-standard --boot-disk-device-name=kafka-broker
 
 # Get IP
 #zk=$(gcloud compute instances describe kafka-zookeeper |sed -n "/networkIP\:\ /s/networkIP\:\ //p")
