@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab'
 import NavigationIcon from '@material-ui/icons/Navigation';
 import TextField from '@material-ui/core/TextField';
+import { Link } from "react-router-dom";
+
 const styles = theme => ({
   card: {
     maxWidth: 555, // should be set to this.     
@@ -26,8 +28,22 @@ const styles = theme => ({
 });
 
 class  SimpleCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      event_id : ""
+    }
+  }
+  
+  handleChange = name => event => {
+    console.log(`in handleChange: ${name}`)
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
   render() {
-  const { classes } = this.props;
+  const { classes, match } = this.props;    
     return (
       <Card className={classes.card}>
         <CardContent>
@@ -38,18 +54,21 @@ class  SimpleCard extends Component {
             Please enter your event id
           </Typography>
           <TextField
-          id="outlined-helperText"
+          id="event_id"
           label="Event Id"          
           className={classes.textField}          
           margin="normal"
           variant="outlined"
+          onChange={this.handleChange('event_id')}
         />         
         </CardContent>
-        <CardActions>          
-          <Fab size="small" variant="extended" aria-label="Delete" className={classes.fab}>
-            <NavigationIcon className={classes.extendedIcon} />
-            Fetch Info
-          </Fab>
+        <CardActions>  
+          <Link to={`${match.url}/eventinfo/${this.state.event_id}`}>
+            <Fab size="small" variant="extended" aria-label="Delete" className={classes.fab}>
+              <NavigationIcon className={classes.extendedIcon} />
+              Fetch Info
+            </Fab>
+          </Link>        
         </CardActions>
       </Card>
     );

@@ -12,7 +12,7 @@ class EventLandingPage extends Component {
         return (      
               <div className={classes.contentWrapper}>             
                   <div>                    
-                    <SimpleCard/>                
+                    <SimpleCard match={match}/>                
                   </div>            
               </div>          
         );
