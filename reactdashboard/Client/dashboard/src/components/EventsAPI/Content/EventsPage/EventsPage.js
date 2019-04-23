@@ -7,6 +7,13 @@ import { withStyles } from '@material-ui/core/styles';
 import { fetchRsvpCount } from "../../../../actions/eventActions";
 
 class EventsPage extends Component {
+  constructor() {
+    super()
+    this.state = {
+      rsvpCounts : 0
+    }
+  }
+
   componentDidMount() {
     const { match } = this.props;
     const { eventId} = match.params         
@@ -14,7 +21,16 @@ class EventsPage extends Component {
     setInterval(() => {
       this.props.fetchRsvpCount(eventId);
     }, 5000);
-}
+  }
+
+  componentDidUpdate(nextProps) {
+    if(this.props.rsvpCounts != nextProps.rsvpCounts) {
+      this.setState ({
+        rsvpCounts: nextProps.rsvpCounts
+      })
+    }
+  }
+  
   render() {  
     const { match, myrsvpCounts } = this.props;
     const { url, eventId} = match   
