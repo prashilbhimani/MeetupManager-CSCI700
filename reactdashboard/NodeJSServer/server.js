@@ -86,6 +86,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
 
   app.get('/:eventId/hourbuckets', (req, res, next) => {
     const eventId = req.params.eventId;
+<<<<<<< Updated upstream
     events.findOne({"event.event_id" : eventId}, (err, result) => {
       var dailyCounts = {}
       for(var i = 0; i < 24; ++i)
@@ -126,6 +127,13 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.status(200).send(rsvps)
+=======
+    const collection = db.collection('events');
+    collection.findOne({"event.event_id" : eventId}, (err, result) => {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.send(result.event.dailyCounts)
+>>>>>>> Stashed changes
     })
   })
 
