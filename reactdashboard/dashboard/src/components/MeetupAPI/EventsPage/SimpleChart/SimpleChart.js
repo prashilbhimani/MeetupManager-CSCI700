@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Chart from "react-google-charts"
 import Paper from "@material-ui/core/Paper";;
-export default class SimpleChart extends Component {
+
+class SimpleChart extends Component {
 // https://react-google-charts.com/bar-chart
   render() {
     return (
@@ -32,3 +33,5 @@ export default class SimpleChart extends Component {
     )
   }
 }
+
+export default  SimpleChart;
