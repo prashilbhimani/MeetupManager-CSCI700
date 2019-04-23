@@ -1,18 +1,32 @@
-import { NEW_EVENT, FETCH_EVENTS, UPDATED_EVENT, TWEET_ANNOTATION, FETCH_TAGS} from './types';
+import { FETCH_RSVP } from './types';
 import fetch from 'cross-fetch';
 
-export const fetchEvents = () => dispatch => {    
-        fetch('https://epicapi.gerard.space/events/', {
-            headers: {}
-        })
-            .then(res => res.json())
-            .then(myevents => dispatch({
-                type: FETCH_EVENTS,
-                payload: myevents
-            }))
-            .catch(function (error) {
-                console.log('There has been a problem with your fetch operation: ', error.message);
-            });;    
+export const fetchRsvpCount = (eventId) => dispatch => {
+    console.log(`action fetchRSVPCount done`)
+    fetch(`http://localhost:9001/${eventId}/rsvpcount`, {
+        headers: {}
+    })
+    .then(res => res.json())
+    .then(rsvpcount => dispatch({
+        type: FETCH_RSVP,
+        payload: rsvpcount
+    }))
+    .catch(function (error) {
+        console.log('There has been a problem with your fetch operation: ', error.message);
+    });; 
+}
+/*export const fetchEvents = () => dispatch => {    
+    fetch('https://epicapi.gerard.space/events/', {
+        headers: {}
+    })
+        .then(res => res.json())
+        .then(myevents => dispatch({
+            type: FETCH_EVENTS,
+            payload: myevents
+        }))
+        .catch(function (error) {
+            console.log('There has been a problem with your fetch operation: ', error.message);
+        });;    
 };
 
 export const createEvent = (eventData) => dispatch => {    
@@ -88,4 +102,4 @@ export const fetchTags = (tweetId) => dispatch => {
         .catch(function (error) {
             console.log('There has been a problem with your fetch operation: ', error.message);
         });;    
-};
+};*/

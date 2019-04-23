@@ -24,7 +24,7 @@ const styles = {
 
 function RSVPCountCard(props) {
   const { classes } = props;  
-  console.log(`in simple card: styles is ${JSON.stringify(classes)}`)
+  // console.log(`in simple card: styles is ${JSON.stringify(classes)}`)
 
   return (
     <Card className={classes.card}>

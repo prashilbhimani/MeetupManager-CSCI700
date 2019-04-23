@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 import RSVPCountCard from "./RSVPCountCard/RSVPCountCard";
 import SimpleChart from './SimpleChart/SimpleChart';
+import { connect } from 'react-redux';
+import { styles } from "./styles";
+import { withStyles } from '@material-ui/core/styles';
+import { fetchRsvpCount } from "../../../../actions/eventActions";
 
-
-export default class EventsPage extends Component {
+class EventsPage extends Component {
   componentDidMount() {
+    const { match } = this.props;
+    const { eventId} = match.params         
+    this.props.fetchRsvpCount(eventId);
     setInterval(() => {
-      // here call a bunch of actions to populate stuff.
-    }, 3000);
+      this.props.fetchRsvpCount(eventId);
+    }, 5000);
 }
   render() {  
-    const { match } = this.props;
-    const { url, eventId} = match    
+    const { match, myrsvpCounts } = this.props;
+    const { url, eventId} = match   
+    console.log(`myrsvpCounts: ${JSON.stringify(myrsvpCounts)}`)     
     return (       
         <div>
           <RSVPCountCard/> 
@@ -23,3 +30,13 @@ export default class EventsPage extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  myrsvpCounts: state.eventsReducer.rsvpCounts,  
+});
+
+const mapDispatchToProps = {
+  fetchRsvpCount: fetchRsvpCount,   
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(EventsPage));

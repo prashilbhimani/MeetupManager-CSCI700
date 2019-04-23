@@ -35,8 +35,7 @@ class  SimpleCard extends Component {
     }
   }
   
-  handleChange = name => event => {
-    console.log(`in handleChange: ${name}`)
+  handleChange = name => event => {    
     this.setState({
       [name]: event.target.value,
     });

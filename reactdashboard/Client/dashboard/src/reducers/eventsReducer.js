@@ -1,4 +1,4 @@
-import { NEW_EVENT, FETCH_EVENTS, UPDATED_EVENT, FETCH_TAGS } from '../actions/types';
+import { FETCH_RSVP } from '../actions/types'
 
 const initialState = {
     myevents: [],
@@ -7,8 +7,13 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-    switch(action.type) {        
-        case NEW_EVENT:
+    switch(action.type) {  
+        case FETCH_RSVP:
+            return {
+                ...state,
+                rsvpCounts: action.payload
+            }
+        /*case NEW_EVENT:
             
             if (typeof action.payload !== 'undefined'){
                 return {
@@ -42,7 +47,7 @@ export default function(state = initialState, action) {
         return {
             ...state,
             initialTags: action.payload
-        }
+        }*/
 
         default:
         return state
