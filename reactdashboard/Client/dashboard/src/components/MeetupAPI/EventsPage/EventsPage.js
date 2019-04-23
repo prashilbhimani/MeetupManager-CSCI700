@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
-import SimpleCard from "./SimpleCard/SimpleCard";
+import RSVPCountCard from "./RSVPCountCard/RSVPCountCard";
 import SimpleChart from './SimpleChart/SimpleChart';
 
 
 export default class EventsPage extends Component {
   componentDidMount() {
     setInterval(() => {
-      console.log('timeout called')
-    }, 100);
+      // here call a bunch of actions to populate stuff.
+    }, 3000);
 }
-  render() {        
+  render() {  
+    const { match } = this.props;
+    const { url, eventId} = match    
     return (       
         <div>
-          <SimpleCard/> 
+          <RSVPCountCard/> 
           <br/>
           <SimpleChart/>
           <br/>
