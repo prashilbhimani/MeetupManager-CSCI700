@@ -4,7 +4,7 @@ var app = express()
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 app.use(cors())
-const mongo = require('mongodb').MongoClient
+const mongo = require('mongodb').MongoClient // http://mongodb.github.io/node-mongodb-native/3.1/api/
 const url = 'mongodb://35.225.229.89:27017'
 
 
@@ -66,10 +66,21 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   
   app.get('/testingget', function (req, res, next) {    
     const collection = db.collection('events');
-    collection.find().limit(10).toArray((err, items) => {
+    
+    collection.find().count()
+    .then(function(count){
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.json({"count" : count})
+      console.log(`res is ${JSON.stringify(res)}`) 
+    })        
+    /*
+      collection.find().limit(10).toArray((err, items) => {
       console.log(items)
-    })
+    }) 
+    */
   })
+
 })
 
 app.listen(9001, function () {
