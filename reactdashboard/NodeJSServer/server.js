@@ -88,7 +88,11 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
     const eventId = req.params.eventId;
     const collection = db.collection('events');
     collection.findOne({"event.event_id" : eventId}, (err, result) => {
-      res.send(result.event.dailyCounts)
+      var dailyCounts = {}
+      for(var i = 0; i < 24; ++i)
+        dailyCounts[i.toString()] = result.event.dailyCounts[(2*i).toString()] +
+          result.event.dailyCounts[(2*i+1).toString()]
+      res.send(dailyCounts)
     })
   })
 
