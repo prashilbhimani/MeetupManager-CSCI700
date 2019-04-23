@@ -64,11 +64,11 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   }
 
   const db = client.db('testdb');
+  const events = db.collection('events')
+  const rsvps = db.collection('rsvps')
   
   app.get('/testingget', function (req, res, next) {    
-    const collection = db.collection('events');
-    
-    collection.find().count()
+    events.find().count()
     .then(function(count){
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -78,7 +78,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       return
     })      
     /*
-      collection.find().limit(10).toArray((err, items) => {
+      events.find().limit(10).toArray((err, items) => {
       console.log(items)
     }) 
     */
@@ -86,13 +86,38 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
 
   app.get('/:eventId/hourbuckets', (req, res, next) => {
     const eventId = req.params.eventId;
-    const collection = db.collection('events');
-    collection.findOne({"event.event_id" : eventId}, (err, result) => {
+    events.findOne({"event.event_id" : eventId}, (err, result) => {
       var dailyCounts = {}
       for(var i = 0; i < 24; ++i)
         dailyCounts[i.toString()] = result.event.dailyCounts[(2*i).toString()] +
           result.event.dailyCounts[(2*i+1).toString()]
-      res.send(dailyCounts)
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.status(200).send(dailyCounts)
+    })
+  })
+
+  app.get('/:eventId/rsvpcount', (req, res, next) => {
+    const eventId = req.params.eventId;
+    rsvps.find({"json.event.event_id" : eventId}).sort({"json.mtime" : 1}).toArray((err, results) => {
+      const ONE_DAY = 60 * 60 * 24
+      const count = results.length
+      const min_mtime = results[0].json.mtime
+      const max_mtime = results[count - 1].json.mtime
+      var rsvps = {}
+      for(var i = min_mtime; i < max_mtime; i += ONE_DAY)
+        rsvps[Math.floor(i / ONE_DAY)] = {
+          'start_time' : i,
+          'end_time': i + ONE_DAY,
+          'count' : 0
+        }
+      for(var i = 0; i < count; ++i) {
+        const mtime = results[i].json.mtime;
+        rsvps[Math.floor(mtime / ONE_DAY)].count += 1
+      }
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.status(200).send(rsvps)
     })
   })
 
