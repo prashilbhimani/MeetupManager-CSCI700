@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Header from "../common-components/Header/Header";
 import { Route} from "react-router-dom";
-// import ListEventsContent from "./Content/ListEventsContent/ListEventsContent";
 import EventLandingPage from "./Content/EventLandingPage/EventLandingPage";
-import AnnotateEventsContent from "./Content/AnnotateEventsContent/AnnotateEventsContent";
-import EventsPage from "../MeetupAPI/EventsPage/EventsPage";
+import EventsPage from "../EventsAPI/Content/EventsPage/EventsPage";
 
 export const styles = theme => ({
   Main: {

@@ -22,7 +22,7 @@ const styles = {
   },
 };
 
-function SimpleCard(props) {
+function RSVPCountCard(props) {
   const { classes } = props;  
   console.log(`in simple card: styles is ${JSON.stringify(classes)}`)
 
@@ -43,8 +43,8 @@ function SimpleCard(props) {
   );
 }
 
-SimpleCard.propTypes = {
+RSVPCountCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleCard);
+export default withStyles(styles)(RSVPCountCard);
