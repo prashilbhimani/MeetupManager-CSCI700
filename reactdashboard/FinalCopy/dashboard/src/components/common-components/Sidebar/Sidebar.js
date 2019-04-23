@@ -26,7 +26,7 @@ class Sidebar extends Component {
               classes.itemCategory
             )}
           >
-            Project Epic
+            Meetup Manager
           </ListItem>
           {sidebarRoutes.map(({ id, children }) => (
             <React.Fragment key={id}>

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Header from "../common-components/Header/Header";
 import { Route} from "react-router-dom";
-import ListEventsContent from "./Content/ListEventsContent/ListEventsContent";
+// import ListEventsContent from "./Content/ListEventsContent/ListEventsContent";
+import EventLandingPage from "./Content/EventLandingPage/EventLandingPage";
 import AnnotateEventsContent from "./Content/AnnotateEventsContent/AnnotateEventsContent";
 
 
@@ -23,7 +24,7 @@ class EventsAPI extends Component {
         <Header onDrawerToggle={this.props.onDrawerToggle} title={title} />
         <div className={classes.Main}>
           <main className={classes.mainContent}>                    
-              <Route exact path="/eventsapi" render={(props) => (<ListEventsContent {...props} />)} />              
+              <Route exact path="/eventsapi" render={(props) => (<EventLandingPage {...props} />)} />              
               <Route path="/eventsapi/annotatetweets/:eventId" render={(props) => (<AnnotateEventsContent {...props} />)} />                            
           </main>
         </div>
