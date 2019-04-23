@@ -106,7 +106,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       const count = results.length
       const min_mtime = results[0].json.mtime
       const max_mtime = results[count - 1].json.mtime
-      var rsvps = {}
+      var rsvps = {'total_count' : count}
       for(var i = min_mtime; i <= max_mtime; i += ONE_DAY)
         rsvps[Math.floor(i / ONE_DAY)] = {
           'start_time' : i,
