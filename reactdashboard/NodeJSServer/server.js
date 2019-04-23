@@ -62,6 +62,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
     console.error(err)
     return
   }
+
   const db = client.db('testdb');
   
   app.get('/testingget', function (req, res, next) {    
@@ -74,12 +75,21 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       res.json({"count" : count})      
     }).catch( function(error) {
       console.log(error)
+      return
     })      
     /*
       collection.find().limit(10).toArray((err, items) => {
       console.log(items)
     }) 
     */
+  })
+
+  app.get('/:eventId/hourbuckets', (req, res, next) => {
+    const eventId = req.params.eventId;
+    const collection = db.collection('events');
+    collection.findOne({"event.event_id" : eventId}, (err, result) => {
+      res.send(result.event.dailyCounts)
+    })
   })
 
 })
