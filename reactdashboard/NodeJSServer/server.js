@@ -4,9 +4,11 @@ var app = express()
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 app.use(cors())
+const mongo = require('mongodb').MongoClient
+const url = 'mongodb://35.225.229.89:27017'
 
 
-var newevent = require('./mocks/newevent.json');
+/*var newevent = require('./mocks/newevent.json');
 var fetchEvents = require('./mocks/fetchevents.json');
 var modifyevent = require('./mocks/modifyevent.json');
 var annotateTweets = require('./mocks/annotatetweets.json');
@@ -53,8 +55,22 @@ app.get('/annotate', function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   console.log(`in the server hander, ID: ${req.query.id}`)
   res.json({"tags":["initaltag1", "initaltag2", "initaltag3"]})
-})
+})*/
 
+mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  const db = client.db('testdb');
+  
+  app.get('/testingget', function (req, res, next) {    
+    const collection = db.collection('events');
+    collection.find().limit(10).toArray((err, items) => {
+      console.log(items)
+    })
+  })
+})
 
 app.listen(9001, function () {
   console.log('CORS-enabled web server listening on port 9001')
