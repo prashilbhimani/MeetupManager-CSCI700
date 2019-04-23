@@ -4,7 +4,7 @@ import { Route} from "react-router-dom";
 // import ListEventsContent from "./Content/ListEventsContent/ListEventsContent";
 import EventLandingPage from "./Content/EventLandingPage/EventLandingPage";
 import AnnotateEventsContent from "./Content/AnnotateEventsContent/AnnotateEventsContent";
-
+import EventsPage from "../MeetupAPI/EventsPage/EventsPage";
 
 export const styles = theme => ({
   Main: {
@@ -24,8 +24,8 @@ class EventsAPI extends Component {
         <Header onDrawerToggle={this.props.onDrawerToggle} title={title} />
         <div className={classes.Main}>
           <main className={classes.mainContent}>                    
-              <Route exact path="/eventsapi" render={(props) => (<EventLandingPage {...props} />)} />              
-              <Route path="/eventsapi/annotatetweets/:eventId" render={(props) => (<AnnotateEventsContent {...props} />)} />                            
+              <Route exact path="/eventsapi" render={(props) => (<EventLandingPage {...props} />)} />                            
+              <Route path="/eventsapi/eventinfo/:eventId" render={(props) => (<EventsPage {...props} />)} />                                                
           </main>
         </div>
       </div>
