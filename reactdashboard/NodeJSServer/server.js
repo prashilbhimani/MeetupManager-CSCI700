@@ -71,9 +71,10 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
     .then(function(count){
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-      res.json({"count" : count})
-      console.log(`res is ${JSON.stringify(res)}`) 
-    })        
+      res.json({"count" : count})      
+    }).catch( function(error) {
+      console.log(error)
+    })      
     /*
       collection.find().limit(10).toArray((err, items) => {
       console.log(items)
