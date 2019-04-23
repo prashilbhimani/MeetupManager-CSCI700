@@ -4,7 +4,7 @@ var app = express()
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 app.use(cors())
-const mongo = require('mongodb').MongoClient
+const mongo = require('mongodb').MongoClient // http://mongodb.github.io/node-mongodb-native/3.1/api/
 const url = 'mongodb://35.225.229.89:27017'
 
 
@@ -62,14 +62,36 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
     console.error(err)
     return
   }
+
   const db = client.db('testdb');
   
   app.get('/testingget', function (req, res, next) {    
     const collection = db.collection('events');
-    collection.find().limit(10).toArray((err, items) => {
+    
+    collection.find().count()
+    .then(function(count){
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.json({"count" : count})      
+    }).catch( function(error) {
+      console.log(error)
+      return
+    })      
+    /*
+      collection.find().limit(10).toArray((err, items) => {
       console.log(items)
+    }) 
+    */
+  })
+
+  app.get('/:eventId/hourbuckets', (req, res, next) => {
+    const eventId = req.params.eventId;
+    const collection = db.collection('events');
+    collection.findOne({"event.event_id" : eventId}, (err, result) => {
+      res.send(result.event.dailyCounts)
     })
   })
+
 })
 
 app.listen(9001, function () {
