@@ -74,3 +74,7 @@ export const annotateTweet = (normalized_name) => dispatch => {
         }) 
 };
 
+export const somefunction = () => dispatch => {
+    fetch(  )
+}
+

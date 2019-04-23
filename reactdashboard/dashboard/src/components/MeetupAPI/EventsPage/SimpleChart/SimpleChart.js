@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Chart from "react-google-charts"
+import Paper from "@material-ui/core/Paper";;
 
-export default class SimpleChart extends Component {
+class SimpleChart extends Component {
 // https://react-google-charts.com/bar-chart
   render() {
     return (
-      <div>
+      <Paper>
           <Chart
             width={'900px'}
             height={'400px'}
@@ -28,7 +29,9 @@ export default class SimpleChart extends Component {
             // For tests
             rootProps={{ 'data-testid': '2' }}
           />          
-      </div>
+      </Paper>
     )
   }
 }
+
+export default  SimpleChart;
