@@ -24,7 +24,8 @@ const styles = {
 
 function RSVPCountCard(props) {
   const { classes } = props;  
-  // console.log(`in simple card: styles is ${JSON.stringify(classes)}`)
+  // console.log(`in simple card: styles is ${JSON.stringify(props)}`)
+
 
   return (
     <Card className={classes.card}>
@@ -36,7 +37,7 @@ function RSVPCountCard(props) {
           RSVP Counter
         </Typography>
         <Typography component="p">
-          Counts
+          {props.totalCount}
         </Typography>
       </CardContent>
     </Card>

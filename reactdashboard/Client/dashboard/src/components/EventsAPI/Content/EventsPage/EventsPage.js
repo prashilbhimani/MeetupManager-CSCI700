@@ -10,7 +10,7 @@ class EventsPage extends Component {
   constructor() {
     super()
     this.state = {
-      rsvpCounts : 0
+      totalCount : 0
     }
   }
 
@@ -18,26 +18,38 @@ class EventsPage extends Component {
     const { match } = this.props;
     const { eventId} = match.params         
     this.props.fetchRsvpCount(eventId);
-    setInterval(() => {
-      this.props.fetchRsvpCount(eventId);
-    }, 5000);
-  }
-
-  componentDidUpdate(nextProps) {
-    if(this.props.rsvpCounts != nextProps.rsvpCounts) {
-      this.setState ({
-        rsvpCounts: nextProps.rsvpCounts
+    console.log(`mount: ${JSON.stringify(this.props)}`)
+    if(this.props.myrsvpCounts) {
+      console.log(`entering in did mount`)
+      this.setState({
+        totalCount: this.props.myrsvpCounts.total_count
       })
     }
+
+    // setInterval(() => {
+    //   this.props.fetchRsvpCount(eventId);
+    // }, 5000);
   }
-  
+
+  // componentDidUpdate(nextProps) {
+  //   // console.log(`did update ${JSON.stringify(this.props.myrsvpCounts)}`)
+  //   console.log(`nextProps: ${JSON.stringify(nextProps)}`)
+  //   if(nextProps.myrsvpCounts !== undefined && this.props.myrsvpCounts.total_count !== nextProps.myrsvpCounts.total_count) {
+  //     console.log(` yeah props changed`)
+  //     this.setState ({        
+  //       totalCount: nextProps.myrsvpCounts.total_count
+  //     })
+  //   }
+  // }
+
   render() {  
     const { match, myrsvpCounts } = this.props;
-    const { url, eventId} = match   
-    console.log(`myrsvpCounts: ${JSON.stringify(myrsvpCounts)}`)     
+    const { url, eventId} = match
+    console.log(` in EventsPage Render: ${this.state.totalCount}`)      
+     
     return (       
         <div>
-          <RSVPCountCard/> 
+          <RSVPCountCard totalCount={this.state.totalCount}/> 
           <br/>
           <SimpleChart/>
           <br/>

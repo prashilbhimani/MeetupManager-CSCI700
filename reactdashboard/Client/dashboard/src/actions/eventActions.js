@@ -1,20 +1,21 @@
 import { FETCH_RSVP } from './types';
 import fetch from 'cross-fetch';
 
-export const fetchRsvpCount = (eventId) => dispatch => {
-    console.log(`action fetchRSVPCount done`)
+export const fetchRsvpCount = (eventId) => dispatch => {    
+    console.log(`in action ${FETCH_RSVP}`)
     fetch(`http://localhost:9001/${eventId}/rsvpcount`, {
         headers: {}
     })
-    .then(res => res.json())
-    .then(rsvpcount => dispatch({
+    .then(res => res.json())                
+    .then(mytags => dispatch({
         type: FETCH_RSVP,
-        payload: rsvpcount
+        payload: mytags
     }))
     .catch(function (error) {
         console.log('There has been a problem with your fetch operation: ', error.message);
-    });; 
-}
+    });;    
+};
+
 /*export const fetchEvents = () => dispatch => {    
     fetch('https://epicapi.gerard.space/events/', {
         headers: {}
