@@ -8,19 +8,31 @@ import { fetchRsvpCount } from "../../../../actions/eventActions";
 
 class EventsPage extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      intervalTimer : null
+    }
+  }
   componentDidMount() {
     const { match } = this.props;
     const { eventId} = match.params         
     this.props.fetchRsvpCount(eventId);
-    setInterval(() => {
+    var interval =setInterval(() => {
       this.props.fetchRsvpCount(eventId);
     }, 5000);
+    this.setState({intervalTimer: interval})
+  }
+  componentWillUnmount() {
+    if(this.state.intervalTimer) {
+      clearInterval(this.state.intervalTimer);
+    }
   }
 
   convertEpochToSpecificTimezone = (utcSeconds) => {    
     console.log(`utc seconds: ${utcSeconds}`)
     var d = new Date(utcSeconds); // The 0 there is the key, which sets the date to the epoch        
-    var month = new Array();
+    var month = [];
     month[0] = "January";
     month[1] = "February";
     month[2] = "March";
