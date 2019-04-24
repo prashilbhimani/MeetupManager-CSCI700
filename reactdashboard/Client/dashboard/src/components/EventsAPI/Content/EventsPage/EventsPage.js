@@ -17,16 +17,29 @@ class EventsPage extends Component {
     }, 5000);
   }
 
-  // convertEpochToSpecificTimezone = (offset) => {
-  //   var d = new Date(1495159447834);
-  //   var utc = d.getTime() + (d.getTimezoneOffset() * 60000);  //This converts to UTC 00:00
-  //   var nd = new Date(utc + (3600000*offset));
-  //   return nd.toLocaleString();
-  // }
+  convertEpochToSpecificTimezone = (utcSeconds) => {    
+    console.log(`utc seconds: ${utcSeconds}`)
+    var d = new Date(utcSeconds); // The 0 there is the key, which sets the date to the epoch        
+    var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    var format = `${d.getDate()} ${month[d.getMonth()]} ${d.getFullYear()}`
+    return format;
+  }
 
   _formatData = (data) => {
     var new_data = []    
-    new_data.push(["Date", "RSVPs"])
+
     var sortedDates = []
     Object.keys(data).map(function(key, index) {
       if(key !== "total_count")
@@ -36,10 +49,12 @@ class EventsPage extends Component {
     for(var i=0; i< sortedDates.length; i++) {
       var key = sortedDates[i]      
       var value = data[`${key}`]
-      var subarr = [`${value[`start_time`]}`, value[`count`]]
+      var date = this.convertEpochToSpecificTimezone(value[`start_time`])    
+      var subarr = [`${date}`, value[`count`]]
       new_data.push(subarr)    
     }
-    console.log(`sortedDates: ${sortedDates}`)
+
+    new_data.unshift(["Date", "RSVPs"])    
     return new_data;
   }
 
