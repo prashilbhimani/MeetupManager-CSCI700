@@ -1,4 +1,4 @@
-import { FETCH_RSVP } from './types';
+import { FETCH_RSVP, FETCH_BUCKETS } from './types';
 import fetch from 'cross-fetch';
 
 export const fetchRsvpCount = (eventId) => dispatch => {    
@@ -8,6 +8,20 @@ export const fetchRsvpCount = (eventId) => dispatch => {
     .then(res => res.json())                
     .then(mytags => dispatch({
         type: FETCH_RSVP,
+        payload: mytags
+    }))
+    .catch(function (error) {
+        console.log('There has been a problem with your fetch operation: ', error.message);
+    });;    
+};
+
+export const fetchBuckets = (eventId) => dispatch => {    
+    fetch(`http://localhost:9001/${eventId}/hourbuckets`, {
+        headers: {}
+    })
+    .then(res => res.json())               
+    .then(mytags => dispatch({
+        type: FETCH_BUCKETS,
         payload: mytags
     }))
     .catch(function (error) {

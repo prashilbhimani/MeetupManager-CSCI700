@@ -4,7 +4,7 @@ import SimpleChart from './SimpleChart/SimpleChart';
 import { connect } from 'react-redux';
 import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
-import { fetchRsvpCount } from "../../../../actions/eventActions";
+import { fetchRsvpCount, fetchBuckets } from "../../../../actions/eventActions";
 
 class EventsPage extends Component {
 
@@ -20,6 +20,7 @@ class EventsPage extends Component {
     this.props.fetchRsvpCount(eventId);
     var interval =setInterval(() => {
       this.props.fetchRsvpCount(eventId);
+      this.props.fetchBuckets(eventId);
     }, 5000);
     this.setState({intervalTimer: interval})
   }
@@ -29,8 +30,7 @@ class EventsPage extends Component {
     }
   }
 
-  convertEpochToSpecificTimezone = (utcSeconds) => {    
-    console.log(`utc seconds: ${utcSeconds}`)
+  convertEpochToSpecificTimezone = (utcSeconds) => {        
     var d = new Date(utcSeconds); // The 0 there is the key, which sets the date to the epoch        
     var month = [];
     month[0] = "January";
@@ -49,7 +49,7 @@ class EventsPage extends Component {
     return format;
   }
 
-  _formatData = (data) => {
+  _formatRSVPDateData = (data) => {
     var new_data = []    
 
     var sortedDates = []
@@ -70,32 +70,54 @@ class EventsPage extends Component {
     return new_data;
   }
 
+  _formatBucketData = (data) => {
+    var new_data = []
+    if(data) {
+      var dateSlots = []
+      Object.keys(data).map(function(key, index) {        
+        dateSlots.push(key)
+      });
+      dateSlots.sort()
+      for(var i=0; i< dateSlots.length; i++) {
+        var key = dateSlots[i]      
+        var value = data[`${key}`]
+        var subarr = [`${key}`, value]
+        new_data.push(subarr)    
+      }      
+    }
+    new_data.unshift(["Hour Slots", "RSVPs"])    
+    return new_data
+  }
+
   render() {  
     const { myrsvpCounts } = this.props;        
     
     const rsvpCounter = this.props.myrsvpCounts ? <RSVPCountCard totalCount={myrsvpCounts.total_count}/> : null
 
-    const data = this.props.myrsvpCounts ? this._formatData(this.props.myrsvpCounts) : []    
+    const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
 
-    console.log(`sorted Data is: ${data}`)
+    const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
+    
     return (       
         <div>
           {rsvpCounter}
           <br/>
-          <SimpleChart data={data}/>
+          <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
           <br/>
-          {/* <SimpleChart /> */}
+          <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
         </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  myrsvpCounts: state.eventsReducer.rsvpCounts,  
+  myrsvpCounts: state.eventsReducer.rsvpCounts, 
+  myrsvpBuckets: state.eventsReducer.rsvpBuckets, 
 });
 
 const mapDispatchToProps = {
-  fetchRsvpCount: fetchRsvpCount,   
+  fetchRsvpCount: fetchRsvpCount, 
+  fetchBuckets: fetchBuckets    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(EventsPage));

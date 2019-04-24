@@ -3,8 +3,7 @@ import Chart from "react-google-charts"
 import Paper from "@material-ui/core/Paper";;
 
 class SimpleChart extends Component {
-  render() {
-    console.log(`in SimpleChart: ${JSON.stringify(this.props.data)}`)
+  render() {    
     return (
       <Paper>
           <Chart
@@ -16,8 +15,8 @@ class SimpleChart extends Component {
             options={{
               // Material design options
               chart: {
-                title: `Daily Counts`,
-                subtitle: 'The RSVP chart that shows when users RSVP to the',
+                title: `${this.props.title}`,
+                subtitle: `${this.props.subtitle}`,
               },
             }}
             // For tests
