@@ -2,7 +2,6 @@ import { FETCH_RSVP } from './types';
 import fetch from 'cross-fetch';
 
 export const fetchRsvpCount = (eventId) => dispatch => {    
-    console.log(`in action ${FETCH_RSVP}`)
     fetch(`http://localhost:9001/${eventId}/rsvpcount`, {
         headers: {}
     })
