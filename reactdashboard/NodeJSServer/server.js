@@ -13,7 +13,7 @@ app.use(cors())
 mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   if (err) throw err;
 
-  const db = client.db("testdb");
+  const db = client.db("newdb");
   const events = db.collection("events")
   const rsvps = db.collection("rsvps")
 
