@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import RSVPCountCard from "./RSVPCountCard/RSVPCountCard";
 import SimpleChart from './SimpleChart/SimpleChart';
+import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
-import { fetchRsvpCount, fetchBuckets } from "../../../../actions/eventActions";
+import { fetchRsvpCount, fetchBuckets, fetchRsvps } from "../../../../actions/eventActions";
 
 class EventsPage extends Component {
 
@@ -21,6 +22,7 @@ class EventsPage extends Component {
     var interval =setInterval(() => {
       this.props.fetchRsvpCount(eventId);
       this.props.fetchBuckets(eventId);
+      this.props.fetchRsvps(eventId)
     }, 5000);
     this.setState({intervalTimer: interval})
   }
@@ -89,6 +91,10 @@ class EventsPage extends Component {
     return new_data
   }
 
+  _formatRSVPData = (data) => {
+    console.log(`rsvp data is: ${JSON.stringify(data)}`)
+
+  }
   render() {  
     const { myrsvpCounts } = this.props;        
     
@@ -98,6 +104,7 @@ class EventsPage extends Component {
 
     const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
     
+    const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
     return (       
         <div>
           {rsvpCounter}
@@ -105,19 +112,54 @@ class EventsPage extends Component {
           <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
           <br/>
           <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
+          <br/>
+          <div style={{ maxWidth: '100%' }}>
+            <MaterialTable
+              columns={[
+                { title: 'Name', field: 'name' },
+                { title: 'Surname', field: 'surname' },
+                { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
+                {
+                  title: 'Birth Place',
+                  field: 'birthCity',
+                  lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
+                },
+              ]}
+              data={[
+                { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+                { name: 'Zerya Betül', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+              ]}
+              title="Detail Panel With RowClick Preview"
+              detailPanel={rowData => {
+                return (
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src="https://www.youtube.com/embed/C0DPdy98e4c"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+            />
+            )
+          }}
+          onRowClick={(event, rowData, togglePanel) => togglePanel()}
+        />
+          </div>
         </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  myrsvpCounts: state.eventsReducer.rsvpCounts, 
+  myrsvpCounts: state.eventsReducer.myrsvpCounts, 
   myrsvpBuckets: state.eventsReducer.rsvpBuckets, 
+  myrsvps: state.eventsReducer.myrsvps
 });
 
 const mapDispatchToProps = {
   fetchRsvpCount: fetchRsvpCount, 
-  fetchBuckets: fetchBuckets    
+  fetchBuckets: fetchBuckets,
+  fetchRsvps: fetchRsvps    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(EventsPage));

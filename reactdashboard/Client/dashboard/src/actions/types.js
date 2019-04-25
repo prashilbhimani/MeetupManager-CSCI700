@@ -1,2 +1,3 @@
-export const FETCH_RSVP = 'FETCH_RSVP';
+export const FETCH_RSVP_COUNT = 'FETCH_RSVP_COUNT';
 export const FETCH_BUCKETS = 'FETCH_BUCKETS';
+export const FETCH_RSVPS = 'FETCH_RSVPS';
