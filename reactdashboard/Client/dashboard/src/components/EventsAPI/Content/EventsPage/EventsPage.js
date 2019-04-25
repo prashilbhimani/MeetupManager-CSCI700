@@ -98,6 +98,7 @@ class EventsPage extends Component {
       var myjson = {}
       myjson["photo"] = rsvp.json.member.photo
       myjson["member_name"] = rsvp.json.member.member_name;            
+      myjson["member_id"] = rsvp.json.member.member_id;
       new_data.push(myjson)
     })
     return new_data
@@ -131,7 +132,8 @@ class EventsPage extends Component {
                     alt="Avatar"
                   />
                 ) },
-                { title: 'Name', field: 'member_name' },                
+                { title: 'Name', field: 'member_name' },
+                { title: 'Id', field: 'member_id' },                
               ]}
               data={formattedRSVPData ? formattedRSVPData : []}
               title="Detail Panel With RowClick Preview"
