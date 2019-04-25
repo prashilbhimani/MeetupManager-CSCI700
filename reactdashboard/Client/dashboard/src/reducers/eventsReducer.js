@@ -3,7 +3,7 @@ import { FETCH_RSVP_COUNT, FETCH_RSVPS, FETCH_BUCKETS} from '../actions/types'
 
 const initialState = {
     myrsvpCounts: 0,
-    rsvpBuckets: {},
+    myrsvpBuckets: {},
     myrsvps: []
 };
 
@@ -18,7 +18,7 @@ export default function(state = initialState, action) {
         case FETCH_BUCKETS:            
             return {
                 ...state,
-                rsvpBuckets: action.payload
+                myrsvpBuckets: action.payload
             }
         case FETCH_RSVPS:
             console.log(`fetching rsvps`)

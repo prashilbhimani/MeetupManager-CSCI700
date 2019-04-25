@@ -72,7 +72,7 @@ class EventsPage extends Component {
     return new_data;
   }
 
-  _formatBucketData = (data) => {
+  _formatBucketData = (data) => {    
     var new_data = []
     if(data) {
       var dateSlots = []
@@ -88,12 +88,19 @@ class EventsPage extends Component {
       }      
     }
     new_data.unshift(["Hour Slots", "RSVPs"])    
+    console.log(`data for bucket data is: ${JSON.stringify(new_data)}`)
     return new_data
   }
 
   _formatRSVPData = (data) => {
-    console.log(`rsvp data is: ${JSON.stringify(data)}`)
-
+    var new_data = []
+    data.map(event => {
+      var myjson = {}
+      myjson["photo"] = event.json.member.photo
+      myjson["member_name"] = event.json.member.member_name;            
+      new_data.push(myjson)
+    })
+    return new_data
   }
   render() {  
     const { myrsvpCounts } = this.props;        
@@ -115,20 +122,18 @@ class EventsPage extends Component {
           <br/>
           <div style={{ maxWidth: '100%' }}>
             <MaterialTable
+            tableRef={this.tableRef}
               columns={[
-                { title: 'Name', field: 'name' },
-                { title: 'Surname', field: 'surname' },
-                { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
-                {
-                  title: 'Birth Place',
-                  field: 'birthCity',
-                  lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
-                },
+                { title: 'Avatar', field: 'avatar', render: rowData => (
+                    <img
+                    style={{ height: 36, borderRadius: '50%', width: 36 }}
+                    src={rowData.photo}
+                    alt="Avatar"
+                  />
+                ) },
+                { title: 'Name', field: 'member_name' },                
               ]}
-              data={[
-                { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
-                { name: 'Zerya Betül', surname: 'Baran', birthYear: 1987, birthCity: 63 },
-              ]}
+              data={formattedRSVPData ? formattedRSVPData : []}
               title="Detail Panel With RowClick Preview"
               detailPanel={rowData => {
                 return (
@@ -152,7 +157,7 @@ class EventsPage extends Component {
 
 const mapStateToProps = state => ({
   myrsvpCounts: state.eventsReducer.myrsvpCounts, 
-  myrsvpBuckets: state.eventsReducer.rsvpBuckets, 
+  myrsvpBuckets: state.eventsReducer.myrsvpBuckets, 
   myrsvps: state.eventsReducer.myrsvps
 });
 

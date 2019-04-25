@@ -11,7 +11,7 @@ class SimpleChart extends Component {
             height={'400px'}
             chartType="Line"
             loader={<h6>Fetching data</h6>}
-            data={this.props.data ? this.props.data : []}
+            data={this.props.data && this.props.data.length > 1 ? this.props.data : []}
             options={{
               // Material design options
               chart: {
