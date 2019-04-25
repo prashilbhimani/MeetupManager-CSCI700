@@ -1,0 +1,2318 @@
+{
+    "tweets": [
+        {
+            "created_at": "Thu Apr 11 06:08:36 +0000 2019",
+            "id": 1116221491098607618,
+            "id_str": "1116221491098607618",
+            "text": "RT @whatsonyormind: 6 states under blizzard warnings as residents prepare for April snow storm https://t.co/OmytrAh3zQ",
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 1022741765286187008,
+                "id_str": "1022741765286187008",
+                "name": "Végh Lajosné",
+                "screen_name": "LajosneVegh",
+                "location": null,
+                "url": null,
+                "description": null,
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 1111,
+                "friends_count": 4999,
+                "listed_count": 5,
+                "favourites_count": 32434,
+                "statuses_count": 85481,
+                "created_at": "Fri Jul 27 07:13:33 +0000 2018",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": false,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "F5F8FA",
+                "profile_background_image_url": "",
+                "profile_background_image_url_https": "",
+                "profile_background_tile": false,
+                "profile_link_color": "1DA1F2",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+                "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+                "default_profile": true,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Thu Apr 11 05:51:02 +0000 2019",
+                "id": 1116217070004293632,
+                "id_str": "1116217070004293632",
+                "text": "6 states under blizzard warnings as residents prepare for April snow storm https://t.co/OmytrAh3zQ",
+                "source": "<a href=\"https://dlvrit.com/\" rel=\"nofollow\">dlvr.it</a>",
+                "truncated": false,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 761146784,
+                    "id_str": "761146784",
+                    "name": "What's on your Mind?",
+                    "screen_name": "whatsonyormind",
+                    "location": "United States of my Mind",
+                    "url": "http://www.dwellonthesky.com",
+                    "description": "Sounds familiar with my name? Yeah right! I used to be in your mind too. It's maybe for many times I guess. What do you think?",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 712,
+                    "friends_count": 1827,
+                    "listed_count": 213,
+                    "favourites_count": 0,
+                    "statuses_count": 352862,
+                    "created_at": "Thu Aug 16 08:38:42 +0000 2012",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": false,
+                    "lang": "en",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "0099B9",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme4/bg.gif",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme4/bg.gif",
+                    "profile_background_tile": false,
+                    "profile_link_color": "0099B9",
+                    "profile_sidebar_border_color": "5ED4DC",
+                    "profile_sidebar_fill_color": "95E8EC",
+                    "profile_text_color": "3C3940",
+                    "profile_use_background_image": true,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/2565991792/y0vtmcj4n8lt6upzyywi_normal.jpeg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/2565991792/y0vtmcj4n8lt6upzyywi_normal.jpeg",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "quote_count": 0,
+                "reply_count": 0,
+                "retweet_count": 1,
+                "favorite_count": 0,
+                "entities": {
+                    "hashtags": [],
+                    "urls": [
+                        {
+                            "url": "https://t.co/OmytrAh3zQ",
+                            "expanded_url": "http://dlvr.it/R2b5D4",
+                            "display_url": "dlvr.it/R2b5D4",
+                            "indices": [
+                                75,
+                                98
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "en"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [],
+                "urls": [
+                    {
+                        "url": "https://t.co/OmytrAh3zQ",
+                        "expanded_url": "http://dlvr.it/R2b5D4",
+                        "display_url": "dlvr.it/R2b5D4",
+                        "indices": [
+                            95,
+                            118
+                        ]
+                    }
+                ],
+                "user_mentions": [
+                    {
+                        "screen_name": "whatsonyormind",
+                        "name": "What's on your Mind?",
+                        "id": 761146784,
+                        "id_str": "761146784",
+                        "indices": [
+                            3,
+                            18
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "possibly_sensitive": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962916527"
+        },
+        {
+            "created_at": "Thu Apr 11 06:08:40 +0000 2019",
+            "id": 1116221506676084736,
+            "id_str": "1116221506676084736",
+            "text": "RT @don_21st: CoDやオーバーウォッチの販売元アクティビジョン・ブリザード、社員に妊活アプリを支給して利用者に1日1ドルを支払う代わりに会社が統計データを見れるようにしてるとか。\n産休を予測するためなんだろうけど…もし日本でもこれが始まったら、会社にデータ渡します…",
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 7654752,
+                "id_str": "7654752",
+                "name": "面田　幸⛅",
+                "screen_name": "NEWLA",
+                "location": "東京都デスクルス市",
+                "url": null,
+                "description": "【未成年ですｗ↓】フォロー非推奨ミュート推奨、腹が痛いとか頭が痛いをメモツイして急変に備えるＲＴ基地外のため。宮城県山元町を応援します。いちごうめえ。沼＞深海・文具・ゲーム音楽（SSTBAND/BLINDSPOT・GAMADELIC）【↑と書いてプロフ最後まで読まない人を選別するついった12年生の老害】",
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 1062,
+                "friends_count": 1113,
+                "listed_count": 76,
+                "favourites_count": 34372,
+                "statuses_count": 618247,
+                "created_at": "Mon Jul 23 08:16:06 +0000 2007",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": false,
+                "lang": "ja",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "89C9FA",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme8/bg.gif",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme8/bg.gif",
+                "profile_background_tile": true,
+                "profile_link_color": "4A913C",
+                "profile_sidebar_border_color": "FFFFFF",
+                "profile_sidebar_fill_color": "FFAF8E",
+                "profile_text_color": "FFCC8E",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/982751511737282560/mRKyS0OV_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/982751511737282560/mRKyS0OV_normal.jpg",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/7654752/1496822933",
+                "default_profile": false,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Thu Apr 11 00:01:29 +0000 2019",
+                "id": 1116129103604666368,
+                "id_str": "1116129103604666368",
+                "text": "CoDやオーバーウォッチの販売元アクティビジョン・ブリザード、社員に妊活アプリを支給して利用者に1日1ドルを支払う代わりに会社が統計データを見れるようにしてるとか。\n産休を予測するためなんだろうけど…もし日本でもこれが始まったら、… https://t.co/3UJFrDpdJU",
+                "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+                "truncated": true,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 2919084643,
+                    "id_str": "2919084643",
+                    "name": "Donnary21st",
+                    "screen_name": "don_21st",
+                    "location": "Tokyo, Japan",
+                    "url": "http://contactup.io/donnary21st/",
+                    "description": "三度の飯よりゲーム好き(*^ω^*)  Dead by Daylight コミュニティモデレーター・元有志翻訳チーム代表・DbyDJPグループ管理人 ※個人のアカウント/発言です。DbD日本語サポート＆バグ報告は：https://support.deadbydaylight.com/hc/ja/requests/new",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 35803,
+                    "friends_count": 234,
+                    "listed_count": 316,
+                    "favourites_count": 26882,
+                    "statuses_count": 15285,
+                    "created_at": "Thu Dec 04 23:34:48 +0000 2014",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": true,
+                    "lang": "ja",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "000000",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": false,
+                    "profile_link_color": "4A913C",
+                    "profile_sidebar_border_color": "000000",
+                    "profile_sidebar_fill_color": "000000",
+                    "profile_text_color": "000000",
+                    "profile_use_background_image": false,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1057648358238515200/GcCj4vAN_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1057648358238515200/GcCj4vAN_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/2919084643/1543929078",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "extended_tweet": {
+                    "full_text": "CoDやオーバーウォッチの販売元アクティビジョン・ブリザード、社員に妊活アプリを支給して利用者に1日1ドルを支払う代わりに会社が統計データを見れるようにしてるとか。\n産休を予測するためなんだろうけど…もし日本でもこれが始まったら、会社にデータ渡します？(；´∀｀)\nhttps://t.co/yZF03Zly4R",
+                    "display_text_range": [
+                        0,
+                        156
+                    ],
+                    "entities": {
+                        "hashtags": [],
+                        "urls": [
+                            {
+                                "url": "https://t.co/yZF03Zly4R",
+                                "expanded_url": "https://kotaku.com/report-activision-blizzard-wants-to-know-how-its-emplo-1833952962",
+                                "display_url": "kotaku.com/report-activis…",
+                                "indices": [
+                                    133,
+                                    156
+                                ]
+                            }
+                        ],
+                        "user_mentions": [],
+                        "symbols": []
+                    }
+                },
+                "quote_count": 1,
+                "reply_count": 2,
+                "retweet_count": 28,
+                "favorite_count": 47,
+                "entities": {
+                    "hashtags": [],
+                    "urls": [
+                        {
+                            "url": "https://t.co/3UJFrDpdJU",
+                            "expanded_url": "https://twitter.com/i/web/status/1116129103604666368",
+                            "display_url": "twitter.com/i/web/status/1…",
+                            "indices": [
+                                117,
+                                140
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "ja"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "don_21st",
+                        "name": "Donnary21st",
+                        "id": 2919084643,
+                        "id_str": "2919084643",
+                        "indices": [
+                            3,
+                            12
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "ja",
+            "timestamp_ms": "1554962920241"
+        },
+        {
+            "created_at": "Thu Apr 11 06:08:50 +0000 2019",
+            "id": 1116221550158655490,
+            "id_str": "1116221550158655490",
+            "text": "RT @NWSGoodland: Blizzard conditions are likely as snow increases in coverage and intensity between Midnight and 2:00 am MDT Thursday. #COw…",
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 1245682237,
+                "id_str": "1245682237",
+                "name": "Brian Harvey",
+                "screen_name": "Brian_in_KCMO",
+                "location": "MidWest, USA",
+                "url": null,
+                "description": "Emergency Management; Situational Awareness. Social Media in Emergency Management #SMEM; Views & opinions expressed, if any, are my own. I retweet.",
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 55,
+                "friends_count": 473,
+                "listed_count": 10,
+                "favourites_count": 2933,
+                "statuses_count": 10530,
+                "created_at": "Wed Mar 06 09:22:32 +0000 2013",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": false,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_link_color": "0084B4",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "000000",
+                "profile_text_color": "000000",
+                "profile_use_background_image": false,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/817425026869764097/3gl8i2Dp_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/817425026869764097/3gl8i2Dp_normal.jpg",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1245682237/1400945043",
+                "default_profile": false,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Thu Apr 11 05:57:22 +0000 2019",
+                "id": 1116218662187352064,
+                "id_str": "1116218662187352064",
+                "text": "Blizzard conditions are likely as snow increases in coverage and intensity between Midnight and 2:00 am MDT Thursda… https://t.co/T7KkjulghU",
+                "display_text_range": [
+                    0,
+                    140
+                ],
+                "source": "<a href=\"https://nwschat.weather.gov/nwsbotfaq.php\" rel=\"nofollow\">NWSBot</a>",
+                "truncated": true,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 596425253,
+                    "id_str": "596425253",
+                    "name": "NWS Goodland",
+                    "screen_name": "NWSGoodland",
+                    "location": "Goodland, KS",
+                    "url": "http://www.weather.gov/gld",
+                    "description": "Official Twitter account for the National Weather Service office in Goodland, KS. Details: http://weather.gov/twitter",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": true,
+                    "followers_count": 8519,
+                    "friends_count": 87,
+                    "listed_count": 362,
+                    "favourites_count": 1899,
+                    "statuses_count": 18454,
+                    "created_at": "Fri Jun 01 12:40:24 +0000 2012",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": false,
+                    "lang": "en",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "C0DEED",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": false,
+                    "profile_link_color": "0084B4",
+                    "profile_sidebar_border_color": "C0DEED",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/875584136638980096/bvsC-46S_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/875584136638980096/bvsC-46S_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/596425253/1552199274",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "extended_tweet": {
+                    "full_text": "Blizzard conditions are likely as snow increases in coverage and intensity between Midnight and 2:00 am MDT Thursday. #COwx #KSwx #NEwx https://t.co/J9qTsSbjwx",
+                    "display_text_range": [
+                        0,
+                        135
+                    ],
+                    "entities": {
+                        "hashtags": [
+                            {
+                                "text": "COwx",
+                                "indices": [
+                                    118,
+                                    123
+                                ]
+                            },
+                            {
+                                "text": "KSwx",
+                                "indices": [
+                                    124,
+                                    129
+                                ]
+                            },
+                            {
+                                "text": "NEwx",
+                                "indices": [
+                                    130,
+                                    135
+                                ]
+                            }
+                        ],
+                        "urls": [],
+                        "user_mentions": [],
+                        "symbols": [],
+                        "media": [
+                            {
+                                "id": 1116218660778139648,
+                                "id_str": "1116218660778139648",
+                                "indices": [
+                                    136,
+                                    159
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D32a9T9X4AAVnVW.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D32a9T9X4AAVnVW.jpg",
+                                "url": "https://t.co/J9qTsSbjwx",
+                                "display_url": "pic.twitter.com/J9qTsSbjwx",
+                                "expanded_url": "https://twitter.com/NWSGoodland/status/1116218662187352064/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "medium": {
+                                        "w": 960,
+                                        "h": 740,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 680,
+                                        "h": 524,
+                                        "resize": "fit"
+                                    },
+                                    "large": {
+                                        "w": 960,
+                                        "h": 740,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "extended_entities": {
+                        "media": [
+                            {
+                                "id": 1116218660778139648,
+                                "id_str": "1116218660778139648",
+                                "indices": [
+                                    136,
+                                    159
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D32a9T9X4AAVnVW.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D32a9T9X4AAVnVW.jpg",
+                                "url": "https://t.co/J9qTsSbjwx",
+                                "display_url": "pic.twitter.com/J9qTsSbjwx",
+                                "expanded_url": "https://twitter.com/NWSGoodland/status/1116218662187352064/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "medium": {
+                                        "w": 960,
+                                        "h": 740,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 680,
+                                        "h": 524,
+                                        "resize": "fit"
+                                    },
+                                    "large": {
+                                        "w": 960,
+                                        "h": 740,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "quote_count": 0,
+                "reply_count": 0,
+                "retweet_count": 1,
+                "favorite_count": 3,
+                "entities": {
+                    "hashtags": [],
+                    "urls": [
+                        {
+                            "url": "https://t.co/T7KkjulghU",
+                            "expanded_url": "https://twitter.com/i/web/status/1116218662187352064",
+                            "display_url": "twitter.com/i/web/status/1…",
+                            "indices": [
+                                117,
+                                140
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "en"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "NWSGoodland",
+                        "name": "NWS Goodland",
+                        "id": 596425253,
+                        "id_str": "596425253",
+                        "indices": [
+                            3,
+                            15
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962930608"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:00 +0000 2019",
+            "id": 1116221591208308736,
+            "id_str": "1116221591208308736",
+            "text": "RT @CDC1REG: Le groupe appui du #1REG, embarqué sur le PHA TONNERRE, a participé à la mission d’assistance aux populations au Mozambique ap…",
+            "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 2567868280,
+                "id_str": "2567868280",
+                "name": "joel VEIES",
+                "screen_name": "veies_joel",
+                "location": null,
+                "url": null,
+                "description": null,
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 147,
+                "friends_count": 432,
+                "listed_count": 24,
+                "favourites_count": 4765,
+                "statuses_count": 12712,
+                "created_at": "Tue May 27 20:48:21 +0000 2014",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": true,
+                "lang": "fr",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "C0DEED",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_link_color": "1DA1F2",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/502142011609059328/MY2aRcQS_normal.png",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/502142011609059328/MY2aRcQS_normal.png",
+                "default_profile": true,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Wed Apr 10 16:06:24 +0000 2019",
+                "id": 1116009546286346240,
+                "id_str": "1116009546286346240",
+                "text": "Le groupe appui du #1REG, embarqué sur le PHA TONNERRE, a participé à la mission d’assistance aux populations au Mo… https://t.co/OdBWvCfzTN",
+                "display_text_range": [
+                    0,
+                    140
+                ],
+                "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+                "truncated": true,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 827150175521144832,
+                    "id_str": "827150175521144832",
+                    "name": "Chef de corps 1REG",
+                    "screen_name": "CDC1REG",
+                    "location": "Laudun-l'Ardoise, France",
+                    "url": "http://www.1reg.legion-etrangere.com",
+                    "description": "Colonel Olivier PINARD LEGRY, chef de corps du 1er Régiment étranger de génie #1REG \"Fier de ton passé, confiant dans l'avenir\" @COM6BLB @3eDivision",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 2019,
+                    "friends_count": 85,
+                    "listed_count": 18,
+                    "favourites_count": 102,
+                    "statuses_count": 388,
+                    "created_at": "Thu Feb 02 13:42:24 +0000 2017",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": true,
+                    "lang": "fr",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "F5F8FA",
+                    "profile_background_image_url": "",
+                    "profile_background_image_url_https": "",
+                    "profile_background_tile": false,
+                    "profile_link_color": "1DA1F2",
+                    "profile_sidebar_border_color": "C0DEED",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/891943173865472001/GE8OyLQp_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/891943173865472001/GE8OyLQp_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/827150175521144832/1501490801",
+                    "default_profile": true,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "extended_tweet": {
+                    "full_text": "Le groupe appui du #1REG, embarqué sur le PHA TONNERRE, a participé à la mission d’assistance aux populations au Mozambique après le passage du cyclone IDAI. Ils ont fini la mission avec un dernier déchargement de fret pour la croix rouge, avant de reprendre la route vers Le Cap https://t.co/pwdtNvg1ZV",
+                    "display_text_range": [
+                        0,
+                        279
+                    ],
+                    "entities": {
+                        "hashtags": [
+                            {
+                                "text": "1REG",
+                                "indices": [
+                                    19,
+                                    24
+                                ]
+                            }
+                        ],
+                        "urls": [],
+                        "user_mentions": [],
+                        "symbols": [],
+                        "media": [
+                            {
+                                "id": 1116009504930451457,
+                                "id_str": "1116009504930451457",
+                                "indices": [
+                                    280,
+                                    303
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D3zcu1tW0AEc2Eh.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D3zcu1tW0AEc2Eh.jpg",
+                                "url": "https://t.co/pwdtNvg1ZV",
+                                "display_url": "pic.twitter.com/pwdtNvg1ZV",
+                                "expanded_url": "https://twitter.com/CDC1REG/status/1116009546286346240/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 2048,
+                                        "h": 1365,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 1200,
+                                        "h": 800,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 680,
+                                        "h": 453,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "extended_entities": {
+                        "media": [
+                            {
+                                "id": 1116009504930451457,
+                                "id_str": "1116009504930451457",
+                                "indices": [
+                                    280,
+                                    303
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D3zcu1tW0AEc2Eh.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D3zcu1tW0AEc2Eh.jpg",
+                                "url": "https://t.co/pwdtNvg1ZV",
+                                "display_url": "pic.twitter.com/pwdtNvg1ZV",
+                                "expanded_url": "https://twitter.com/CDC1REG/status/1116009546286346240/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 2048,
+                                        "h": 1365,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 1200,
+                                        "h": 800,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 680,
+                                        "h": 453,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "quote_count": 1,
+                "reply_count": 0,
+                "retweet_count": 11,
+                "favorite_count": 48,
+                "entities": {
+                    "hashtags": [
+                        {
+                            "text": "1REG",
+                            "indices": [
+                                19,
+                                24
+                            ]
+                        }
+                    ],
+                    "urls": [
+                        {
+                            "url": "https://t.co/OdBWvCfzTN",
+                            "expanded_url": "https://twitter.com/i/web/status/1116009546286346240",
+                            "display_url": "twitter.com/i/web/status/1…",
+                            "indices": [
+                                117,
+                                140
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "fr"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [
+                    {
+                        "text": "1REG",
+                        "indices": [
+                            32,
+                            37
+                        ]
+                    }
+                ],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "CDC1REG",
+                        "name": "Chef de corps 1REG",
+                        "id": 827150175521144832,
+                        "id_str": "827150175521144832",
+                        "indices": [
+                            3,
+                            11
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "fr",
+            "timestamp_ms": "1554962940395"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:19 +0000 2019",
+            "id": 1116221670698758144,
+            "id_str": "1116221670698758144",
+            "text": "RT @fayaz_king: Our team is in Bikita offloading more food stuffs &amp; relief supplies for those affected by #CycloneIdai\n\nWe are truly gratef…",
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 1098854885448134656,
+                "id_str": "1098854885448134656",
+                "name": "ISABELLA ATIGOH",
+                "screen_name": "IAtigoh",
+                "location": null,
+                "url": null,
+                "description": null,
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 28,
+                "friends_count": 175,
+                "listed_count": 0,
+                "favourites_count": 98,
+                "statuses_count": 96,
+                "created_at": "Fri Feb 22 07:59:55 +0000 2019",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": false,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "F5F8FA",
+                "profile_background_image_url": "",
+                "profile_background_image_url_https": "",
+                "profile_background_tile": false,
+                "profile_link_color": "1DA1F2",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+                "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+                "default_profile": true,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Fri Apr 05 07:43:01 +0000 2019",
+                "id": 1114070923618017280,
+                "id_str": "1114070923618017280",
+                "text": "Our team is in Bikita offloading more food stuffs &amp; relief supplies for those affected by #CycloneIdai\n\nWe are trul… https://t.co/edSn9acYqk",
+                "display_text_range": [
+                    0,
+                    140
+                ],
+                "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+                "truncated": true,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 1906878560,
+                    "id_str": "1906878560",
+                    "name": "Fayaz King",
+                    "screen_name": "fayaz_king",
+                    "location": "Harare, Zimbabwe",
+                    "url": "http://www.fayazking.co.zw",
+                    "description": "Digital Transformation  | King of Execution | Coach, Mentor & Influencer | Urban Farmer, Avid Fisherman, Drone Pilot & Awesome Dad!",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 20847,
+                    "friends_count": 4412,
+                    "listed_count": 102,
+                    "favourites_count": 1612,
+                    "statuses_count": 15513,
+                    "created_at": "Thu Sep 26 06:10:18 +0000 2013",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": true,
+                    "lang": "en",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "C0C8BB",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme6/bg.gif",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme6/bg.gif",
+                    "profile_background_tile": true,
+                    "profile_link_color": "98BDAF",
+                    "profile_sidebar_border_color": "ECB397",
+                    "profile_sidebar_fill_color": "465054",
+                    "profile_text_color": "667A79",
+                    "profile_use_background_image": false,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/998217138644049920/tBgbvKnb_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/998217138644049920/tBgbvKnb_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/1906878560/1554462065",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "extended_tweet": {
+                    "full_text": "Our team is in Bikita offloading more food stuffs &amp; relief supplies for those affected by #CycloneIdai\n\nWe are truly grateful for everyone who has donated to help the families affected by the cyclone. \n\nThere is still more work to do so let's continue to support!\n\n#RebootRebuild https://t.co/LzPdTCodUE",
+                    "display_text_range": [
+                        0,
+                        283
+                    ],
+                    "entities": {
+                        "hashtags": [
+                            {
+                                "text": "CycloneIdai",
+                                "indices": [
+                                    94,
+                                    106
+                                ]
+                            },
+                            {
+                                "text": "RebootRebuild",
+                                "indices": [
+                                    269,
+                                    283
+                                ]
+                            }
+                        ],
+                        "urls": [],
+                        "user_mentions": [],
+                        "symbols": [],
+                        "media": [
+                            {
+                                "id": 1114070117812514816,
+                                "id_str": "1114070117812514816",
+                                "indices": [
+                                    284,
+                                    307
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D3X43psXsAAyiu7.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D3X43psXsAAyiu7.jpg",
+                                "url": "https://t.co/LzPdTCodUE",
+                                "display_url": "pic.twitter.com/LzPdTCodUE",
+                                "expanded_url": "https://twitter.com/fayaz_king/status/1114070923618017280/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 992,
+                                        "h": 744,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 680,
+                                        "h": 510,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 992,
+                                        "h": 744,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "extended_entities": {
+                        "media": [
+                            {
+                                "id": 1114070117812514816,
+                                "id_str": "1114070117812514816",
+                                "indices": [
+                                    284,
+                                    307
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D3X43psXsAAyiu7.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D3X43psXsAAyiu7.jpg",
+                                "url": "https://t.co/LzPdTCodUE",
+                                "display_url": "pic.twitter.com/LzPdTCodUE",
+                                "expanded_url": "https://twitter.com/fayaz_king/status/1114070923618017280/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 992,
+                                        "h": 744,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 680,
+                                        "h": 510,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 992,
+                                        "h": 744,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "quote_count": 0,
+                "reply_count": 0,
+                "retweet_count": 45,
+                "favorite_count": 70,
+                "entities": {
+                    "hashtags": [
+                        {
+                            "text": "CycloneIdai",
+                            "indices": [
+                                94,
+                                106
+                            ]
+                        }
+                    ],
+                    "urls": [
+                        {
+                            "url": "https://t.co/edSn9acYqk",
+                            "expanded_url": "https://twitter.com/i/web/status/1114070923618017280",
+                            "display_url": "twitter.com/i/web/status/1…",
+                            "indices": [
+                                121,
+                                144
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "en"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [
+                    {
+                        "text": "CycloneIdai",
+                        "indices": [
+                            110,
+                            122
+                        ]
+                    }
+                ],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "fayaz_king",
+                        "name": "Fayaz King",
+                        "id": 1906878560,
+                        "id_str": "1906878560",
+                        "indices": [
+                            3,
+                            14
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962959347"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:27 +0000 2019",
+            "id": 1116221705461145600,
+            "id_str": "1116221705461145600",
+            "text": "RT @JamesInks: Odd I should finish this during a snowstorm in April, but lil foxy brought ice\n#Dayjob #chalkboard #illustration https://t.c…",
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 272241142,
+                "id_str": "272241142",
+                "name": "🐼 Triplet 🐼",
+                "screen_name": "xtriplet23x",
+                "location": null,
+                "url": "http://instagram.com/xtriplet23x",
+                "description": "Loves dance, rising variety streamer and honorary Chen. Does Mashups, art and video editing.\nProfile Pic: Pandasona by @james_midokami",
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 573,
+                "friends_count": 2149,
+                "listed_count": 10,
+                "favourites_count": 75430,
+                "statuses_count": 64098,
+                "created_at": "Sat Mar 26 03:34:49 +0000 2011",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": true,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "C0DEED",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_link_color": "1B95E0",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1113936705625698304/k53L6AYp_normal.png",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1113936705625698304/k53L6AYp_normal.png",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/272241142/1553535302",
+                "default_profile": false,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Wed Apr 10 20:54:36 +0000 2019",
+                "id": 1116082070583955457,
+                "id_str": "1116082070583955457",
+                "text": "Odd I should finish this during a snowstorm in April, but lil foxy brought ice\n#Dayjob #chalkboard #illustration https://t.co/n3prWMGmJy",
+                "display_text_range": [
+                    0,
+                    112
+                ],
+                "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+                "truncated": false,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 557195835,
+                    "id_str": "557195835",
+                    "name": "James H, 🐆",
+                    "screen_name": "JamesInks",
+                    "location": "A drawing desk in MN",
+                    "url": "http://www.jhohenstein.com",
+                    "description": "Comic artist, Illustrator. Animation enthusiast. Drinks coffee, likes tea. He/Him. http://jhohenstein.com Demi/Bi. Taken.",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 376,
+                    "friends_count": 700,
+                    "listed_count": 15,
+                    "favourites_count": 33702,
+                    "statuses_count": 11972,
+                    "created_at": "Wed Apr 18 18:40:27 +0000 2012",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": true,
+                    "lang": "en",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "1A1B1F",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": false,
+                    "profile_link_color": "6B83C2",
+                    "profile_sidebar_border_color": "000000",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1107107178169753601/Jh2k2x84_normal.png",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1107107178169753601/Jh2k2x84_normal.png",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/557195835/1548732041",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "quote_count": 0,
+                "reply_count": 3,
+                "retweet_count": 17,
+                "favorite_count": 78,
+                "entities": {
+                    "hashtags": [
+                        {
+                            "text": "Dayjob",
+                            "indices": [
+                                79,
+                                86
+                            ]
+                        },
+                        {
+                            "text": "chalkboard",
+                            "indices": [
+                                87,
+                                98
+                            ]
+                        },
+                        {
+                            "text": "illustration",
+                            "indices": [
+                                99,
+                                112
+                            ]
+                        }
+                    ],
+                    "urls": [],
+                    "user_mentions": [],
+                    "symbols": [],
+                    "media": [
+                        {
+                            "id": 1116082049331474434,
+                            "id_str": "1116082049331474434",
+                            "indices": [
+                                113,
+                                136
+                            ],
+                            "media_url": "http://pbs.twimg.com/media/D30eteqXsAILQYg.jpg",
+                            "media_url_https": "https://pbs.twimg.com/media/D30eteqXsAILQYg.jpg",
+                            "url": "https://t.co/n3prWMGmJy",
+                            "display_url": "pic.twitter.com/n3prWMGmJy",
+                            "expanded_url": "https://twitter.com/JamesInks/status/1116082070583955457/photo/1",
+                            "type": "photo",
+                            "sizes": {
+                                "small": {
+                                    "w": 680,
+                                    "h": 434,
+                                    "resize": "fit"
+                                },
+                                "thumb": {
+                                    "w": 150,
+                                    "h": 150,
+                                    "resize": "crop"
+                                },
+                                "large": {
+                                    "w": 2048,
+                                    "h": 1307,
+                                    "resize": "fit"
+                                },
+                                "medium": {
+                                    "w": 1200,
+                                    "h": 766,
+                                    "resize": "fit"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "extended_entities": {
+                    "media": [
+                        {
+                            "id": 1116082049331474434,
+                            "id_str": "1116082049331474434",
+                            "indices": [
+                                113,
+                                136
+                            ],
+                            "media_url": "http://pbs.twimg.com/media/D30eteqXsAILQYg.jpg",
+                            "media_url_https": "https://pbs.twimg.com/media/D30eteqXsAILQYg.jpg",
+                            "url": "https://t.co/n3prWMGmJy",
+                            "display_url": "pic.twitter.com/n3prWMGmJy",
+                            "expanded_url": "https://twitter.com/JamesInks/status/1116082070583955457/photo/1",
+                            "type": "photo",
+                            "sizes": {
+                                "small": {
+                                    "w": 680,
+                                    "h": 434,
+                                    "resize": "fit"
+                                },
+                                "thumb": {
+                                    "w": 150,
+                                    "h": 150,
+                                    "resize": "crop"
+                                },
+                                "large": {
+                                    "w": 2048,
+                                    "h": 1307,
+                                    "resize": "fit"
+                                },
+                                "medium": {
+                                    "w": 1200,
+                                    "h": 766,
+                                    "resize": "fit"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "en"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [
+                    {
+                        "text": "Dayjob",
+                        "indices": [
+                            94,
+                            101
+                        ]
+                    },
+                    {
+                        "text": "chalkboard",
+                        "indices": [
+                            102,
+                            113
+                        ]
+                    },
+                    {
+                        "text": "illustration",
+                        "indices": [
+                            114,
+                            127
+                        ]
+                    }
+                ],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "JamesInks",
+                        "name": "James H, 🐆",
+                        "id": 557195835,
+                        "id_str": "557195835",
+                        "indices": [
+                            3,
+                            13
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962967635"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:28 +0000 2019",
+            "id": 1116221707352670208,
+            "id_str": "1116221707352670208",
+            "text": "#Activision #Blizzard Wants Data on Employee Pregnancies https://t.co/kHKD8tE6Wb",
+            "source": "<a href=\"http://www.nextscripts.com/\" rel=\"nofollow\">NextScripts: GameRant</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 67712170,
+                "id_str": "67712170",
+                "name": "Game Rant",
+                "screen_name": "GameRant",
+                "location": "Earth",
+                "url": "https://gamerant.com",
+                "description": "Love video games? Follow us for the latest news, reviews and more!",
+                "translator_type": "none",
+                "protected": false,
+                "verified": true,
+                "followers_count": 42390,
+                "friends_count": 6084,
+                "listed_count": 572,
+                "favourites_count": 4457,
+                "statuses_count": 60422,
+                "created_at": "Fri Aug 21 20:37:15 +0000 2009",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": false,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "131516",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+                "profile_background_tile": false,
+                "profile_link_color": "009999",
+                "profile_sidebar_border_color": "EEEEEE",
+                "profile_sidebar_fill_color": "EFEFEF",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/618089808284389377/NySTZFcE_normal.png",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/618089808284389377/NySTZFcE_normal.png",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/67712170/1521797898",
+                "default_profile": false,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [
+                    {
+                        "text": "Activision",
+                        "indices": [
+                            0,
+                            11
+                        ]
+                    },
+                    {
+                        "text": "Blizzard",
+                        "indices": [
+                            12,
+                            21
+                        ]
+                    }
+                ],
+                "urls": [
+                    {
+                        "url": "https://t.co/kHKD8tE6Wb",
+                        "expanded_url": "https://gamerant.com/activision-pregnancy/",
+                        "display_url": "gamerant.com/activision-pre…",
+                        "indices": [
+                            57,
+                            80
+                        ]
+                    }
+                ],
+                "user_mentions": [],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "possibly_sensitive": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962968086"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:28 +0000 2019",
+            "id": 1116221708489248768,
+            "id_str": "1116221708489248768",
+            "text": "RT @GimmeFiveShop: 5月1日【VINYL CREATOR】\nat:JAMDUNG（神戸）OPEN/23:00~\nADV:1,500yen ADM:2,000yen\nSP GUEST\n・BOOGIE MAN\nGUEST DEEJAY\n・ARC MAN\nGUEST…",
+            "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 1562508181,
+                "id_str": "1562508181",
+                "name": "おおにし しんじ",
+                "screen_name": "shinji_AMA",
+                "location": null,
+                "url": null,
+                "description": "GENERAL STONE SOUND from AMAGASAKI 97 VINYL PC ブッキングはDMで宜しくお願いします 第1金曜日jamdung#vinyl creator",
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 1128,
+                "friends_count": 1170,
+                "listed_count": 1,
+                "favourites_count": 1800,
+                "statuses_count": 13130,
+                "created_at": "Tue Jul 02 07:21:57 +0000 2013",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": true,
+                "lang": "ja",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "C0DEED",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_link_color": "1DA1F2",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091625543315816448/OEU4PuQN_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091625543315816448/OEU4PuQN_normal.jpg",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1562508181/1549098787",
+                "default_profile": true,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Thu Apr 11 05:29:19 +0000 2019",
+                "id": 1116211603706277889,
+                "id_str": "1116211603706277889",
+                "text": "5月1日【VINYL CREATOR】\nat:JAMDUNG（神戸）OPEN/23:00~\nADV:1,500yen ADM:2,000yen\nSP GUEST\n・BOOGIE MAN\nGUEST DEEJAY\n・ARC MAN… https://t.co/zVEkBs3NKS",
+                "display_text_range": [
+                    0,
+                    140
+                ],
+                "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+                "truncated": true,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 339469622,
+                    "id_str": "339469622",
+                    "name": "GIMME FIVE",
+                    "screen_name": "GimmeFiveShop",
+                    "location": "大阪市西区南堀江1-1-1-1F",
+                    "url": "http://gimmefive.jp/",
+                    "description": "Clothing Shop @Gimme Five Osaka Japan. ☎︎06.6536.1136 OPEN:12:00~CLOSE:20:00 GIMME FIVE/Anga/CALM. /STALEMATE/BDB...  https://www.instagram.com/gimmefiveshop/",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 10861,
+                    "friends_count": 988,
+                    "listed_count": 48,
+                    "favourites_count": 0,
+                    "statuses_count": 98386,
+                    "created_at": "Thu Jul 21 04:38:26 +0000 2011",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": false,
+                    "lang": "ja",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "C0DEED",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": true,
+                    "profile_link_color": "0084B4",
+                    "profile_sidebar_border_color": "C0DEED",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1452708506/gimmefive01_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1452708506/gimmefive01_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/339469622/1348658907",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "extended_tweet": {
+                    "full_text": "5月1日【VINYL CREATOR】\nat:JAMDUNG（神戸）OPEN/23:00~\nADV:1,500yen ADM:2,000yen\nSP GUEST\n・BOOGIE MAN\nGUEST DEEJAY\n・ARC MAN\nGUEST SOUND\n・RODEM CYCLONE\n・ZERO MOVEMENT\nLINK UP DEEJAY\n・IRIE TELL\nHOST SOUND\n・GENERAL STONE\n・MUNSHO\n・PEACE MAKER\n・ACE https://t.co/Pba6rc0JEd",
+                    "display_text_range": [
+                        0,
+                        234
+                    ],
+                    "entities": {
+                        "hashtags": [],
+                        "urls": [],
+                        "user_mentions": [],
+                        "symbols": [],
+                        "media": [
+                            {
+                                "id": 1116211585641398272,
+                                "id_str": "1116211585641398272",
+                                "indices": [
+                                    235,
+                                    258
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D32UhfBUwAAcl2m.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D32UhfBUwAAcl2m.jpg",
+                                "url": "https://t.co/Pba6rc0JEd",
+                                "display_url": "pic.twitter.com/Pba6rc0JEd",
+                                "expanded_url": "https://twitter.com/GimmeFiveShop/status/1116211603706277889/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 481,
+                                        "h": 680,
+                                        "resize": "fit"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 1116211596487827456,
+                                "id_str": "1116211596487827456",
+                                "indices": [
+                                    235,
+                                    258
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D32UiHbUIAA6mb3.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D32UiHbUIAA6mb3.jpg",
+                                "url": "https://t.co/Pba6rc0JEd",
+                                "display_url": "pic.twitter.com/Pba6rc0JEd",
+                                "expanded_url": "https://twitter.com/GimmeFiveShop/status/1116211603706277889/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 481,
+                                        "h": 680,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "extended_entities": {
+                        "media": [
+                            {
+                                "id": 1116211585641398272,
+                                "id_str": "1116211585641398272",
+                                "indices": [
+                                    235,
+                                    258
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D32UhfBUwAAcl2m.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D32UhfBUwAAcl2m.jpg",
+                                "url": "https://t.co/Pba6rc0JEd",
+                                "display_url": "pic.twitter.com/Pba6rc0JEd",
+                                "expanded_url": "https://twitter.com/GimmeFiveShop/status/1116211603706277889/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 481,
+                                        "h": 680,
+                                        "resize": "fit"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 1116211596487827456,
+                                "id_str": "1116211596487827456",
+                                "indices": [
+                                    235,
+                                    258
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D32UiHbUIAA6mb3.jpg",
+                                "media_url_https": "https://pbs.twimg.com/media/D32UiHbUIAA6mb3.jpg",
+                                "url": "https://t.co/Pba6rc0JEd",
+                                "display_url": "pic.twitter.com/Pba6rc0JEd",
+                                "expanded_url": "https://twitter.com/GimmeFiveShop/status/1116211603706277889/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "large": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 848,
+                                        "h": 1199,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 481,
+                                        "h": 680,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "quote_count": 0,
+                "reply_count": 0,
+                "retweet_count": 1,
+                "favorite_count": 0,
+                "entities": {
+                    "hashtags": [],
+                    "urls": [
+                        {
+                            "url": "https://t.co/zVEkBs3NKS",
+                            "expanded_url": "https://twitter.com/i/web/status/1116211603706277889",
+                            "display_url": "twitter.com/i/web/status/1…",
+                            "indices": [
+                                116,
+                                139
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "en"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "GimmeFiveShop",
+                        "name": "GIMME FIVE",
+                        "id": 339469622,
+                        "id_str": "339469622",
+                        "indices": [
+                            3,
+                            17
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962968357"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:30 +0000 2019",
+            "id": 1116221718253592576,
+            "id_str": "1116221718253592576",
+            "text": "Cyclone Idai's death toll now above 1,000 in southern Africa https://t.co/gjkdz9yxxm",
+            "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 1864755553,
+                "id_str": "1864755553",
+                "name": "dolores wiens",
+                "screen_name": "rugratfarm",
+                "location": "Seattle, WA",
+                "url": null,
+                "description": "Mother,Grandmother,Neighbor,Proud Liberal#Seattle#OFA##WAGUN,#imWithHer #LGBTQ#Equality#LoveTrumpsHate #NeverTrump #StrongerTogether #TheResistance",
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 3562,
+                "friends_count": 4699,
+                "listed_count": 128,
+                "favourites_count": 16732,
+                "statuses_count": 48043,
+                "created_at": "Sat Sep 14 19:24:37 +0000 2013",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": true,
+                "lang": "en",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "C0DEED",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_link_color": "1DA1F2",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/440214015310974976/qh_rQdXi_normal.jpeg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/440214015310974976/qh_rQdXi_normal.jpeg",
+                "default_profile": true,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [],
+                "urls": [
+                    {
+                        "url": "https://t.co/gjkdz9yxxm",
+                        "expanded_url": "http://a.msn.com/01/en-us/BBVNhGb?ocid=st",
+                        "display_url": "a.msn.com/01/en-us/BBVNh…",
+                        "indices": [
+                            61,
+                            84
+                        ]
+                    }
+                ],
+                "user_mentions": [],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "possibly_sensitive": false,
+            "filter_level": "low",
+            "lang": "en",
+            "timestamp_ms": "1554962970685"
+        },
+        {
+            "created_at": "Thu Apr 11 06:09:38 +0000 2019",
+            "id": 1116221750285668353,
+            "id_str": "1116221750285668353",
+            "text": "RT @EKMeteo: Fort contraste thermique aux Etats-Unis\n\nChaleur sur le Texas où les premiers 40°C/104°F de l'année ont été observés ce 9 avri…",
+            "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+            "truncated": false,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "in_reply_to_screen_name": null,
+            "user": {
+                "id": 1003600770,
+                "id_str": "1003600770",
+                "name": "Janine Gianaria",
+                "screen_name": "janineg06",
+                "location": null,
+                "url": null,
+                "description": null,
+                "translator_type": "none",
+                "protected": false,
+                "verified": false,
+                "followers_count": 843,
+                "friends_count": 1442,
+                "listed_count": 243,
+                "favourites_count": 4005,
+                "statuses_count": 100044,
+                "created_at": "Tue Dec 11 08:33:13 +0000 2012",
+                "utc_offset": null,
+                "time_zone": null,
+                "geo_enabled": true,
+                "lang": "fr",
+                "contributors_enabled": false,
+                "is_translator": false,
+                "profile_background_color": "C0DEED",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_link_color": "1DA1F2",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/3038470772/258b544ad2e390e62404aa049bcc44bf_normal.jpeg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/3038470772/258b544ad2e390e62404aa049bcc44bf_normal.jpeg",
+                "default_profile": true,
+                "default_profile_image": false,
+                "following": null,
+                "follow_request_sent": null,
+                "notifications": null
+            },
+            "geo": null,
+            "coordinates": null,
+            "place": null,
+            "contributors": null,
+            "retweeted_status": {
+                "created_at": "Wed Apr 10 10:36:17 +0000 2019",
+                "id": 1115926469623132166,
+                "id_str": "1115926469623132166",
+                "text": "Fort contraste thermique aux Etats-Unis\n\nChaleur sur le Texas où les premiers 40°C/104°F de l'année ont été observé… https://t.co/1A2gZoJnfy",
+                "display_text_range": [
+                    0,
+                    140
+                ],
+                "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+                "truncated": true,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 2787955681,
+                    "id_str": "2787955681",
+                    "name": "Etienne Kapikian",
+                    "screen_name": "EKMeteo",
+                    "location": "Paris",
+                    "url": null,
+                    "description": "Prévisionniste @meteofrance",
+                    "translator_type": "none",
+                    "protected": false,
+                    "verified": false,
+                    "followers_count": 11981,
+                    "friends_count": 3765,
+                    "listed_count": 170,
+                    "favourites_count": 19931,
+                    "statuses_count": 13654,
+                    "created_at": "Wed Sep 03 12:50:59 +0000 2014",
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": true,
+                    "lang": "fr",
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "profile_background_color": "000000",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": false,
+                    "profile_link_color": "ABB8C2",
+                    "profile_sidebar_border_color": "000000",
+                    "profile_sidebar_fill_color": "000000",
+                    "profile_text_color": "000000",
+                    "profile_use_background_image": false,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/956674409644937216/si1-yszc_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/956674409644937216/si1-yszc_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/2787955681/1475005888",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "following": null,
+                    "follow_request_sent": null,
+                    "notifications": null
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "is_quote_status": false,
+                "extended_tweet": {
+                    "full_text": "Fort contraste thermique aux Etats-Unis\n\nChaleur sur le Texas où les premiers 40°C/104°F de l'année ont été observés ce 9 avril à Falcon Lake (rives du Rio Grande, frontière mexicaine)\n\nT° proches de 0°C sur le nord des Grandes Plaines où un intense blizzard neigeux se prépare ! https://t.co/fS5jfKqCx9",
+                    "display_text_range": [
+                        0,
+                        279
+                    ],
+                    "entities": {
+                        "hashtags": [],
+                        "urls": [],
+                        "user_mentions": [],
+                        "symbols": [],
+                        "media": [
+                            {
+                                "id": 1115924201649725441,
+                                "id_str": "1115924201649725441",
+                                "indices": [
+                                    280,
+                                    303
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D3yPJiOX4AEe5ti.png",
+                                "media_url_https": "https://pbs.twimg.com/media/D3yPJiOX4AEe5ti.png",
+                                "url": "https://t.co/fS5jfKqCx9",
+                                "display_url": "pic.twitter.com/fS5jfKqCx9",
+                                "expanded_url": "https://twitter.com/EKMeteo/status/1115926469623132166/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "medium": {
+                                        "w": 516,
+                                        "h": 424,
+                                        "resize": "fit"
+                                    },
+                                    "large": {
+                                        "w": 516,
+                                        "h": 424,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 516,
+                                        "h": 424,
+                                        "resize": "fit"
+                                    },
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "extended_entities": {
+                        "media": [
+                            {
+                                "id": 1115924201649725441,
+                                "id_str": "1115924201649725441",
+                                "indices": [
+                                    280,
+                                    303
+                                ],
+                                "media_url": "http://pbs.twimg.com/media/D3yPJiOX4AEe5ti.png",
+                                "media_url_https": "https://pbs.twimg.com/media/D3yPJiOX4AEe5ti.png",
+                                "url": "https://t.co/fS5jfKqCx9",
+                                "display_url": "pic.twitter.com/fS5jfKqCx9",
+                                "expanded_url": "https://twitter.com/EKMeteo/status/1115926469623132166/photo/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "medium": {
+                                        "w": 516,
+                                        "h": 424,
+                                        "resize": "fit"
+                                    },
+                                    "large": {
+                                        "w": 516,
+                                        "h": 424,
+                                        "resize": "fit"
+                                    },
+                                    "small": {
+                                        "w": 516,
+                                        "h": 424,
+                                        "resize": "fit"
+                                    },
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "quote_count": 0,
+                "reply_count": 2,
+                "retweet_count": 12,
+                "favorite_count": 19,
+                "entities": {
+                    "hashtags": [],
+                    "urls": [
+                        {
+                            "url": "https://t.co/1A2gZoJnfy",
+                            "expanded_url": "https://twitter.com/i/web/status/1115926469623132166",
+                            "display_url": "twitter.com/i/web/status/1…",
+                            "indices": [
+                                117,
+                                140
+                            ]
+                        }
+                    ],
+                    "user_mentions": [],
+                    "symbols": []
+                },
+                "favorited": false,
+                "retweeted": false,
+                "possibly_sensitive": false,
+                "filter_level": "low",
+                "lang": "fr"
+            },
+            "is_quote_status": false,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0,
+            "favorite_count": 0,
+            "entities": {
+                "hashtags": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "screen_name": "EKMeteo",
+                        "name": "Etienne Kapikian",
+                        "id": 2787955681,
+                        "id_str": "2787955681",
+                        "indices": [
+                            3,
+                            11
+                        ]
+                    }
+                ],
+                "symbols": []
+            },
+            "favorited": false,
+            "retweeted": false,
+            "filter_level": "low",
+            "lang": "fr",
+            "timestamp_ms": "1554962978322"
+        }
+    ],
+    "meta": {
+        "tweet_count": 10,
+        "refreshed_time": "Mon Apr 15 19:12:33 GMT 2019",
+        "total_count": 72027,
+        "num_pages": 7203,
+        "count": 10,
+        "event_name": "winter",
+        "page": 1
+    }
+}
