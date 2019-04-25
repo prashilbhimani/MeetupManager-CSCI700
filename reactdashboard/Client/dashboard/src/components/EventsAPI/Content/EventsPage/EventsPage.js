@@ -87,17 +87,17 @@ class EventsPage extends Component {
         new_data.push(subarr)    
       }      
     }
-    new_data.unshift(["Hour Slots", "RSVPs"])    
-    console.log(`data for bucket data is: ${JSON.stringify(new_data)}`)
+    new_data.unshift(["Hour Slots", "RSVPs"])        
     return new_data
   }
 
   _formatRSVPData = (data) => {
     var new_data = []
-    data.map(event => {
+    data.map(rsvp => {
+      console.log(`rsvp is: ${JSON.stringify(rsvp)}`)
       var myjson = {}
-      myjson["photo"] = event.json.member.photo
-      myjson["member_name"] = event.json.member.member_name;            
+      myjson["photo"] = rsvp.json.member.photo
+      myjson["member_name"] = rsvp.json.member.member_name;            
       new_data.push(myjson)
     })
     return new_data
@@ -135,18 +135,6 @@ class EventsPage extends Component {
               ]}
               data={formattedRSVPData ? formattedRSVPData : []}
               title="Detail Panel With RowClick Preview"
-              detailPanel={rowData => {
-                return (
-                  <iframe
-                    width="100%"
-                    height="315"
-                    src="https://www.youtube.com/embed/C0DPdy98e4c"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-            />
-            )
-          }}
           onRowClick={(event, rowData, togglePanel) => togglePanel()}
         />
           </div>
