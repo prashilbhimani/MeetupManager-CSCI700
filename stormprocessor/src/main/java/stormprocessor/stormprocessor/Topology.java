@@ -76,12 +76,12 @@ public class Topology {
 		String id=String.valueOf(Math.random());
         System.out.println(id);
 		builder.setSpout("KafkaSpout", new KafkaSpout<>(KafkaSpoutConfig.builder(
-				properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId("StromSpout").build()), 1);
+				properties.getProperty("kafkabroker")+":9092", properties.getProperty("topic")).setGroupId("StromSpout5").setProcessingGuarantee(KafkaSpoutConfig.ProcessingGuarantee.AT_MOST_ONCE).build()), 1);
 
 		builder.setBolt("JSONBolt",new JSONBolt(), 3).shuffleGrouping("KafkaSpout");
 
 
-		builder.setBolt("MongoRSVPInsertBolt", new MongoInsertBolt(url, "rsvps", new SimpleMongoMapper().withFields("json"))).shuffleGrouping("JSONBolt");
+		//builder.setBolt("MongoRSVPInsertBolt", new MongoInsertBolt(url, "rsvps", new SimpleMongoMapper().withFields("json"))).shuffleGrouping("JSONBolt");
 		builder.setBolt("MongoEventLocationInsertBolt", new MongoEventLocationInsertBolt()).shuffleGrouping("JSONBolt");
 		builder.setBolt("LocationCountBolt", new LocationCountBolt()).shuffleGrouping("MongoEventLocationInsertBolt");
 		builder.setBolt("DailyCountUpdate", new DailyCountBolt()).shuffleGrouping("MongoEventLocationInsertBolt");

@@ -1,6 +1,8 @@
 package stormprocessor.stormprocessor.Bolts;
 
+import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.BasicOutputCollector;
@@ -18,6 +20,7 @@ import stormprocessor.stormprocessor.Resources.MongoDatabaseFactory;
 import java.util.Map;
 
 public class MongoEventLocationInsertBolt extends BaseBasicBolt {
+    private MongoCollection<Document> rsvps;
     private MongoCollection<Document> events;
     private MongoCollection<Document> location;
     private static final long serialVersionUID = 1L;
@@ -32,9 +35,14 @@ public class MongoEventLocationInsertBolt extends BaseBasicBolt {
 
     @Override
     public void prepare(Map stormConf, TopologyContext context) {
-        events= MongoDatabaseFactory.getDatabaseObject((String) stormConf.get("monogClient"), (String) stormConf.get("databaseName")).getCollection("events");
+        rsvps   = MongoDatabaseFactory.getDatabaseObject((String) stormConf.get("monogClient"), (String) stormConf.get("databaseName")).getCollection("rsvps");
+        events  = MongoDatabaseFactory.getDatabaseObject((String) stormConf.get("monogClient"), (String) stormConf.get("databaseName")).getCollection("events");
         location= MongoDatabaseFactory.getDatabaseObject((String) stormConf.get("monogClient"), (String) stormConf.get("databaseName")).getCollection("locations");
 
+    }
+    private  void insertRsvps(JSONObject rsvp){
+        Document result= new Document("json",rsvp);
+        rsvps.insertOne(result);
     }
 
     private boolean insertEvent(JSONObject rsvp){
@@ -70,10 +78,12 @@ public class MongoEventLocationInsertBolt extends BaseBasicBolt {
 
     @Override
     public void execute(Tuple input, BasicOutputCollector basicOutputCollector) {
-        JSONObject rsvp= (JSONObject)  input.getValueByField("json");
-        boolean newEvent=insertEvent(rsvp);
-        insertLocation(rsvp);
 
+        JSONObject rsvp= (JSONObject)  input.getValueByField("json");
+        insertRsvps(rsvp);
+        boolean newEvent=insertEvent(rsvp);
+
+        insertLocation(rsvp);
         basicOutputCollector.emit(new Values((JSONObject)input.getValueByField("json"), newEvent));
     }
 
