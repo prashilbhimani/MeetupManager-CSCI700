@@ -84,6 +84,22 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
     */
   })
 
+  app.get('/:groupId/events', (req, res, next) => {
+    const groupId = Number(req.params.groupId);
+    events.find({"event.groupDetails.group_id" : groupId}).toArray((err, results) => {
+      for(var i = 0; i < results.length; ++i) {
+        var dailyCounts = {}
+        for(var j = 0; j < 24; ++j)
+          dailyCounts[j.toString()] = results[i].event.dailyCounts[(2*j).toString()] +
+            results[i].event.dailyCounts[(2*j+1).toString()]
+        results[i].event.dailyCounts = dailyCounts
+      }
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.status(200).send(results);
+    })
+  })
+
   app.get('/:eventId/rsvps', (req, res, next) => {
     const eventId = req.params.eventId;
     rsvps.find({"json.event.event_id" : eventId}).toArray((err, results) => {
