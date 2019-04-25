@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import RSVPCountCard from "./RSVPCountCard/RSVPCountCard";
 import SimpleChart from './SimpleChart/SimpleChart';
+import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
-import { fetchRsvpCount, fetchBuckets } from "../../../../actions/eventActions";
+import { fetchRsvpCount, fetchBuckets, fetchRsvps } from "../../../../actions/eventActions";
 
 class EventsPage extends Component {
 
@@ -21,6 +22,7 @@ class EventsPage extends Component {
     var interval =setInterval(() => {
       this.props.fetchRsvpCount(eventId);
       this.props.fetchBuckets(eventId);
+      this.props.fetchRsvps(eventId)
     }, 5000);
     this.setState({intervalTimer: interval})
   }
@@ -70,7 +72,7 @@ class EventsPage extends Component {
     return new_data;
   }
 
-  _formatBucketData = (data) => {
+  _formatBucketData = (data) => {    
     var new_data = []
     if(data) {
       var dateSlots = []
@@ -86,9 +88,20 @@ class EventsPage extends Component {
       }      
     }
     new_data.unshift(["Hour Slots", "RSVPs"])    
+    console.log(`data for bucket data is: ${JSON.stringify(new_data)}`)
     return new_data
   }
 
+  _formatRSVPData = (data) => {
+    var new_data = []
+    data.map(event => {
+      var myjson = {}
+      myjson["photo"] = event.json.member.photo
+      myjson["member_name"] = event.json.member.member_name;            
+      new_data.push(myjson)
+    })
+    return new_data
+  }
   render() {  
     const { myrsvpCounts } = this.props;        
     
@@ -98,6 +111,7 @@ class EventsPage extends Component {
 
     const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
     
+    const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
     return (       
         <div>
           {rsvpCounter}
@@ -105,19 +119,52 @@ class EventsPage extends Component {
           <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
           <br/>
           <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
+          <br/>
+          <div style={{ maxWidth: '100%' }}>
+            <MaterialTable
+            tableRef={this.tableRef}
+              columns={[
+                { title: 'Avatar', field: 'avatar', render: rowData => (
+                    <img
+                    style={{ height: 36, borderRadius: '50%', width: 36 }}
+                    src={rowData.photo}
+                    alt="Avatar"
+                  />
+                ) },
+                { title: 'Name', field: 'member_name' },                
+              ]}
+              data={formattedRSVPData ? formattedRSVPData : []}
+              title="Detail Panel With RowClick Preview"
+              detailPanel={rowData => {
+                return (
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src="https://www.youtube.com/embed/C0DPdy98e4c"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+            />
+            )
+          }}
+          onRowClick={(event, rowData, togglePanel) => togglePanel()}
+        />
+          </div>
         </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  myrsvpCounts: state.eventsReducer.rsvpCounts, 
-  myrsvpBuckets: state.eventsReducer.rsvpBuckets, 
+  myrsvpCounts: state.eventsReducer.myrsvpCounts, 
+  myrsvpBuckets: state.eventsReducer.myrsvpBuckets, 
+  myrsvps: state.eventsReducer.myrsvps
 });
 
 const mapDispatchToProps = {
   fetchRsvpCount: fetchRsvpCount, 
-  fetchBuckets: fetchBuckets    
+  fetchBuckets: fetchBuckets,
+  fetchRsvps: fetchRsvps    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(EventsPage));
