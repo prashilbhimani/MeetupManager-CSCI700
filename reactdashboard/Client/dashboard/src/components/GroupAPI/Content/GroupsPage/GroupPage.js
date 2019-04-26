@@ -5,7 +5,7 @@ import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
-import { fetchRsvpCount, fetchBuckets, fetchRsvps } from "../../../../actions/eventActions";
+import { fetchGroupInfo } from "../../../../actions/groupActions";
 
 class GroupPage extends Component {
 
@@ -17,12 +17,10 @@ class GroupPage extends Component {
   }
   componentDidMount() {
     const { match } = this.props;
-    const { eventId} = match.params         
-    this.props.fetchRsvpCount(eventId);
+    const { groupId} = match.params         
+    this.props.fetchGroupInfo(groupId);
     var interval = setInterval(() => {
-      this.props.fetchRsvpCount(eventId);
-      this.props.fetchBuckets(eventId);
-      this.props.fetchRsvps(eventId)
+      this.props.fetchGroupInfo(groupId);
     }, 5000);
     this.setState({intervalTimer: interval})
   }
@@ -32,24 +30,6 @@ class GroupPage extends Component {
     }
   }
 
-  convertEpochToSpecificTimezone = (utcSeconds) => {        
-    var d = new Date(utcSeconds); // The 0 there is the key, which sets the date to the epoch        
-    var month = [];
-    month[0] = "January";
-    month[1] = "February";
-    month[2] = "March";
-    month[3] = "April";
-    month[4] = "May";
-    month[5] = "June";
-    month[6] = "July";
-    month[7] = "August";
-    month[8] = "September";
-    month[9] = "October";
-    month[10] = "November";
-    month[11] = "December";
-    var format = `${d.getDate()} ${month[d.getMonth()]} ${d.getFullYear()}`
-    return format;
-  }
 
   _formatRSVPDateData = (data) => {
     var new_data = []    
@@ -103,18 +83,20 @@ class GroupPage extends Component {
     return new_data
   }
   render() {  
-    const { myrsvpCounts } = this.props;        
+    const { myGroupInfo } = this.props;    
+    console.log(`in GroupPage: ${JSON.stringify(myGroupInfo)}`)    
     
-    const rsvpCounter = this.props.myrsvpCounts ? <RSVPCountCard totalCount={myrsvpCounts.total_count}/> : null
+    // const rsvpCounter = this.props.myrsvpCounts ? <RSVPCountCard totalCount={myrsvpCounts.total_count}/> : null
 
-    const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
+    // const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
 
-    const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
+    // const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
     
-    const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
+    // const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
     return (       
         <div>
-          {rsvpCounter}
+          hey from Group Page
+          {/* {rsvpCounter}
           <br/>
           <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
           <br/>
@@ -138,22 +120,18 @@ class GroupPage extends Component {
               title="Detail Panel With RowClick Preview"
           onRowClick={(event, rowData, togglePanel) => togglePanel()}
         />
-          </div>
+          </div> */}
         </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  myrsvpCounts: state.eventsReducer.myrsvpCounts, 
-  myrsvpBuckets: state.eventsReducer.myrsvpBuckets, 
-  myrsvps: state.eventsReducer.myrsvps
+  myGroupInfo: state.groupReducer.myGroupInfo, 
 });
 
 const mapDispatchToProps = {
-  fetchRsvpCount: fetchRsvpCount, 
-  fetchBuckets: fetchBuckets,
-  fetchRsvps: fetchRsvps    
+  fetchGroupInfo: fetchGroupInfo,   
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(GroupPage));

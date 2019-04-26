@@ -16,6 +16,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   const db = client.db("newdb");
   const events = db.collection("events")
   const rsvps = db.collection("rsvps")
+  
 
   app.get('/:groupId/events', (req, res, next) => {
     const groupId = Number(req.params.groupId);
