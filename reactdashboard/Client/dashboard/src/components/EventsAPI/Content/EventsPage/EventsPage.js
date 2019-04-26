@@ -52,10 +52,8 @@ class EventsPage extends Component {
   }
 
   _formatRSVPDateData = (data) => {
-    console.log(`in formatRSVPDateData`)
-    console.log(data)
     var new_data = []    
-
+    const { eventId} = this.props.match.params    
     var sortedDates = []
     Object.keys(data).map(function(key, index) {
       if(key !== "total_count")
@@ -70,7 +68,7 @@ class EventsPage extends Component {
       new_data.push(subarr)    
     }
 
-    new_data.unshift(["Date", "RSVPs"])    
+    new_data.unshift([`x`, `${eventId}`])    
     return new_data;
   }
 
@@ -78,7 +76,8 @@ class EventsPage extends Component {
     return a - b;
   }
 
-  _formatBucketData = (data) => {    
+  _formatBucketData = (data) => {   
+    const { eventId} = this.props.match.params    
     var new_data = []
     if(data) {
       var dateSlots = []
@@ -93,7 +92,7 @@ class EventsPage extends Component {
         new_data.push(subarr)            
       }      
     }
-    new_data.unshift(["Hour Slots", "RSVPs"])        
+    new_data.unshift([`x`, eventId])        
     return new_data
   }
 
@@ -122,7 +121,7 @@ class EventsPage extends Component {
         <div>
           {rsvpCounter}
           <br/>
-          <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
+          <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData} hAxis={`Date`} vAxis={`RSVPs`}/>
           <br/>
           <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
           <br/>
