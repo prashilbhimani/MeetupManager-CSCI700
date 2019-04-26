@@ -72,19 +72,23 @@ class EventsPage extends Component {
     return new_data;
   }
 
+   sortNumber = (a,b) => {
+    return a - b;
+}
+
   _formatBucketData = (data) => {    
     var new_data = []
     if(data) {
       var dateSlots = []
       Object.keys(data).map(function(key, index) {        
-        dateSlots.push(key)
-      });
-      dateSlots.sort()
+        dateSlots.push(parseInt(key))
+      });      
+      dateSlots.sort(this.sortNumber)      
       for(var i=0; i< dateSlots.length; i++) {
         var key = dateSlots[i]      
         var value = data[`${key}`]
-        var subarr = [`${key}`, value]
-        new_data.push(subarr)    
+        var subarr = [`${key}`, value]        
+        new_data.push(subarr)            
       }      
     }
     new_data.unshift(["Hour Slots", "RSVPs"])        
@@ -110,6 +114,8 @@ class EventsPage extends Component {
     const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
 
     const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
+    if(this.props.myrsvpBuckets)
+      console.log(`format rsvpBucketData : ${JSON.stringify(rsvBucketData)}`)
     
     const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
     return (       
