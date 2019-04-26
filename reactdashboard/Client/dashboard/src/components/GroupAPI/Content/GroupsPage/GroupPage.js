@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RSVPCountCard from "./RSVPCountCard/RSVPCountCard";
+import GroupInfocard from "./GroupInfocard/GroupInfocard";
 import SimpleChart from './SimpleChart/SimpleChart';
 import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
@@ -82,11 +82,21 @@ class GroupPage extends Component {
     })
     return new_data
   }
+
+   _isEmpty = (obj) => {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
   render() {  
-    const { myGroupInfo } = this.props;    
-    console.log(`in GroupPage: ${JSON.stringify(myGroupInfo)}`)    
-    
-    // const rsvpCounter = this.props.myrsvpCounts ? <RSVPCountCard totalCount={myrsvpCounts.total_count}/> : null
+    const { myGroupInfo } = this.props;          
+
+    const groupData = this._isEmpty(myGroupInfo) ? undefined : <GroupInfocard groupDetails={myGroupInfo[0].event.groupDetails}/>
+    console.log(`in groupData: ${groupData}`)  
+    console.log(groupData)
 
     // const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
 
@@ -94,11 +104,10 @@ class GroupPage extends Component {
     
     // const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
     return (       
-        <div>
-          hey from Group Page
-          {/* {rsvpCounter}
+        <div>                
+          {groupData}
           <br/>
-          <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
+          {/*<SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
           <br/>
           <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
           <br/>

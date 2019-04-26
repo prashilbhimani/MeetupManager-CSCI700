@@ -22,8 +22,9 @@ const styles = {
   },
 };
 
-function RSVPCountCard(props) {
+function GroupInfocard(props) {
   const { classes } = props; 
+  const { groupDetails } = props;
 
   return (
     <Card className={classes.card}>
@@ -32,18 +33,36 @@ function RSVPCountCard(props) {
           Real time updates
         </Typography>
         <Typography variant="h5" component="h2">
-          RSVP Counter
+          Group Name
         </Typography>
         <Typography component="p">
-          {props.totalCount}
+          {groupDetails.group_name}
+        </Typography>   
+        <Typography variant="h5" component="h2">
+          Group City
         </Typography>
+        <Typography component="p">
+          {groupDetails.group_city}
+        </Typography>
+        <Typography variant="h5" component="h2">
+          Group Country
+        </Typography>
+        <Typography component="p">
+          {groupDetails.group_country}
+        </Typography> 
+        <Typography variant="h5" component="h2">
+          Group State
+        </Typography>
+        <Typography component="p">
+          {groupDetails.group_state}
+        </Typography>     
       </CardContent>
     </Card>
   );
 }
 
-RSVPCountCard.propTypes = {
+GroupInfocard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(RSVPCountCard);
+export default withStyles(styles)(GroupInfocard);
