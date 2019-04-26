@@ -59,7 +59,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   app.get("/:eventId/rsvpcount", (req, res, next) => {
     const eventId = req.params.eventId;
     rsvps.find({"json.event.event_id" : eventId}).sort({"json.mtime" : 1}).toArray((err, results) => {
-      const ONE_DAY = 60 * 60 * 24
+      const ONE_DAY = 24 * 60 * 60 * 1000
       const count = results.length
       const min_mtime = results[0].json.mtime
       const max_mtime = results[count - 1].json.mtime
@@ -71,11 +71,6 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
           "end_time": i + ONE_DAY,
           "count" : 0
         }
-      rsvps[Math.floor(i / ONE_DAY)] = {
-        "start_time" : i,
-        "end_time": i + ONE_DAY,
-        "count" : 0
-      }
       
       for(var i = 0; i < count; ++i) {
         const mtime = results[i].json.mtime;
