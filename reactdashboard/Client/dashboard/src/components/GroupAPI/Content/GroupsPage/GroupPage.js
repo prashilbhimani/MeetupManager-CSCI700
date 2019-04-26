@@ -7,7 +7,7 @@ import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
 import { fetchRsvpCount, fetchBuckets, fetchRsvps } from "../../../../actions/eventActions";
 
-class EventsPage extends Component {
+class GroupPage extends Component {
 
   constructor() {
     super()
@@ -19,7 +19,7 @@ class EventsPage extends Component {
     const { match } = this.props;
     const { eventId} = match.params         
     this.props.fetchRsvpCount(eventId);
-    var interval =setInterval(() => {
+    var interval = setInterval(() => {
       this.props.fetchRsvpCount(eventId);
       this.props.fetchBuckets(eventId);
       this.props.fetchRsvps(eventId)
@@ -156,4 +156,4 @@ const mapDispatchToProps = {
   fetchRsvps: fetchRsvps    
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(EventsPage));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(GroupPage));

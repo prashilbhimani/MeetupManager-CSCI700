@@ -7,8 +7,7 @@ const initialState = {
     myrsvps: []
 };
 
-export default function(state = initialState, action) {    
-    // console.log(`reducer value: ${action.type}`)
+export default function(state = initialState, action) {        
     switch(action.type) {        
         case FETCH_RSVP_COUNT:
             return {
@@ -20,14 +19,12 @@ export default function(state = initialState, action) {
                 ...state,
                 myrsvpBuckets: action.payload
             }
-        case FETCH_RSVPS:
-            console.log(`fetching rsvps`)
+        case FETCH_RSVPS:            
             return {
                 ...state,
                 myrsvps:action.payload
             }
-        default:
-            console.log(`entering default reducer`)
+        default:            
             return state
     }
 }
