@@ -135,8 +135,7 @@ class EventsPage extends Component {
                 { title: 'Id', field: 'member_id' },                
               ]}
               data={formattedRSVPData ? formattedRSVPData : []}
-              title="Detail Panel With RowClick Preview"
-          onRowClick={(event, rowData, togglePanel) => togglePanel()}
+              title="Detail Panel With RowClick Preview"          
         />
           </div>
         </div>
