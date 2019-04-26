@@ -69,8 +69,32 @@ class GroupPage extends Component {
             return false;
     }
     return true;
-  } 
+  }
+  
+  _formatBucketData = (data) => {
+    var new_data = []    
 
+    var sortedDates = []
+    Object.keys(data).map(function(key, index) {
+      if(key !== "total_count")
+        sortedDates.push(parseInt(key))
+    });
+    sortedDates.sort(this.sortNumber)
+    for(var i=0; i< sortedDates.length; i++) {
+      var key = sortedDates[i]      
+      var value = data[`${key}`]
+      var date = this.convertEpochToSpecificTimezone(value[`start_time`])    
+      var subarr = [`${date}`, value[`count`]]
+      new_data.push(subarr)    
+    }
+
+    new_data.unshift(["Date", "RSVPs"])    
+    return new_data;
+  }
+
+  sortNumber = (a,b) => {
+    return a - b;
+  }
   render() {  
     const { myGroupInfo } = this.props;          
 

@@ -52,14 +52,16 @@ class EventsPage extends Component {
   }
 
   _formatRSVPDateData = (data) => {
+    console.log(`in formatRSVPDateData`)
+    console.log(data)
     var new_data = []    
 
     var sortedDates = []
     Object.keys(data).map(function(key, index) {
       if(key !== "total_count")
-        sortedDates.push(key)
+        sortedDates.push(parseInt(key))
     });
-    sortedDates.sort()
+    sortedDates.sort(this.sortNumber)
     for(var i=0; i< sortedDates.length; i++) {
       var key = sortedDates[i]      
       var value = data[`${key}`]
@@ -74,7 +76,7 @@ class EventsPage extends Component {
 
    sortNumber = (a,b) => {
     return a - b;
-}
+  }
 
   _formatBucketData = (data) => {    
     var new_data = []
@@ -111,11 +113,9 @@ class EventsPage extends Component {
     
     const rsvpCounter = this.props.myrsvpCounts ? <RSVPCountCard totalCount={myrsvpCounts.total_count}/> : null
 
-    const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
-
+    const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []        
     const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
-    if(this.props.myrsvpBuckets)
-      console.log(`format rsvpBucketData : ${JSON.stringify(rsvBucketData)}`)
+    
     
     const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
     return (       
