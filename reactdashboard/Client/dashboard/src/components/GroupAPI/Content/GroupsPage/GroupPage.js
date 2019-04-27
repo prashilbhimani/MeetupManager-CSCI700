@@ -12,7 +12,7 @@ class GroupPage extends Component {
   constructor() {
     super()
     this.state = {
-      intervalTimer : null
+      intervalTimer : null,
     }
   }
   componentDidMount() {
@@ -59,7 +59,7 @@ class GroupPage extends Component {
       myjson["time"] = this._convertEpochToSpecificTimezone(event.time) 
       myjson["event_url"] = event.event_url
       new_data.push(myjson)
-    })    
+    })     
     return new_data
   }
 
@@ -72,39 +72,66 @@ class GroupPage extends Component {
   }
   
   _formatBucketData = (data) => {
-    var new_data = []    
-
-    var sortedDates = []
-    Object.keys(data).map(function(key, index) {
-      if(key !== "total_count")
-        sortedDates.push(parseInt(key))
-    });
-    sortedDates.sort(this.sortNumber)
-    for(var i=0; i< sortedDates.length; i++) {
-      var key = sortedDates[i]      
-      var value = data[`${key}`]
-      var date = this.convertEpochToSpecificTimezone(value[`start_time`])    
-      var subarr = [`${date}`, value[`count`]]
-      new_data.push(subarr)    
+                     
+    var chartData = {
+      0: [0],
+      1: [1],
+      2: [2],
+      3: [3],
+      4: [4],
+      5: [5],
+      6: [6],
+      7: [7],
+      8: [8],
+      9: [9],
+      10: [10],
+      11: [11],
+      12: [12],
+      13: [13],
+      14: [14],
+      15: [15],
+      16: [16],
+      17: [17],
+      18: [18],
+      19: [19],
+      20: [20],
+      21: [21],
+      22: [22],
+      23: [23],
     }
+    var eventNames = [`x`]
 
-    new_data.unshift(["Date", "RSVPs"])    
-    return new_data;
-  }
+    for(var i=0 ; i< data.length; i++) { // for each event
+      const event = data[i].event;
+      const eventName = event.event_name;
+      const dailyCounts = event.dailyCounts            
+
+      Object.keys(dailyCounts).map(function(key, index) { // for each bucket of the event       
+                                
+        if(chartData[key] !== undefined) {          
+          chartData[key].push(dailyCounts[key])          
+        }                
+      })
+
+      eventNames.push(eventName)
+    }
+    var new_data = []
+    new_data.push(eventNames)
+    for(var i=0; i< 24; i++) {
+      new_data.push(chartData[i])
+    }
+    return new_data
+}
 
   sortNumber = (a,b) => {
     return a - b;
   }
   render() {  
-    const { myGroupInfo } = this.props;              
+    const { myGroupInfo } = this.props;                 
     const groupData = this._isEmpty(myGroupInfo) ? undefined : <GroupInfocard groupDetails={myGroupInfo[0].event.groupDetails}/>
 
-    const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);
-    // const rsvpDateData = this.props.myrsvpCounts ? this._formatRSVPDateData(this.props.myrsvpCounts) : []    
-
-    // const rsvBucketData = this.props.myrsvpBuckets ? this._formatBucketData(this.props.myrsvpBuckets) : []
-    
-    // const formattedRSVPData = this.props.myrsvps ? this._formatRSVPData(this.props.myrsvps): [];
+    const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);        
+    const formattedChartData = this._isEmpty(myGroupInfo) ? [] : this._formatBucketData(myGroupInfo);                    
     return (       
         <div>                
           {groupData}
@@ -117,17 +144,14 @@ class GroupPage extends Component {
                 { title: 'Name', field: 'event_name' },
                 { title: 'Time', field: 'time' }, 
                 { title: 'Event URL', field: 'event_url' }, 
-
               ]}
               data={formattedEventsTableData ? formattedEventsTableData : []}
               title="Detail Panel With RowClick Preview"
         />
         </div>
 
-          {/*<SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData}/>
-          <br/>
-          <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
-          <br/> */}
+        <SimpleChart title={'Bucket Count'} subtitle={'Subtitle1'} data={formattedChartData}/>
+          <br/>                    
         </div>
     )
   }
