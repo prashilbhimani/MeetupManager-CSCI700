@@ -29,28 +29,32 @@ function GroupInfocard(props) {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Real time updates
-        </Typography>
         <Typography variant="h5" component="h2">
-          Group Name
+          Group Information
         </Typography>
+        <br/>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Group Name
+        </Typography>        
         <Typography component="p">
           {groupDetails.group_name}
-        </Typography>   
-        <Typography variant="h5" component="h2">
+        </Typography> 
+        <br/>  
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
           Group City
-        </Typography>
+        </Typography>        
         <Typography component="p">
           {groupDetails.group_city}
         </Typography>
-        <Typography variant="h5" component="h2">
+        <br/>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
           Group Country
         </Typography>
         <Typography component="p">
-          {groupDetails.group_country}
+          {groupDetails.group_country.toUpperCase()}
         </Typography> 
-        <Typography variant="h5" component="h2">
+        <br/>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
           Group State
         </Typography>
         <Typography component="p">
