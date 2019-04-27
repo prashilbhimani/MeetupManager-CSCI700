@@ -29,7 +29,7 @@ function RSVPCountCard(props) {
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Real time updates
+          Real time rsvp ticker
         </Typography>
         <Typography variant="h5" component="h2">
           RSVP Counter
