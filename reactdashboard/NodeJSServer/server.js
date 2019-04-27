@@ -47,6 +47,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   app.get("/mostfreqtags", (req, res, next) => {
     const city = req.query.city;
     locationFrequentTags.find({"city" : city, "item" : {$size : 1}}).toArray((err, results) => {
+      results.forEach(v => { v.item = v.item[0] });
       res.status(200).send(results);
     });
   });
