@@ -96,9 +96,7 @@ class GroupPage extends Component {
     return a - b;
   }
   render() {  
-    const { myGroupInfo } = this.props;          
-
-    console.log(`Group Info: ${JSON.stringify(myGroupInfo)}`)
+    const { myGroupInfo } = this.props;              
     const groupData = this._isEmpty(myGroupInfo) ? undefined : <GroupInfocard groupDetails={myGroupInfo[0].event.groupDetails}/>
 
     const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);

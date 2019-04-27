@@ -68,7 +68,7 @@ class EventsPage extends Component {
       new_data.push(subarr)    
     }
 
-    new_data.unshift([`x`, `${eventId}`])    
+    new_data.unshift([`Date`, `${eventId}`])    
     return new_data;
   }
 
@@ -87,8 +87,8 @@ class EventsPage extends Component {
       dateSlots.sort(this.sortNumber)      
       for(var i=0; i< dateSlots.length; i++) {
         var key = dateSlots[i]      
-        var value = data[`${key}`]
-        var subarr = [`${key}`, value]        
+        var value = parseInt(data[`${key}`])
+        var subarr = [key, value]        
         new_data.push(subarr)            
       }      
     }
@@ -123,7 +123,7 @@ class EventsPage extends Component {
           <br/>
           <SimpleChart title={'Daily Count'} subtitle={'Subtitle1'} data={rsvpDateData} hAxis={`Date`} vAxis={`RSVPs`}/>
           <br/>
-          <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData}/>
+          <SimpleChart title={'Bucket Count'} subtitle={'Subtitle2'} data={rsvBucketData} hAxis={`Hour`} vAxis={`RSVPs`}/>
           <br/>
           <div style={{ maxWidth: '100%' }}>
             <MaterialTable
