@@ -5,7 +5,11 @@ import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
-import { fetchGroupInfo } from "../../../../actions/groupActions";
+import { fetchGroupInfo, fetchRelatedTagsOnLocation } from "../../../../actions/groupActions";
+import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 class GroupPage extends Component {
 
@@ -13,6 +17,8 @@ class GroupPage extends Component {
     super()
     this.state = {
       intervalTimer : null,
+      related_tags_location: "",
+      related_tags_tag: ""
     }
   }
   componentDidMount() {
@@ -71,6 +77,12 @@ class GroupPage extends Component {
     }
     return true;
   }
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
   
   _formatBucketData = (data) => {
                      
@@ -128,15 +140,30 @@ class GroupPage extends Component {
   sortNumber = (a,b) => {
     return a - b;
   }
+
+  _fetchRelatedTagsOnLocation = (e) => {
+    // console.log(`method called for: ${e.target} with ${this.state.related_tags_location} and ${this.state.related_tags_tag}`)
+    this.props.fetchRelatedTagsOnLocation(this.state.related_tags_location, this.state.related_tags_tag);
+    this.setState({
+      related_tags_location: "",
+      related_tags_tag: ""
+    })
+  }
+
   render() {  
-    const { myGroupInfo } = this.props;                 
+    const { myGroupInfo, classes } = this.props;                 
     const groupData = this._isEmpty(myGroupInfo) ? undefined : <GroupInfocard groupDetails={myGroupInfo[0].event.groupDetails}/>
 
     const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);        
     const formattedChartData = this._isEmpty(myGroupInfo) ? [] : this._formatBucketData(myGroupInfo);                    
+    
     return (       
         <div>                
           {groupData}
+          <br/>
+          <div style={{ maxWidth: '100%' }}>
+            <SimpleChart title={'Bucket Count'} subtitle={'Subtitle1'} data={formattedChartData} hAxis={`Buckets`} vAxis={`RSVPs`}/>
+          </div> 
           <br/>
           <div style={{ maxWidth: '100%' }}>
             <MaterialTable
@@ -150,10 +177,40 @@ class GroupPage extends Component {
               data={formattedEventsTableData ? formattedEventsTableData : []}
               title="Event infomation"
         />
-        </div>
+        </div>     
+        <br/>  
+        
+        <Card className={classes.card}>
+          <form className={classes.container} noValidate autoComplete="off">
+            <Typography variant="h5" component="h2" gutterBottom>
+              Related Tags for a Location 
+            </Typography>
+            <TextField
+              id="outlined-name"
+              label="Location"
+              className={classes.textField}
+              value={this.state.related_tags_location}
+              onChange={this.handleChange('related_tags_location')}
+              margin="normal"
+              variant="outlined"
+            />
+            <TextField
+              id="outlined-name"
+              label="Tag"
+              className={classes.textField}
+              value={this.state.related_tags_tag}
+              onChange={this.handleChange('related_tags_tag')}
+              margin="normal"
+              variant="outlined"
+            />
+            <br/><br/>
+            <Button id="fetchresults1" variant="contained" color="primary" className={classes.button} onClick={this._fetchRelatedTagsOnLocation}>
+              Fetch Results
+            </Button>            
+          </form>
+        </Card>
 
-        <SimpleChart title={'Bucket Count'} subtitle={'Subtitle1'} data={formattedChartData} hAxis={`Buckets`} vAxis={`RSVPs`}/>
-          <br/>                    
+        
         </div>
     )
   }
@@ -165,6 +222,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchGroupInfo: fetchGroupInfo,   
+  fetchRelatedTagsOnLocation: fetchRelatedTagsOnLocation
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(GroupPage));
