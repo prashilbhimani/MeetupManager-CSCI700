@@ -60,7 +60,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
         for(var j = 0; j < results[i].item.length; ++j)
           tags.add(results[i].item[j]);
       }
-      res.status(200).send(Array.from(tags));
+      res.status(200).send({"tags" : Array.from(tags)});
     })
   });
 
