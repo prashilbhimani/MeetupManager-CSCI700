@@ -116,6 +116,7 @@ class GroupPage extends Component {
 
       eventNames.push(eventName)
     }
+    
     var new_data = []
     new_data.push(eventNames)
     for(i=0; i< 24; i++) {

@@ -50,7 +50,7 @@ class  SimpleCard extends Component {
             Event Information 
           </Typography>
           <Typography variant="h5" component="h2">
-            Please enter your event id
+            Please enter your event ID
           </Typography>
           <TextField
           id="event_id"

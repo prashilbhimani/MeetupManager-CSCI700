@@ -14,6 +14,12 @@ const sidebarRoutes = [
         { id: "Groups API", icon: <PeopleIcon />, targetUrl: "/groupapi"}, 
       ]
     },
+    {
+      id: "Location APIs",
+      children: [
+        { id: "Location API", icon: <PeopleIcon />, targetUrl: "/locationapi"}, 
+      ]
+    },
 
   ];
 
