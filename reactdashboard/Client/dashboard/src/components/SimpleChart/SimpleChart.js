@@ -4,9 +4,7 @@ import Paper from "@material-ui/core/Paper";;
 
 class SimpleChart extends Component {
   render() { 
-    // console.log(`haxis: ${this.props.hAxis} vaxis: ${this.props.vAxis} , title:${this.props.title}, subtitle:${this.props.subtitle}`)   
-    console.log(`data for charts is:`)
-    console.log(this.props.data)
+        
     return (
       <Paper>
           <Chart
@@ -23,9 +21,6 @@ class SimpleChart extends Component {
               },
               vAxis: {
                 title: `${this.props.vAxis}`,
-              },
-              series: {
-                1: { curveType: 'function' },
               },
             }}
             // For tests

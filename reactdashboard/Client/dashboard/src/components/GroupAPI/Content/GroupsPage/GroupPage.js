@@ -146,11 +146,11 @@ class GroupPage extends Component {
                 { title: 'Event URL', field: 'event_url' }, 
               ]}
               data={formattedEventsTableData ? formattedEventsTableData : []}
-              title="Detail Panel With RowClick Preview"
+              title="Event infomation"
         />
         </div>
 
-        <SimpleChart title={'Bucket Count'} subtitle={'Subtitle1'} data={formattedChartData}/>
+        <SimpleChart title={'Bucket Count'} subtitle={'Subtitle1'} data={formattedChartData} hAxis={`Buckets`} vAxis={`RSVPs`}/>
           <br/>                    
         </div>
     )
