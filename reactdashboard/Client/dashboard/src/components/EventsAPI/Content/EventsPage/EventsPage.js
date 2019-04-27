@@ -48,6 +48,7 @@ class EventsPage extends Component {
     month[10] = "November";
     month[11] = "December";
     var format = `${d.getDate()} ${month[d.getMonth()]} ${d.getFullYear()}`
+    // var format = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`   
     return format;
   }
 
@@ -100,7 +101,7 @@ class EventsPage extends Component {
     var new_data = []
     data.map(rsvp => {      
       var myjson = {}
-      myjson["photo"] = rsvp.json.member.photo
+      myjson["photo"] = rsvp.json.member.photo ? rsvp.json.member.photo  : `https://cdn2.iconfinder.com/data/icons/user/539/default-avatar.png`
       myjson["member_name"] = rsvp.json.member.member_name;            
       myjson["member_id"] = rsvp.json.member.member_id;
       new_data.push(myjson)
