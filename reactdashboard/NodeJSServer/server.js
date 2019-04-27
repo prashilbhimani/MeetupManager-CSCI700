@@ -57,12 +57,9 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
     locationFrequentTags.find({"city" : city, "item" : ref_tag}).toArray((err, results) => {
       var tags = new Set();
       for(var i = 0; i < results.length; ++i) {
-        for(var j = 0; j < results[i].item.length; ++j)
-          tags.add(results[i].item[j]);
+        results[i].item.forEach(v => { tags.add(v); });
       }
-      tags = Array.from(tags);
-      for(var i = 0; i < tags.length; ++i)
-        tags[i] = {"tag" : tags[i]}
+      tags = Array.from(tags).map(v => { return {"tag" : v}; });
       res.status(200).send(Array.from(tags));
     });
   });
