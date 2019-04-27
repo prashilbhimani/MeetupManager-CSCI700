@@ -45,7 +45,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
 
   app.get("/:eventId/hourbuckets", (req, res, next) => {
     const eventId = req.params.eventId;
-    events.findOne({"event.event_id" : eventId}, (err, result) => {
+    events.findOne({"event.event_id" : eventId}, (err, result) => { 
       var dailyCounts = {}
       for(var i = 0; i < 24; ++i)
         dailyCounts[i.toString()] = result.event.dailyCounts[(2*i).toString()] +
@@ -58,8 +58,11 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
 
   app.get("/:eventId/rsvpcount", (req, res, next) => {
     const eventId = req.params.eventId;
-    rsvps.find({"json.event.event_id" : eventId}).sort({"json.mtime" : 1}).toArray((err, results) => {
-      const ONE_DAY = 24 * 60 * 60 * 1000
+    rsvps.find({"json.event.event_id" : eventId}).toArray((err, results) => {
+      results.sort((x, y) => { return x.json.mtime - y.json.mtime; });
+      if(results.length == 0)
+        return res.status(404).send('Resource not found');
+      const ONE_DAY = 24 * 60 * 60 * 1000 // ms
       const count = results.length
       const min_mtime = results[0].json.mtime
       const max_mtime = results[count - 1].json.mtime
@@ -74,7 +77,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       
       for(var i = 0; i < count; ++i) {
         const mtime = results[i].json.mtime;
-        rsvps[Math.floor(mtime / ONE_DAY)].count += 1
+        rsvps[Math.floor(mtime / ONE_DAY)].count += 1;
       }
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
