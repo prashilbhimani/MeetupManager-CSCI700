@@ -149,7 +149,20 @@ class GroupPage extends Component {
       related_tags_tag: ""
     })
   }
-
+  _getTableFromArr = (data) => {
+    return(
+      <div style={{ maxWidth: '100%' }}>
+      <MaterialTable
+      tableRef={this.tableRef}
+        columns={[
+          { title: 'Tag', field: 'tag' },
+        ]}
+        data={data ? data : []}
+        title="Event infomation"
+      />
+  </div>   
+    )
+  }
   render() {  
     const { myGroupInfo, classes } = this.props;                 
     const groupData = this._isEmpty(myGroupInfo) ? undefined : <GroupInfocard groupDetails={myGroupInfo[0].event.groupDetails}/>
@@ -157,6 +170,10 @@ class GroupPage extends Component {
     const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);        
     const formattedChartData = this._isEmpty(myGroupInfo) ? [] : this._formatBucketData(myGroupInfo);                    
     
+    const relatedTagsonLocationResults = this.props.relatedTags  ? this._getTableFromArr(this.props.relatedTags) : null
+    console.log(`in render: ${JSON.stringify(this.props.relatedTags)}`)
+    if(this.props.relatedTags)
+    console.log(`length: ${this.props.relatedTags.length}`)
     return (       
         <div>                
           {groupData}
@@ -176,7 +193,7 @@ class GroupPage extends Component {
               ]}
               data={formattedEventsTableData ? formattedEventsTableData : []}
               title="Event infomation"
-        />
+            />
         </div>     
         <br/>  
         
@@ -209,6 +226,8 @@ class GroupPage extends Component {
             </Button>            
           </form>
         </Card>
+        <br/><br/>
+        {relatedTagsonLocationResults}
 
         
         </div>
@@ -218,6 +237,7 @@ class GroupPage extends Component {
 
 const mapStateToProps = state => ({
   myGroupInfo: state.groupReducer.myGroupInfo, 
+  relatedTags: state.groupReducer.relatedTags
 });
 
 const mapDispatchToProps = {
