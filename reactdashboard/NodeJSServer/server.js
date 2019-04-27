@@ -6,7 +6,6 @@ const mongo = require("mongodb").MongoClient;
 const url = "mongodb://35.225.229.89:27017";
 
 const port = 9001;
-
 const app = express();
 app.use(cors());
 
@@ -16,8 +15,8 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
   const db = client.db("newdb");
   const events = db.collection("events");
   const rsvps = db.collection("rsvps");
+  const locationFrequentTags = db.collection("locationFrequentTags");
   
-
   app.get("/:groupId/events", (req, res, next) => {
     const groupId = Number(req.params.groupId);
     events.find({"event.groupDetails.group_id" : groupId}).toArray((err, results) => {
@@ -43,6 +42,26 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.status(200).send(results);
     });
+  });
+
+  app.get("/mostfreqtags", (req, res, next) => {
+    const city = req.query.city;
+    locationFrequentTags.find({"city" : city, "item" : {$size : 1}}).toArray((err, results) => {
+      res.status(200).send(results);
+    });
+  });
+
+  app.get('/relatedtags', (req, res, next) => {
+    const city = req.query.city;
+    const ref_tag = req.query.ref_tag;
+    locationFrequentTags.find({"city" : city, "item" : ref_tag}).toArray((err, results) => {
+      var tags = new Set();
+      for(var i = 0; i < results.length; ++i) {
+        for(var j = 0; j < results[i].item.length; ++j)
+          tags.add(results[i].item[j]);
+      }
+      res.status(200).send(Array.from(tags));
+    })
   });
 
   app.get("/:eventId/hourbuckets", (req, res, next) => {
