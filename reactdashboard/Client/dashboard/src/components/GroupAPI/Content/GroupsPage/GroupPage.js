@@ -59,6 +59,7 @@ class GroupPage extends Component {
       myjson["time"] = this._convertEpochToSpecificTimezone(event.time) 
       myjson["event_url"] = event.event_url
       new_data.push(myjson)
+      return myjson
     })     
     return new_data
   }
@@ -106,18 +107,18 @@ class GroupPage extends Component {
       const eventName = event.event_name;
       const dailyCounts = event.dailyCounts            
 
-      Object.keys(dailyCounts).map(function(key, index) { // for each bucket of the event       
-                                
+      Object.keys(dailyCounts).map(function(key, index) { // for each bucket of the event                                       
         if(chartData[key] !== undefined) {          
           chartData[key].push(dailyCounts[key])          
-        }                
+        }   
+        return chartData             
       })
 
       eventNames.push(eventName)
     }
     var new_data = []
     new_data.push(eventNames)
-    for(var i=0; i< 24; i++) {
+    for(i=0; i< 24; i++) {
       new_data.push(chartData[i])
     }
     return new_data

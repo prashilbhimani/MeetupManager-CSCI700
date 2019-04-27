@@ -59,6 +59,7 @@ class EventsPage extends Component {
     Object.keys(data).map(function(key, index) {
       if(key !== "total_count")
         sortedDates.push(parseInt(key))
+      return sortedDates
     });
     sortedDates.sort(this.sortNumber)
     for(var i=0; i< sortedDates.length; i++) {
@@ -83,7 +84,8 @@ class EventsPage extends Component {
     if(data) {
       var dateSlots = []
       Object.keys(data).map(function(key, index) {        
-        dateSlots.push(parseInt(key))
+        dateSlots.push(parseInt(key))        
+        return data
       });      
       dateSlots.sort(this.sortNumber)      
       for(var i=0; i< dateSlots.length; i++) {
@@ -105,6 +107,7 @@ class EventsPage extends Component {
       myjson["member_name"] = rsvp.json.member.member_name;            
       myjson["member_id"] = rsvp.json.member.member_id;
       new_data.push(myjson)
+      return new_data
     })
     return new_data
   }
