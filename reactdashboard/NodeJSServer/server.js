@@ -60,8 +60,11 @@ mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
         for(var j = 0; j < results[i].item.length; ++j)
           tags.add(results[i].item[j]);
       }
-      res.status(200).send({"tags" : Array.from(tags)});
-    })
+      tags = Array.from(tags);
+      for(var i = 0; i < tags.length; ++i)
+        tags[i] = {"tag" : tags[i]}
+      res.status(200).send(Array.from(tags));
+    });
   });
 
   app.get("/:eventId/hourbuckets", (req, res, next) => {
