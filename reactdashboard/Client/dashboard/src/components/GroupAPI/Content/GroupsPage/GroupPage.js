@@ -172,14 +172,33 @@ class GroupPage extends Component {
       related_location: "",      
     })
   }
+
+  _getTableFromArrForLocationOnly = (data) => {
+    return(
+      <div style={{ maxWidth: '100%' }}>
+        <MaterialTable
+        tableRef={this.tableRef}
+          columns={[
+            { title: 'City', field: 'city' },
+            { title: 'Date', field: 'date' },
+            { title: 'Frequency', field: 'frequency' },
+            { title: 'Tag', field: 'item' },
+          ]}
+          data={data ? data : []}
+          title="Event infomation"
+        />
+        <br/><br/>
+      </div>   
+    )    
+  }
   render() {  
     const { myGroupInfo, classes } = this.props;                 
     const groupData = this._isEmpty(myGroupInfo) ? undefined : <GroupInfocard groupDetails={myGroupInfo[0].event.groupDetails}/>
 
     const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);        
     const formattedChartData = this._isEmpty(myGroupInfo) ? [] : this._formatBucketData(myGroupInfo);                    
-    const relatedTagsonLocationResults = this.props.relatedTags && this.props.relatedTags.length > 0 ? this._getTableFromArr(this.props.relatedTags) : null    
-
+    const relatedTagsonLocationResults = this.props.relatedTags && this.props.relatedTags.length > 0 ? this._getTableFromArr(this.props.relatedTags) : null        
+    const relatedTagsonLocationOnly = this.props.relatedTagsLocationOnly && this.props.relatedTagsLocationOnly.length > 0 ? this._getTableFromArrForLocationOnly(this.props.relatedTagsLocationOnly): null
         
     return (       
         <div>                
@@ -246,7 +265,7 @@ class GroupPage extends Component {
               id="related_location"
               label="Location"
               className={classes.textField}
-              value={this.state.related_tags_location}
+              value={this.state.related_location}
               onChange={this.handleChange('related_location')}
               margin="normal"
               variant="outlined"
@@ -257,7 +276,8 @@ class GroupPage extends Component {
             </Button>            
           </form>
         </Card>
-
+        <br/><br/>
+        {relatedTagsonLocationOnly}
         
         </div>
     )
@@ -266,7 +286,8 @@ class GroupPage extends Component {
 
 const mapStateToProps = state => ({
   myGroupInfo: state.groupReducer.myGroupInfo, 
-  relatedTags: state.groupReducer.relatedTags
+  relatedTags: state.groupReducer.relatedTags,
+  relatedTagsLocationOnly: state.groupReducer.relatedTagsLocationOnly
 });
 
 const mapDispatchToProps = {

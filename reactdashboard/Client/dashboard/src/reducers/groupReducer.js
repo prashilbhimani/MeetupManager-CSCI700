@@ -4,7 +4,7 @@ import { FETCH_GROUP_INFO, FETCH_RELATED_TAGS_ON_LOCATION, FETCH_RELATED_TAGS_ON
 const initialState = {
     myGroupInfo: {},  
     relatedTags: [],
-    relatedTagsLocationOnly: {}  
+    relatedTagsLocationOnly: []  
 };
 
 export default function(state = initialState, action) {        
