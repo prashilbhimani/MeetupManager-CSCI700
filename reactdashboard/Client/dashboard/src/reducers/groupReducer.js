@@ -14,7 +14,7 @@ export default function(state = initialState, action) {
                 myGroupInfo: action.payload
             }
         case FETCH_RELATED_TAGS_ON_LOCATION:
-        console.log(`in FETCH_RELATED_TAGS_ON_LOCATION: ${action.payload}`)
+        console.log(`in FETCH_RELATED_TAGS_ON_LOCATION: ${JSON.stringify(action.payload)}`)
         return {
             ...state,
             relatedTags: action.payload
