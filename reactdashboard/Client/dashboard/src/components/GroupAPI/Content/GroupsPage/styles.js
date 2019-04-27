@@ -16,7 +16,9 @@ export const styles = theme => ({
   button: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,    
-    paddingLeft: theme.spacing.unit
+    paddingLeft: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
   },
   input: {
     display: 'none',

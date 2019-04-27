@@ -5,7 +5,7 @@ import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
 import { withStyles } from '@material-ui/core/styles';
-import { fetchGroupInfo, fetchRelatedTagsOnLocation } from "../../../../actions/groupActions";
+import { fetchGroupInfo, fetchRelatedTagsOnLocation, fetchRelatedTagsOnLocationOnly } from "../../../../actions/groupActions";
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
@@ -18,7 +18,8 @@ class GroupPage extends Component {
     this.state = {
       intervalTimer : null,
       related_tags_location: "",
-      related_tags_tag: ""
+      related_tags_tag: "",
+      related_location: ""
     }
   }
   componentDidMount() {
@@ -160,8 +161,16 @@ class GroupPage extends Component {
         data={data ? data : []}
         title="Event infomation"
       />
+      <br/><br/>
   </div>   
     )
+  }
+
+  _fetchRelatedTagsOnLocationOnly = (e) => {
+    this.props.fetchRelatedTagsOnLocationOnly(this.state.related_location);
+    this.setState({
+      related_location: "",      
+    })
   }
   render() {  
     const { myGroupInfo, classes } = this.props;                 
@@ -169,11 +178,9 @@ class GroupPage extends Component {
 
     const formattedEventsTableData = this._isEmpty(myGroupInfo) ? undefined : this._formatEventsTableData(myGroupInfo);        
     const formattedChartData = this._isEmpty(myGroupInfo) ? [] : this._formatBucketData(myGroupInfo);                    
-    
-    const relatedTagsonLocationResults = this.props.relatedTags  ? this._getTableFromArr(this.props.relatedTags) : null
-    console.log(`in render: ${JSON.stringify(this.props.relatedTags)}`)
-    if(this.props.relatedTags)
-    console.log(`length: ${this.props.relatedTags.length}`)
+    const relatedTagsonLocationResults = this.props.relatedTags && this.props.relatedTags.length > 0 ? this._getTableFromArr(this.props.relatedTags) : null    
+
+        
     return (       
         <div>                
           {groupData}
@@ -200,7 +207,7 @@ class GroupPage extends Component {
         <Card className={classes.card}>
           <form className={classes.container} noValidate autoComplete="off">
             <Typography variant="h5" component="h2" gutterBottom>
-              Related Tags for a Location 
+              Related Tags for a Location and Tag
             </Typography>
             <TextField
               id="outlined-name"
@@ -226,8 +233,30 @@ class GroupPage extends Component {
             </Button>            
           </form>
         </Card>
+
         <br/><br/>
         {relatedTagsonLocationResults}
+        
+        <Card className={classes.card}>
+          <form className={classes.container} noValidate autoComplete="off">
+            <Typography variant="h5" component="h2" gutterBottom>
+              Related Tags on Location Only
+            </Typography>
+            <TextField
+              id="related_location"
+              label="Location"
+              className={classes.textField}
+              value={this.state.related_tags_location}
+              onChange={this.handleChange('related_location')}
+              margin="normal"
+              variant="outlined"
+            />
+            <br/><br/>
+            <Button id="fetchresults2" variant="contained" color="primary" className={classes.button} onClick={this._fetchRelatedTagsOnLocationOnly}>
+              Fetch Results
+            </Button>            
+          </form>
+        </Card>
 
         
         </div>
@@ -242,7 +271,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchGroupInfo: fetchGroupInfo,   
-  fetchRelatedTagsOnLocation: fetchRelatedTagsOnLocation
+  fetchRelatedTagsOnLocation: fetchRelatedTagsOnLocation,
+  fetchRelatedTagsOnLocationOnly: fetchRelatedTagsOnLocationOnly
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(GroupPage));
