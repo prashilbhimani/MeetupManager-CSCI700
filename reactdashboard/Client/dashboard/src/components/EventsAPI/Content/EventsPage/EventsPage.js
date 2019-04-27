@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import RSVPCountCard from "./RSVPCountCard/RSVPCountCard";
-import SimpleChart from './SimpleChart/SimpleChart';
+import SimpleChart from '../../../SimpleChart/SimpleChart';
 import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
@@ -141,7 +141,7 @@ class EventsPage extends Component {
                 { title: 'Id', field: 'member_id' },                
               ]}
               data={formattedRSVPData ? formattedRSVPData : []}
-              title="Detail Panel With RowClick Preview"          
+              title="Live RSVP Feed"          
         />
           </div>
         </div>

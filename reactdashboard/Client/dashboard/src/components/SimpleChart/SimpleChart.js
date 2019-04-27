@@ -4,9 +4,9 @@ import Paper from "@material-ui/core/Paper";;
 
 class SimpleChart extends Component {
   render() { 
-    console.log(`haxis: ${this.props.hAxis} vaxis: ${this.props.vAxis}`)   
-    console.log(`data for charts is:`)
-    console.log(this.props.data)
+    console.log(`haxis: ${this.props.hAxis} vaxis: ${this.props.vAxis} , title:${this.props.title}, subtitle:${this.props.subtitle}`)   
+    // console.log(`data for charts is:`)
+    // console.log(this.props.data)
     return (
       <Paper>
           <Chart
@@ -16,11 +16,8 @@ class SimpleChart extends Component {
             loader={<h6>Fetching data</h6>}
             data={this.props.data && this.props.data.length > 1 ? this.props.data : []}
             options={{
-              // Material design options
-              chart: {
-                title: `${this.props.title}`,
-                subtitle: `${this.props.subtitle}`,
-              },
+              // Material design options              
+              title: this.props.title,              
               hAxis: {
                 title: `${this.props.hAxis}`,
               },

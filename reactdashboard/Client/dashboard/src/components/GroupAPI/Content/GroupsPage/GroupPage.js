@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import GroupInfocard from "./GroupInfocard/GroupInfocard";
-import SimpleChart from './SimpleChart/SimpleChart';
+import SimpleChart from '../../../SimpleChart/SimpleChart';
 import MaterialTable from 'material-table'
 import { connect } from 'react-redux';
 import { styles } from "./styles";
