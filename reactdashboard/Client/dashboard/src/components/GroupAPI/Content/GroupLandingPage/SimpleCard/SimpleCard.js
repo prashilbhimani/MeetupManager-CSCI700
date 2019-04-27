@@ -50,7 +50,7 @@ class  SimpleCard extends Component {
             Group Information
           </Typography>
           <Typography variant="h5" component="h2">
-            Please enter your group id
+            Please enter your group ID
           </Typography>
           <TextField
           id="group_id"

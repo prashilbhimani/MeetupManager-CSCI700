@@ -14,7 +14,6 @@ const sidebarRoutes = [
         { id: "Groups API", icon: <PeopleIcon />, targetUrl: "/groupapi"}, 
       ]
     },
-
   ];
 
   export default sidebarRoutes;
