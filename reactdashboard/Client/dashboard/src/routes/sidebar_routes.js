@@ -3,12 +3,17 @@ import PeopleIcon from "@material-ui/icons/People";
 
 const sidebarRoutes = [
     {
-      id: "Epic Collect APIs",
+      id: "Meetup Events API",
       children: [
         { id: "Events API", icon: <PeopleIcon />, targetUrl: "/eventsapi"}, 
       ]
     },
-
+    {
+      id: "Meetup Groups APIs",
+      children: [
+        { id: "Groups API", icon: <PeopleIcon />, targetUrl: "/groupapi"}, 
+      ]
+    },
   ];
 
   export default sidebarRoutes;

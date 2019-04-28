@@ -3,17 +3,17 @@ import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./styles";
 import SimpleCard from "./SimpleCard/SimpleCard";
 import { Route } from "react-router-dom";
-import EventsPage from "../EventsPage/EventsPage";
+import GroupPage from "../GroupsPage/GroupPage";
 
-class EventLandingPage extends Component {
+class GroupLandingPage extends Component {
     render() {
         const { classes, match } = this.props;       
         return (      
               <div className={classes.contentWrapper}>                                                 
                     <SimpleCard match={match}/>                                  
-                    <Route path="/eventsapi/eventinfo/:eventId" render={(props) => (<EventsPage {...props} />)} />                                                
+                    <Route path="/groupapi/groupinfo/:groupId" render={(props) => (<GroupPage {...props} />)} />                                                
               </div>          
         );
       }
 }
-export default withStyles(styles)(EventLandingPage);
+export default withStyles(styles)(GroupLandingPage);

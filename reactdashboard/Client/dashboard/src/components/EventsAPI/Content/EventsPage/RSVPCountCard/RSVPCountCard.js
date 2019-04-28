@@ -23,15 +23,13 @@ const styles = {
 };
 
 function RSVPCountCard(props) {
-  const { classes } = props;  
-  // console.log(`in simple card: styles is ${JSON.stringify(props)}`)
-
+  const { classes } = props; 
 
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Real time updates
+          Real time rsvp ticker
         </Typography>
         <Typography variant="h5" component="h2">
           RSVP Counter

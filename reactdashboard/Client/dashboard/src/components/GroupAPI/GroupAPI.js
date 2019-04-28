@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Header from "../common-components/Header/Header";
 import { Route} from "react-router-dom";
-import EventLandingPage from "./Content/EventLandingPage/EventLandingPage";
-import EventsPage from "../EventsAPI/Content/EventsPage/EventsPage";
-
+import GroupLandingPage from "./Content/GroupLandingPage/GroupLandingPage"
+import GroupPage from "./Content/GroupsPage/GroupPage"
 export const styles = theme => ({
   Main: {
     minHeight: '100%',
@@ -11,10 +10,10 @@ export const styles = theme => ({
   },
 });
 
-class EventsAPI extends Component {
+class GroupAPI extends Component {
   render() { 
     const { classes } = this.props;       
-    const title = "Events API";  
+    const title = "Group API";  
        
     return (
       
@@ -22,8 +21,8 @@ class EventsAPI extends Component {
         <Header onDrawerToggle={this.props.onDrawerToggle} title={title} />
         <div className={classes.Main}>
           <main className={classes.mainContent}>                    
-              <Route exact path="/eventsapi" render={(props) => (<EventLandingPage {...props} />)} />                            
-              <Route path="/eventsapi/eventinfo/:eventId" render={(props) => (<EventsPage {...props} />)} />                                                
+              <Route exact path="/groupapi" render={(props) => (<GroupLandingPage {...props} />)} />                            
+              <Route path="/groupapi/groupinfo/:groupId" render={(props) => (<GroupPage {...props} />)} />                                                
           </main>
         </div>
       </div>
@@ -31,4 +30,4 @@ class EventsAPI extends Component {
   }
 }
 
-export default EventsAPI;
+export default GroupAPI;

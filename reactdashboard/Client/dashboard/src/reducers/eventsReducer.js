@@ -1,27 +1,30 @@
-import { FETCH_RSVP, FETCH_BUCKETS} from '../actions/types'
+import { FETCH_RSVP_COUNT, FETCH_RSVPS, FETCH_BUCKETS} from '../actions/types'
 
 
 const initialState = {
     myrsvpCounts: 0,
-    rsvpBuckets: {}
+    myrsvpBuckets: {},
+    myrsvps: []
 };
 
-export default function(state = initialState, action) {    
-    // console.log(`reducer value: ${action.type}`)
+export default function(state = initialState, action) {        
     switch(action.type) {        
-        case FETCH_RSVP:
+        case FETCH_RSVP_COUNT:
             return {
                 ...state,
-                rsvpCounts: action.payload
+                myrsvpCounts: action.payload
             }
-        case FETCH_BUCKETS:
-        console.log(`entering fetch buckets reducer`)
+        case FETCH_BUCKETS:            
             return {
                 ...state,
-                rsvpBuckets: action.payload
+                myrsvpBuckets: action.payload
             }
-        default:
-            console.log(`entering default reducer`)
+        case FETCH_RSVPS:            
+            return {
+                ...state,
+                myrsvps:action.payload
+            }
+        default:            
             return state
     }
 }

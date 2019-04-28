@@ -31,7 +31,7 @@ class  SimpleCard extends Component {
   constructor() {
     super();
     this.state = {
-      event_id : ""
+      group_id : ""
     }
   }
   
@@ -47,22 +47,22 @@ class  SimpleCard extends Component {
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Event Information 
+            Group Information
           </Typography>
           <Typography variant="h5" component="h2">
-            Please enter your event ID
+            Please enter your group ID
           </Typography>
           <TextField
-          id="event_id"
-          label="Event Id"          
+          id="group_id"
+          label="Group Id"          
           className={classes.textField}          
           margin="normal"
           variant="outlined"
-          onChange={this.handleChange('event_id')}
+          onChange={this.handleChange('group_id')}
         />         
         </CardContent>
         <CardActions>  
-          <Link to={`${match.url}/eventinfo/${this.state.event_id}`}>
+          <Link to={`${match.url}/groupinfo/${this.state.group_id}`}>
             <Fab size="small" variant="extended" aria-label="Delete" className={classes.fab}>
               <NavigationIcon className={classes.extendedIcon} />
               Fetch Info
