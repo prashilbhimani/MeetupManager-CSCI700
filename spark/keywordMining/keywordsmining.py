@@ -1,9 +1,6 @@
 from pyspark.sql import SparkSession
-import numpy
 from pyspark.mllib.fpm import FPGrowth
 import pandas as pd
-from pyspark import SparkContext
-
 import os
 
 os.environ["PYSPARK_PYTHON"]="/usr/bin/python3"
@@ -52,7 +49,9 @@ for eachevent in Alltopics:
         y.append(x)
 
 rdd=spark.sparkContext.parallelize(y,2)
-model=FPGrowth.train(rdd, minSupport=0.005, numPartitions=1)
+model=FPGrowth.train(rdd, minSupport=0.05, numPartitions=1)
 result = model.freqItemsets().collect()
+#y1=result.toDF()
+
 for fi in result:
     print(fi)
